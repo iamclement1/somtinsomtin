@@ -4,7 +4,7 @@ import PhoneInput from 'react-phone-number-input'
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 
-function Login() {
+function SampleLogin() {
 
     const [value, setValue] = useState();
 
@@ -13,17 +13,19 @@ function Login() {
     }
 
     return (
-    <div className=" container-xxl position-relative login-background h-screen flex bg-gray-bg1
+    <div className=" container-xxl position-relative h-screen bg-gray-bg1
     font-sans">
-        <div className="w-full max-w-md m-auto bg-white rounded-lg 
-        shadow-md py-8 px-16">
+        <div className="row">
+            <div className="col-md-6">
+            <div className="w-full max-w-md m-auto bg-white rounded-lg 
+                py-14 px-16">
             <img src={ Logo } alt="brand-logo"
             className="w-20 m-auto" />
             <h1 className='text-xl font-medium text-dark mt-4 mb-2 text-start'> 
                 Enter your phone number to get started
             </h1>
 
-            <form action="">
+            <form>
                 <div>
                     <label htmlFor="Phone Number"></label>
                     <PhoneInput placeholder="Enter phone number"
@@ -41,22 +43,29 @@ function Login() {
                         className={`w-full p-2 text-primary border rounded-md outline-none
                         text-sm transition duration-150 ease-in-out mb-4`} />
                 </div> */}
-                <div>
+                <div className="space-x-20">
                     <button className="bg-gray-200 text-gray-400 hover:bg-gray-600
                     hover:text-white p-2 w-full mb-2"
                     onClick={ handleSubmit }>Request OTP</button>
+                    {/* <Link to='/register'
+                    className="text-sm no-underline text-gray-600">
+                        Sign up!
+                    </Link> */}
                 </div>
-                <div className="text-start">
+                <div className="text-center">
                     <Link to='/register'
-                    className="text-sm text-gray-600 no-underline hover:text-gray-400">
-                        Don't have an account? Sign up
+                    className="text-sm text-gray-600 no-underline hover:text-gray">
+                        Sign up here...
                     </Link>
                 </div>
             </form>
+        </div>
+            </div>
+            <div className="col-md-6 login-background"></div>
         </div>
     </div>
 
     )
 }
 
-export default Login
+export default SampleLogin

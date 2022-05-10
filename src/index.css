@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.login-background {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient( rgba(43, 15, 30, 0.9), rgba(15, 23, 43, .9) ),
+    url('./Assets/bg-login.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

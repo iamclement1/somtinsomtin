@@ -25,7 +25,10 @@ function Register() {
 
             <form action="">
                 <div>
-                    <label htmlFor="Phone Number"></label>
+                    <label htmlFor="Phone Number"
+                    className='mb-2 font-semibold text-gray-400 font-sans'>
+                        Phone Number
+                    </label>
                     <PhoneInput placeholder="Enter phone number"
                     international
                     defaultCountry='GH'
@@ -55,10 +58,15 @@ function Register() {
                     hover:text-white p-2 w-full mb-2"
                     onClick={ handleSubmit }>Get Started</button>
                 </div>
-                <div className="text-start">
+                <div className="flex text-center text-start text-xs
+                mt-2 text-gray-600 align-center space-x-3">
+                    <p>
+                        Already have an account?
+                    </p>
                     <Link to='/'
-                    className="text-sm text-gray-600 no-underline hover:text-gray-400">
-                        Already have an account? Sign in
+                    className="text-xs text-red-600 no-underline hover:text-red-400
+                    ">
+                        Sign in
                     </Link>
                 </div>
             </form>

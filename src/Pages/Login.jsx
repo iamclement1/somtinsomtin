@@ -26,7 +26,8 @@ function Login() {
 
             <form action="">
                 <div>
-                    <label htmlFor="Phone Number"></label>
+                    <label htmlFor="Phone Number"
+                    className="font-semibold text-gray-400"> Phone Number</label>
                     <PhoneInput placeholder="Enter phone number"
                     international
                     defaultCountry='GH'
@@ -43,16 +44,21 @@ function Login() {
                         text-sm transition duration-150 ease-in-out mb-4`} />
                 </div> */}
                 <div>
-                    <button className="bg-gray-200 text-gray-400 hover:bg-gray-600
+                    <button className="bg-red-400 text-white hover:bg-red-600
                     hover:text-white p-2 w-full mb-2"
                     onClick={ handleSubmit }>
                         Request OTP
                     </button>
                 </div>
-                <div className="text-start">
+                <div className="flex text-center text-start text-xs
+                mt-2 text-gray-600 align-center space-x-3">
+                    <p>
+                    want to be a merchant?
+                    </p>
                     <Link to='/register'
-                    className="text-sm text-gray-600 no-underline hover:text-gray-400">
-                        Don't have an account? Sign up
+                    className="text-xs text-red-600 no-underline hover:text-red-400
+                    ">
+                        Click Here
                     </Link>
                 </div>
             </form>

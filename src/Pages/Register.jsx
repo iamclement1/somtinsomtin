@@ -26,8 +26,8 @@ function Register() {
             <form action="">
                 <div>
                     <label htmlFor="Phone Number"
-                    className='mb-2 font-semibold text-gray-400 font-sans'>
-                        Phone Number
+                    className='font-semibold text-gray-400 font-sans'>
+                        
                     </label>
                     <PhoneInput placeholder="Enter phone number"
                     international
@@ -54,7 +54,7 @@ function Register() {
                         text-sm transition duration-150 ease-in-out mb-4`} />
                 </div> */}
                 <div>
-                    <button className="bg-gray-200 text-gray-400 hover:bg-gray-600
+                    <button className="bg-red-400 font-semibold text-white hover:bg-red-600
                     hover:text-white p-2 w-full mb-2"
                     onClick={ handleSubmit }>Get Started</button>
                 </div>

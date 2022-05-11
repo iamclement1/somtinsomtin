@@ -33,13 +33,14 @@ function Otp() {
                     <p className="text-gray-600 text-center text-xs">
                         Didn't receive OTP?
                     </p>
-                    <p className="text-gray-400 text-center text-xs
-                    text-underline cursor-pointer hover:text-gray-700">
+                    <p className="text-red-400 text-center text-xs
+                    text-underline cursor-pointer hover:text-red-700">
                         Resend OTP
                     </p>
                 </div>
                 <div>
-                    <button className="bg-gray-200 text-gray-400 hover:bg-gray-600
+                    <button className="bg-red-400 text-white font-semibold
+                    hover:bg-red-600
                     hover:text-white p-2 w-full mb-2"
                     onClick={ handleSubmit }>Sign In</button>
                 </div>

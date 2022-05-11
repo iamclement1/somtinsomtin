@@ -19,7 +19,7 @@ function Login() {
         shadow-md py-8 px-16">
             <img src={ Logo } alt="brand-logo"
             className="w-20 m-auto" />
-            <h1 className='text-xl font-medium text-dark mt-4 mb-2 text-start'> 
+            <h1 className='text-xl font-medium text-dark mt-2 mb-2 text-start'> 
                 Enter your phone number to get started
             </h1>
 

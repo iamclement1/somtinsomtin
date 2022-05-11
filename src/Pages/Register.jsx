@@ -19,7 +19,7 @@ function Register() {
         shadow-md py-8 px-16">
             <img src={ Logo } alt="brand-logo"
             className="w-14 m-auto" />
-            <h1 className='text-sm font-medium text-dark mt-4 mb-2 text-center'> 
+            <h1 className='text-sm font-medium text-dark mt-2 mb-2 text-center'> 
                 Sign up your account
             </h1>
 
@@ -32,7 +32,7 @@ function Register() {
                     value={value}
                     onChange={setValue}
                     className= {`w-full p-2 text-gray-400 border rounded-md outline-none 
-                    text-sm transition duration-150 ease-in-out mb-4 focus:outline-none`} />
+                    text-sm transition duration-150 ease-in-out mb-4 focus:outline-none phone`} />
                 </div>
 
                 <div>

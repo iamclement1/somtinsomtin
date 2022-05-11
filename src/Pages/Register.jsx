@@ -13,10 +13,10 @@ function Register() {
     }
 
     return (
-    <div className=" container-xxl position-relative login-background h-screen flex bg-gray-bg1
-    font-sans">
+    <div className=" container-xxl position-relative login-background h-screen
+    flex bg-gray-bg1 font-sans">
         <div className="w-full max-w-md m-auto bg-white rounded-lg 
-        shadow-md py-8 px-16">
+        shadow-md py-8 md:px-16 px-6">
             <img src={ Logo } alt="brand-logo"
             className="w-14 m-auto" />
             <h1 className='text-sm font-medium text-dark mt-2 mb-2 text-center'> 
@@ -31,11 +31,13 @@ function Register() {
                     defaultCountry='GH'
                     value={value}
                     onChange={setValue}
-                    className= {`w-full p-2 text-gray-400 border rounded-md outline-none 
-                    text-sm transition duration-150 ease-in-out mb-4 focus:outline-none phone`} />
+                    required={true}
+                    className= {`md:w-full p-2 text-gray-400 border rounded-md outline-none 
+                    text-sm transition duration-150 ease-in-out mb-4 focus:outline-none
+                    `} />
                 </div>
 
-                <div>
+                {/* <div>
                     <label htmlFor="Email"> </label>
                         <input type="email" id="email" name="email" placeholder="Email Address"
                         className={`w-full p-2 text-gray-600 border rounded-md outline-none
@@ -47,11 +49,11 @@ function Register() {
                         <input type="password" id="password" name="password" placeholder="Password"
                         className={`w-full p-2 text-gray-600 border rounded-md outline-none
                         text-sm transition duration-150 ease-in-out mb-4`} />
-                </div>
+                </div> */}
                 <div>
                     <button className="bg-gray-200 text-gray-400 hover:bg-gray-600
                     hover:text-white p-2 w-full mb-2"
-                    onClick={ handleSubmit }>Sign Up</button>
+                    onClick={ handleSubmit }>Get Started</button>
                 </div>
                 <div className="text-start">
                     <Link to='/'

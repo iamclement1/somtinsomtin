@@ -5,11 +5,14 @@ import Login from './Pages/Login';
 import Otp from './Pages/OTP/Otp';
 import Register from './Pages/Register';
 import SampleLogin from './Pages/SampleLogin';
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   return (
     <Router>
       <div className="App">
+      <ToastContainer />
         <Routes>
           <Route path="/" element={ <Sidebar/> } />
           <Route path="/login" element={ <Login />}  />

@@ -1,13 +1,31 @@
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 import 'react-phone-number-input/style.css'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function Otp() {
 
+    const [ number, setNumber ] = useState('')
 
+    useEffect(() => {
+        const number = localStorage.getItem('number')
+        setNumber(number)
+    }, [])
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
+        axios.post('')
     }
+    console.log(number);
+
+    const handleResend = (event) => {
+        const data ={
+            number: number,
+        }
+
+        axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/resend_signup_verification/', data)
+    }
+
 
     return (
     <div className=" container-xxl position-relative login-background h-screen flex bg-gray-bg1
@@ -33,7 +51,8 @@ function Otp() {
                     <p className="text-gray-600 text-center text-xs">
                         Didn't receive OTP?
                     </p>
-                    <p className="text-red-400 text-center text-xs
+                    <p role="button" onClick={ handleResend }
+                    className="text-red-400 text-center text-xs
                     text-underline cursor-pointer hover:text-red-700">
                         Resend OTP
                     </p>
@@ -42,7 +61,9 @@ function Otp() {
                     <button className="bg-red-400 text-white font-semibold
                     hover:bg-red-600
                     hover:text-white p-2 w-full mb-2"
-                    onClick={ handleSubmit }>Sign In</button>
+                    onClick={ handleSubmit }>
+                        Verfiy Phone Number
+                    </button>
                 </div>
             </form>
         </div>

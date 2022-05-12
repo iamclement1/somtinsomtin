@@ -1,6 +1,6 @@
 import Logo from '../Assets/sometinlogo250-150-red.png'
 import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import Loader from '../Components/Loader/Loader'
@@ -10,37 +10,32 @@ import 'react-toastify/dist/ReactToastify.css'
 
 function Register() {
 
-    const [value, setValue] = useState();
+    // const [value, setValue] = useState();
     
     const navigate = useNavigate('')
 
-    const [ loading, setLoading ] = useState();
-    const [ phone_number, setPhone_Number ] = useState();
+    const [ loading, setLoading ] = useState(false);
+    const [ number, setNumber ] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setLoading(true);
-
+        setLoading(false)
         const data = {
-            "phone_number": phone_number,
+            "phone_number": number,
         }
-        console.log(data);        
-        axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/check_phone_number/', data, {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
+        console.log('data', data);        
+        axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/check_phone_number/', data)
         .then( response => {
             console.log(response.data);
             toast.success('Phone number regsitered')
 
-            if (response.data.success){
+            if (response.data.response_code == 200) {
                 navigate('/otp-page')
-            }
+            } 
         })
 
         .catch( error => {
-            console.log(error)
+            console.log(error.response)
             toast.error('Phone number not found')
         })
     }
@@ -65,8 +60,8 @@ function Register() {
                     <PhoneInput placeholder="Enter phone number"
                     international
                     defaultCountry='GH'
-                    value={value}
-                    onChange={setValue}
+                    value={number}
+                    onChange={ setNumber }
                     id='phone_number'
                     className= {`md:w-full p-2 text-gray-400 border rounded-md outline-none 
                     text-sm transition duration-150 ease-in-out mb-4 focus:outline-none
@@ -99,7 +94,7 @@ function Register() {
                     <p>
                         Already have an account?
                     </p>
-                    <Link to='/'
+                    <Link to='/login'
                     className="text-xs text-red-600 no-underline hover:text-red-400
                     ">
                         Sign in

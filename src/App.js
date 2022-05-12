@@ -7,6 +7,7 @@ import Register from './Pages/Register';
 import SampleLogin from './Pages/SampleLogin';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { SignUpForm } from './Components/RegisterForm/SignUpForm';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/register" element={ <Register /> }/>
           <Route path="/sample" element={ <SampleLogin /> } />
           <Route path='/otp-page' element={ <Otp /> } />
+          <Route path='/signup' element={ <SignUpForm /> } />
         </Routes>
       </div>
     </Router>

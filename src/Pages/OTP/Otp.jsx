@@ -29,8 +29,8 @@ function Otp() {
             console.log(response.data);
             toast.success('Number Successfully verified')
 
-            if (response.data.response_code == 200 ) {
-                navigate('/login')
+            if (response.data.response_code === "200" ) {
+                navigate('/signup')
             }
             
         })

@@ -1,6 +1,6 @@
 import Logo from '../Assets/sometinlogo250-150-red.png'
 import 'react-phone-number-input/style.css'
-import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
+import PhoneInput from 'react-phone-number-input'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import Loader from '../Components/Loader/Loader'
@@ -29,7 +29,7 @@ function Register() {
             console.log(response.data);
             toast.success('OTP successfully sent!')
 
-            if (response.data.response_code == 200) {
+            if (response.data.response_code === "200") {
                 navigate('/otp-page')
             } 
         })

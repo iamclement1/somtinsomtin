@@ -7,7 +7,7 @@ import Register from './Pages/Register';
 import SampleLogin from './Pages/SampleLogin';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { SignUpForm } from './Components/RegisterForm/SignUpForm';
+import SignUpForm  from './Components/RegisterForm/SignUpForm';
 
 function App() {
   return (

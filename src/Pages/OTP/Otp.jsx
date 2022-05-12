@@ -1,10 +1,15 @@
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 import 'react-phone-number-input/style.css'
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 function Otp() {
 
+    const navigate = useNavigate('')
+    
+    const [ code, setCode ] = useState('')
     const [ number, setNumber ] = useState('')
 
     useEffect(() => {
@@ -14,16 +19,42 @@ function Otp() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('')
+        const data = {
+            "unique_code": code,
+            "phone_number" : number,
+        }
+        console.log('data', data )
+        axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/verify_phone_number/', data)
+        .then( response => {
+            console.log(response.data);
+            toast.success('Number Successfully verified')
+
+            if (response.data.response_code == 200 ) {
+                navigate('/login')
+            }
+            
+        })
+        .catch (error => {
+            console.log(error);
+            toast.error('Number not Verified')
+        })
     }
     console.log(number);
 
     const handleResend = (event) => {
         const data ={
-            number: number,
+            "phone_number": number,
         }
 
         axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/resend_signup_verification/', data)
+        .then( response => {
+            console.log(response.data);
+            toast.success('OTP resent')
+        })
+        .catch(error => {
+            console.log(error)
+        })
+
     }
 
 
@@ -44,7 +75,9 @@ function Otp() {
                     <label htmlFor="otp"> </label>
                         <input type="text" id="otp" name="otp" placeholder="Enter Pin"
                         className={`w-full p-2 text-gray-400 border rounded-md outline-none
-                        text-sm transition duration-150 ease-in-out mb-4`} />
+                        text-sm transition duration-150 ease-in-out mb-4`}
+                        value={code}
+                        onChange={ (e) => setCode(e.target.value) } />
                 </div>
 
                 <div className="flex space-x-4 justify-center">

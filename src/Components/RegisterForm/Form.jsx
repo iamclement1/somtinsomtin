@@ -1,44 +1,17 @@
 import Logo from '../Assets/sometinlogo250-150-red.png'
-import 'react-phone-number-input/style.css'
-import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
-import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
-import Loader from '../Components/Loader/Loader'
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-function Register() {
+function Form() {
 
-    // const [value, setValue] = useState();
-    
-    const navigate = useNavigate('')
 
-    const [ loading, setLoading ] = useState(false);
-    const [ number, setNumber ] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setLoading(false)
-        const data = {
-            "phone_number": number,
-        }
-        // console.log('data', data);        
-        axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/check_phone_number/', data)
-        .then( response => {
-            console.log(response.data);
-            toast.success('OTP successfully sent!')
-
-            if (response.data.response_code == 200) {
-                navigate('/otp-page')
-            } 
-        })
-
-        .catch( error => {
-            console.log(error.response)
-            toast.error('Phone number invalid')
-        })
     }
+
 
     return (
     <div className=" container-xxl position-relative login-background h-screen
@@ -53,22 +26,22 @@ function Register() {
 
             <form action="">
                 <div>
-                    <label htmlFor="Phone Number"
-                    className='font-semibold text-gray-400 font-sans'>
-                        
-                    </label>
-                    <PhoneInput placeholder="Enter phone number"
-                    international
-                    defaultCountry='GH'
-                    value={number}
-                    onChange={ setNumber }
-                    id='phone_number'
-                    className= {`md:w-full p-2 text-gray-400 border rounded-md outline-none 
-                    text-sm transition duration-150 ease-in-out mb-4 focus:outline-none
-                    `} />
+                    <label htmlFor="first name"> </label>
+                        <input type="text" id="firstName" name="firstName"
+                        placeholder="First Name"
+                        className={`w-full p-2 text-gray-600 border rounded-md outline-none
+                        text-sm transition duration-150 ease-in-out mb-4`} />
                 </div>
 
-                {/* <div>
+                <div>
+                    <label htmlFor="last name"> </label>
+                        <input type="text" id="lastName" name="lastName"
+                        placeholder="Last Name"
+                        className={`w-full p-2 text-gray-600 border rounded-md outline-none
+                        text-sm transition duration-150 ease-in-out mb-4`} />
+                </div>
+
+                <div>
                     <label htmlFor="Email"> </label>
                         <input type="email" id="email" name="email" placeholder="Email Address"
                         className={`w-full p-2 text-gray-600 border rounded-md outline-none
@@ -80,13 +53,12 @@ function Register() {
                         <input type="password" id="password" name="password" placeholder="Password"
                         className={`w-full p-2 text-gray-600 border rounded-md outline-none
                         text-sm transition duration-150 ease-in-out mb-4`} />
-                </div> */}
+                </div>
                 <div>
                     <button className="bg-red-400 font-semibold text-white hover:bg-red-600
                     hover:text-white p-2 w-full mb-2"
                     onClick={ handleSubmit }>
-                        Get Started
-                        { loading && ( <Loader />)}
+                        Sign up
                     </button>
                 </div>
                 <div className="flex text-center text-start text-xs
@@ -107,4 +79,4 @@ function Register() {
     )
 }
 
-export default Register
+export default Form

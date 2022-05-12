@@ -3,13 +3,22 @@ import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
+import Loader from '../Components/Loader/Loader'
+import axios from 'axios';
 
 function Register() {
 
     const [value, setValue] = useState();
 
+    const [ loading, setLoading ] = useState();
+
     const handleSubmit = async (event) => {
         event.preventDefault();
+        setLoading(true);
+        axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/check_phone_number/')
+        .then( response => {
+            console.log(response);
+        })
     }
 
     return (
@@ -56,7 +65,10 @@ function Register() {
                 <div>
                     <button className="bg-red-400 font-semibold text-white hover:bg-red-600
                     hover:text-white p-2 w-full mb-2"
-                    onClick={ handleSubmit }>Get Started</button>
+                    onClick={ handleSubmit }>
+                        Get Started
+                        { loading && ( <Loader />)}
+                    </button>
                 </div>
                 <div className="flex text-center text-start text-xs
                 mt-2 text-gray-600 align-center space-x-3">

@@ -2,22 +2,46 @@ import Logo from '../Assets/sometinlogo250-150-red.png'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Loader from '../Components/Loader/Loader'
 import axios from 'axios';
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function Register() {
 
     const [value, setValue] = useState();
+    
+    const navigate = useNavigate('')
 
     const [ loading, setLoading ] = useState();
+    const [ phone_number, setPhone_Number ] = useState();
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
         setLoading(true);
-        axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/check_phone_number/')
+
+        const data = {
+            "phone_number": phone_number,
+        }
+        console.log(data);        
+        axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/check_phone_number/', data, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
         .then( response => {
-            console.log(response);
+            console.log(response.data);
+            toast.success('Phone number regsitered')
+
+            if (response.data.success){
+                navigate('/otp-page')
+            }
+        })
+
+        .catch( error => {
+            console.log(error)
+            toast.error('Phone number not found')
         })
     }
 
@@ -43,7 +67,7 @@ function Register() {
                     defaultCountry='GH'
                     value={value}
                     onChange={setValue}
-                    required={true}
+                    id='phone_number'
                     className= {`md:w-full p-2 text-gray-400 border rounded-md outline-none 
                     text-sm transition duration-150 ease-in-out mb-4 focus:outline-none
                     `} />

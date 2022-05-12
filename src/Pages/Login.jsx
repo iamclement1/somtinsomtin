@@ -2,33 +2,18 @@ import Logo from '../Assets/sometinlogo250-150-red.png'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios'
+import { Link } from 'react-router-dom';
+
 
 function Login() {
 
-    const navigate = useNavigate('')
 
     const [value, setValue] = useState();
-    const [phoneNumber, setPhoneNumber] = useState('')
+
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        const data ={
-            phoneNumber: phoneNumber,
-        } 
-        console.log(data);
-
-        axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/check_phone_number/', data)
-        .then( response => {
-            console.log(response.data)
-            localStorage.setItem('check_phone_number', JSON.stringify(response.data))
-
-            if (response.data.success) {
-                navigate('/otp-page')
-            }
-        })
 
     }
 

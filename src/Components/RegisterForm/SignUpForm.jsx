@@ -1,5 +1,5 @@
 import Logo from '../../Assets/sometinlogo250-150-red.png'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 // import Loader from '../../Components/Loader/Loader'
 import axios from 'axios';
@@ -13,7 +13,13 @@ function  SignUpForm () {
     const [ firstName, setFirstName ] = useState('');
     const [ lastName, setLastName ] = useState('');
     const [ email, setEmail ] = useState('');
+    const [ number, setNumber ] = useState('');
     const [ password, setPassword ] = useState('');
+
+    useEffect(() => {
+        const number = localStorage.getItem('number')
+        setNumber(number)
+    }, [])
 
 
 
@@ -23,15 +29,16 @@ function  SignUpForm () {
             "first_name" : firstName,
             "last_name" : lastName,
             "email" : email,
+            "phone_number" : number,
             "password" : password
         }
 
         axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/complete_signup/', data)
-        .then ( response => {
+        .then ( response => {  
             console.log(response.data);
             toast.success('Account created successfully');
 
-            if (response.data.reponse_code === '200') {
+            if (response.data.reponse_code === '100') {
                 navigate('/')
             }
         })
@@ -95,7 +102,7 @@ function  SignUpForm () {
                         <input type="password"
                         id="password" 
                         name="password" 
-                        placeholder="Password"
+                        placeholder="Pin"
                         value={password}
                         onChange={ (e) => setPassword(e.target.value)}
                         className={`w-full p-2 text-gray-600 border rounded-md outline-none
@@ -105,7 +112,7 @@ function  SignUpForm () {
                     <button className="bg-red-400 font-semibold text-white hover:bg-red-600
                     hover:text-white p-2 w-full mb-2"
                     onClick={ handleSubmit }>
-                        Get Started
+                        Sign Up
                     </button>
                 </div>
                 <div className="flex text-center text-start text-xs

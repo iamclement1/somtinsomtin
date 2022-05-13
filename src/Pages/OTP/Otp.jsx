@@ -27,9 +27,10 @@ function Otp() {
         axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/verify_phone_number/', data)
         .then( response => {
             console.log(response.data);
+            console.log(response.status_code)
             toast.success('Number Successfully verified')
 
-            if (response.data.response_code === "200" ) {
+            if (response.data.response_code === "100" ) {
                 navigate('/signup')
             }
             

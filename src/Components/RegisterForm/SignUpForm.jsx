@@ -35,6 +35,9 @@ function  SignUpForm () {
                 navigate('/')
             }
         })
+        .catch (error => {
+            console.log(error.response)
+        })
     }
 
 

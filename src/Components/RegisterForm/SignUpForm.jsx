@@ -15,6 +15,7 @@ function  SignUpForm () {
     const [ email, setEmail ] = useState('');
     const [ number, setNumber ] = useState('');
     const [ password, setPassword ] = useState('');
+    const [ ivCode, setIvCode ] = useState('');
 
     useEffect(() => {
         const number = localStorage.getItem('number')
@@ -30,7 +31,8 @@ function  SignUpForm () {
             "last_name" : lastName,
             "email" : email,
             "phone_number" : number,
-            "password" : password
+            "password" : password,
+            "invitation_code" : ivCode,
         }
 
         axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/complete_signup/', data)
@@ -38,8 +40,8 @@ function  SignUpForm () {
             console.log(response.data);
             toast.success('Account created successfully');
 
-            if (response.data.reponse_code === '100') {
-                navigate('/')
+            if (response.data.response_code === "100") {
+                navigate('/login')
             }
         })
         .catch (error => {
@@ -53,9 +55,9 @@ function  SignUpForm () {
     <div className=" container-xxl position-relative login-background h-screen
     flex bg-gray-bg1 font-sans">
         <div className="w-full max-w-md m-auto bg-white rounded-lg 
-        shadow-md py-8 md:px-16 px-6">
+        shadow-md py-2 md:px-16 px-6">
             <img src={ Logo } alt="brand-logo"
-            className="w-14 m-auto" />
+            className="w-12 m-auto" />
             <h1 className='text-sm font-medium text-dark mt-2 mb-2 text-center'> 
                 
             </h1>
@@ -105,6 +107,18 @@ function  SignUpForm () {
                         placeholder="Pin"
                         value={password}
                         onChange={ (e) => setPassword(e.target.value)}
+                        className={`w-full p-2 text-gray-600 border rounded-md outline-none
+                        text-sm transition duration-150 ease-in-out mb-4`} />
+                </div>
+
+                <div>
+                    <label htmlFor="Invitation"> </label>
+                        <input type="invitation-code"
+                        id="invitation-code" 
+                        name="invitation-code" 
+                        placeholder="Invitation Code"
+                        value={ivCode}
+                        onChange={ (e) => setIvCode(e.target.value)}
                         className={`w-full p-2 text-gray-600 border rounded-md outline-none
                         text-sm transition duration-150 ease-in-out mb-4`} />
                 </div>

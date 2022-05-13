@@ -1,7 +1,7 @@
 import Logo from '../Assets/sometinlogo250-150-red.png'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -10,13 +10,21 @@ import { toast } from 'react-toastify';
 function Login() {
 
     const navigate = useNavigate('')
-    const [ number, setNumber ] = useState();   
+    const [ number, setNumber ] = useState();
+    const [ password, setPassword ] = useState();
+
+    useEffect(() => {
+        const number = localStorage.getItem('number', 'password')
+        setNumber(number)
+        setPassword(password)
+    }, [])
 
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         const data = {
             "phone_number" : number,
+            "password" : password,
         }
 
         axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/login/', data)
@@ -25,7 +33,7 @@ function Login() {
             toast.success('User Login Successfully')
 
             if (response.data.response_code === "100") {
-                navigate('/otp-page')
+                navigate('/')
             }
         })
         .catch (error => {
@@ -60,12 +68,13 @@ function Login() {
                     text-sm transition duration-150 ease-in-out mb-4 focus:outline-none`} />
                 </div>
 
-                {/* <div>
+                <div>
                     <label htmlFor="Pin"> </label>
-                        <input type="text" id="pin" name="pin" placeholder="Enter Pin"
-                        className={`w-full p-2 text-primary border rounded-md outline-none
-                        text-sm transition duration-150 ease-in-out mb-4`} />
-                </div> */}
+                        <input type="text" id="pin" name="pin" placeholder="Pin"
+                        className={`w-full p-2 text-gray-600 border rounded-md outline-none
+                        text-sm transition duration-150 ease-in-out mb-4`}
+                        onChange={ (event) => setPassword(event.target.value)} />
+                </div>
                 <div>
                     <button className="bg-red-400 font-semibold text-white hover:bg-red-600
                     hover:text-white p-2 w-full mb-2"

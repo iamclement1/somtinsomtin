@@ -2,17 +2,36 @@ import Logo from '../Assets/sometinlogo250-150-red.png'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 
 function Login() {
 
-
-    const [value, setValue] = useState();
+    const navigate = useNavigate('')
+    const [ number, setNumber ] = useState();   
 
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        const data = {
+            "phone_number" : number,
+        }
+
+        axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/login/', data)
+        .then (response => {
+            console.log(response.data);
+            toast.success('User Login Successfully')
+
+            if (response.data.response_code === "100") {
+                navigate('/otp-page')
+            }
+        })
+        .catch (error => {
+            console.log(error.response)
+            toast.error('Invalid number')
+        })
 
 
     }
@@ -35,8 +54,8 @@ function Login() {
                     <PhoneInput placeholder="Enter phone number"
                     international
                     defaultCountry='GH'
-                    value={value}
-                    onChange={setValue}
+                    value={number}
+                    onChange={setNumber}
                     className= {`w-full p-2 text-gray-400 border rounded-md outline-none 
                     text-sm transition duration-150 ease-in-out mb-4 focus:outline-none`} />
                 </div>

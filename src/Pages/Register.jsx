@@ -1,7 +1,7 @@
 import Logo from '../Assets/sometinlogo250-150-red.png'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import Loader from '../Components/Loader/Loader'
 import axios from 'axios';
@@ -16,6 +16,12 @@ function Register() {
 
     const [ loading, setLoading ] = useState(false);
     const [ number, setNumber ] = useState('');
+
+    useEffect(() => {
+        localStorage.setItem('number', JSON.stringify(number));
+        setNumber(number);
+        
+    }, [ number])
 
     const handleSubmit = (event) => {
         event.preventDefault();

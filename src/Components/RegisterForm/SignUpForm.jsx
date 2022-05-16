@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Joi from 'joi'
 
 function  SignUpForm () {
 
@@ -49,7 +50,14 @@ function  SignUpForm () {
         })
     }
 
-    
+    const joi = require('joi')
+
+    const validation = joi.object({
+        firstName: joi.string().min(3).max(25).trim(true).required(),
+        lastName: joi.string().min(3).max(25).trim(true).required(),
+        email: joi.string().email().trim(true).required(),
+        password: joi.string().password().max(4).trim(true).required()
+    })
 
 
 

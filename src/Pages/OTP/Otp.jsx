@@ -92,8 +92,9 @@ function Otp() {
                     </p>
                 </div>
                 <div>
-                    <button className="bg-red-400 text-white font-semibold
-                    hover:bg-red-600
+                    <button className="bg-gradient-to-r from-indigo-400 to-red-400
+                    text-white font-semibold
+                    hover:bg-red-600 rounded-sm
                     hover:text-white p-2 w-full mb-2"
                     onClick={ handleSubmit }>
                         Verfiy Phone Number

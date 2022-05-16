@@ -7,6 +7,8 @@ import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
 
+
+
 function  SignUpForm () {
 
     const navigate = useNavigate('')
@@ -48,6 +50,7 @@ function  SignUpForm () {
         .catch (error => {
             console.log(error.response)
         })
+
     }
 
 
@@ -57,7 +60,7 @@ function  SignUpForm () {
         <div className="w-full max-w-md m-auto bg-white rounded-lg 
         shadow-md py-2 md:px-16 px-6">
             <img src={ Logo } alt="brand-logo"
-            className="w-12 m-auto" />
+            className="w-14 m-auto" />
             <h1 className='text-sm font-medium text-dark mt-2 mb-2 text-center'> 
                 
             </h1>
@@ -73,7 +76,7 @@ function  SignUpForm () {
                         value ={firstName}
                         onChange={ (e) => setFirstName(e.target.value)}
                         className={`w-full p-2 text-gray-600 border rounded-md outline-none
-                        text-sm transition duration-150 ease-in-out mb-4`} />
+                        text-sm transition duration-150 ease-in-out mb-3`} />
                 </div>
 
                 <div>
@@ -85,7 +88,7 @@ function  SignUpForm () {
                         value={lastName}
                         onChange={ (e) => setLastName(e.target.value)}
                         className={`w-full p-2 text-gray-600 border rounded-md outline-none
-                        text-sm transition duration-150 ease-in-out mb-4`} />
+                        text-sm transition duration-150 ease-in-out mb-3`} />
                 </div>
                 <div>
                     <label htmlFor="Email"> </label>
@@ -96,7 +99,7 @@ function  SignUpForm () {
                         value={email}
                         onChange={ (e) => setEmail(e.target.value)}
                         className={`w-full p-2 text-gray-600 border rounded-md outline-none
-                        text-sm transition duration-150 ease-in-out mb-4`} />
+                        text-sm transition duration-150 ease-in-out mb-3`} />
                 </div>
 
                 <div>
@@ -108,7 +111,7 @@ function  SignUpForm () {
                         value={password}
                         onChange={ (e) => setPassword(e.target.value)}
                         className={`w-full p-2 text-gray-600 border rounded-md outline-none
-                        text-sm transition duration-150 ease-in-out mb-4`} />
+                        text-sm transition duration-150 ease-in-out mb-3`} />
                 </div>
 
                 <div>
@@ -120,11 +123,12 @@ function  SignUpForm () {
                         value={ivCode}
                         onChange={ (e) => setIvCode(e.target.value)}
                         className={`w-full p-2 text-gray-600 border rounded-md outline-none
-                        text-sm transition duration-150 ease-in-out mb-4`} />
+                        text-sm transition duration-150 ease-in-out mb-3`} />
                 </div>
                 <div>
-                    <button className="bg-red-400 font-semibold text-white hover:bg-red-600
-                    hover:text-white p-2 w-full mb-2"
+                    <button className="bg-gradient-to-r from-indigo-400 to-red-400
+                    font-semibold text-white hover:bg-red-600
+                    hover:text-white p-2 w-full mb-2 rounded-sm"
                     onClick={ handleSubmit }>
                         Sign Up
                     </button>
@@ -135,7 +139,7 @@ function  SignUpForm () {
                         Already have an account?
                     </p>
                     <Link to='/login'
-                    className="text-xs text-red-600 no-underline hover:text-red-400
+                    className="text-xs text-indigo-600 no-underline hover:text-red-400
                     ">
                         Sign in
                     </Link>

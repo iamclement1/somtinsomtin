@@ -25,3 +25,8 @@
     width: 4em
 }
 
+.error {
+  color: red;
+  font-size: 8px;
+}
+

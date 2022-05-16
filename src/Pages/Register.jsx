@@ -76,7 +76,9 @@ function Register() {
 
             
                 <div>
-                    <button className="bg-red-400 font-semibold text-white hover:bg-red-600
+                    <button className="bg-gradient-to-r from-indigo-400 to-red-400
+                    font-semibold text-white rounded-sm 
+                    hover:bg-red-600
                     hover:text-white p-2 w-full mb-2"
                     onClick={ handleSubmit }>
                         Get Started
@@ -89,7 +91,7 @@ function Register() {
                         Already have an account?
                     </p>
                     <Link to='/login'
-                    className="text-xs text-red-600 no-underline hover:text-red-400
+                    className="text-xs text-indigo-600 no-underline hover:text-red-400
                     ">
                         Sign in
                     </Link>

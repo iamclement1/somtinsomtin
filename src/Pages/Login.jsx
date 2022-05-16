@@ -50,7 +50,7 @@ function Login() {
         <div className="w-full max-w-md m-auto bg-white rounded-lg 
         shadow-md py-8 md:px-16 px-8">
             <img src={ Logo } alt="brand-logo"
-            className="w-20 m-auto" />
+            className="w-14 m-auto" />
             <h1 className='text-sm font-medium text-dark mt-2 mb-2 text-start'> 
                 Enter your phone number to get started
             </h1>
@@ -75,12 +75,14 @@ function Login() {
                         text-sm transition duration-150 ease-in-out mb-4`}
                         onChange={ (event) => setPassword(event.target.value)} />
                 </div>
-                <div>
-                    <button className="bg-red-400 font-semibold text-white hover:bg-red-600
-                    hover:text-white p-2 w-full mb-2"
+                <div className=''>
+                    <button className="bg-gradient-to-r from-indigo-400 to-red-400
+                    font-semibold text-white 
+                    hover:bg-gradient hover:text-white p-2 w-full mb-2 rounded-sm"
                     onClick={ handleSubmit }>
-                        Get Started
+                        Sign In
                     </button>
+                    
                 </div>
                 <div className="flex text-center text-start text-xs
                 mt-2 text-gray-600 align-center space-x-3">
@@ -88,7 +90,7 @@ function Login() {
                     want to be a merchant?
                     </p>
                     <Link to='/register'
-                    className="text-xs text-red-600 no-underline hover:text-red-400
+                    className="text-xs text-indigo-600 no-underline hover:text-red-400
                     ">
                         Click Here
                     </Link>

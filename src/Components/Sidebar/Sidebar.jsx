@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { faGifts } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Dashboard from '../../Pages/Dashboard'
+
 import Navbar from '../Navbar/Navbar'
 import Icon from '../../Assets/icon.png'
 
-function Sidebar() {
+function Sidebar({ children}) {
 
     const [isOpen, setIsOpen] = useState(true)
 
@@ -33,8 +33,8 @@ function Sidebar() {
             </div>
         </div>
         <div>
-          <Navbar />
-          <Dashboard />
+            <Navbar />
+            { children }
         </div>
     </div>
     )

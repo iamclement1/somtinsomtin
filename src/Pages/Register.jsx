@@ -74,19 +74,7 @@ function Register() {
                     `} />
                 </div>
 
-                {/* <div>
-                    <label htmlFor="Email"> </label>
-                        <input type="email" id="email" name="email" placeholder="Email Address"
-                        className={`w-full p-2 text-gray-600 border rounded-md outline-none
-                        text-sm transition duration-150 ease-in-out mb-4`} />
-                </div>
-
-                <div>
-                    <label htmlFor="Password"> </label>
-                        <input type="password" id="password" name="password" placeholder="Password"
-                        className={`w-full p-2 text-gray-600 border rounded-md outline-none
-                        text-sm transition duration-150 ease-in-out mb-4`} />
-                </div> */}
+            
                 <div>
                     <button className="bg-red-400 font-semibold text-white hover:bg-red-600
                     hover:text-white p-2 w-full mb-2"

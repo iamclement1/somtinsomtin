@@ -3,26 +3,26 @@
 @tailwind utilities;
 
 .login-background {
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient( rgba(43, 15, 30, 0.9), rgba(15, 23, 43, .9) ),
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(43, 15, 30, 0.9), rgba(15, 23, 43, .9)),
     url('./Assets/login-bg.JPG');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  .loader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 99999;
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
 }
 
 .spinner-border {
-    height: 4em;
-    width: 4em
+  height: 4em;
+  width: 4em
 }
 
 .error {
@@ -30,3 +30,19 @@
   font-size: 8px;
 }
 
+.spinner {
+  animation: spin infinite 5s linear;
+
+  /*You can increase or decrease the timer (5s) to 
+  increase or decrease the speed of the spinner*/
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

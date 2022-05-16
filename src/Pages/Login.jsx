@@ -95,7 +95,7 @@ function Login() {
                     )}
                     { isLoading && (
                         <button className="bg-gradient-to-r from-indigo-400 to-red-400
-                        font-semibold text-white space-x-5
+                        text-sm text-white space-x-5
                         hover:bg-gradient hover:text-white p-2 w-full mb-2 rounded-sm"
                         disabled>
                             <FontAwesomeIcon icon={ faSpinner } 

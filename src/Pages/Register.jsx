@@ -3,10 +3,11 @@ import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import Loader from '../Components/Loader/Loader'
 import axios from 'axios';
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Register() {
 
@@ -14,8 +15,8 @@ function Register() {
     
     const navigate = useNavigate('')
 
-    const [ loading, setLoading ] = useState(false);
     const [ number, setNumber ] = useState('');
+    const [ isLoading, setIsLoading ] = useState(false);
 
     useEffect(() => {
         localStorage.setItem('number', JSON.stringify(number));
@@ -24,8 +25,8 @@ function Register() {
     }, [ number])
 
     const handleSubmit = (event) => {
+        setIsLoading(true)
         event.preventDefault();
-        setLoading(false)
         const data = {
             "phone_number": number,
         }
@@ -34,6 +35,7 @@ function Register() {
         .then( response => {
             console.log(response.data);
             toast.success('OTP successfully sent!')
+            setIsLoading(false);
 
             if (response.data.response_code === "200") {
                 navigate('/otp-page')
@@ -43,6 +45,7 @@ function Register() {
         .catch( error => {
             console.log(error.response)
             toast.error('Phone number invalid')
+            setIsLoading(false)
         })
     }
 
@@ -76,14 +79,26 @@ function Register() {
 
             
                 <div>
+                    { !isLoading && (
                     <button className="bg-gradient-to-r from-indigo-400 to-red-400
                     font-semibold text-white rounded-sm 
                     hover:bg-red-600
                     hover:text-white p-2 w-full mb-2"
                     onClick={ handleSubmit }>
                         Get Started
-                        { loading && ( <Loader />)}
                     </button>
+                    )}
+                    { isLoading && (
+                        <button className="bg-gradient-to-r from-indigo-400 to-red-400
+                        text-sm text-white rounded-sm 
+                        hover:bg-red-600
+                        hover:text-white p-2 w-full mb-2"
+                        disabled>
+                            <FontAwesomeIcon icon={ faSpinner } 
+                            className='space-x-4 spinner mr-3'/>
+                            sending otp...
+                        </button>
+                    )}
                 </div>
                 <div className="flex text-center text-start text-xs
                 mt-2 text-gray-600 align-center space-x-3">

@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 function Otp() {
 
@@ -11,6 +13,7 @@ function Otp() {
     
     const [ code, setCode ] = useState('')
     const [ number, setNumber ] = useState('')
+    const [ isLoading, setIsLoading ] = useState(false)
 
     useEffect(() => {
         const number = localStorage.getItem('number')
@@ -18,6 +21,7 @@ function Otp() {
     }, [])
 
     const handleSubmit = (event) => {
+        setIsLoading(true)
         event.preventDefault();
         const data = {
             "unique_code": code,
@@ -29,6 +33,7 @@ function Otp() {
             console.log(response.data);
             console.log(response.status_code)
             toast.success('Number Successfully verified')
+            setIsLoading(false)
 
             if (response.data.response_code === "100" ) {
                 navigate('/signup')
@@ -38,6 +43,7 @@ function Otp() {
         .catch (error => {
             console.log(error);
             toast.error('Number not Verified')
+            setIsLoading(false)
         })
     }
     console.log(number);
@@ -92,6 +98,7 @@ function Otp() {
                     </p>
                 </div>
                 <div>
+                    { !isLoading && (
                     <button className="bg-gradient-to-r from-indigo-400 to-red-400
                     text-white font-semibold
                     hover:bg-red-600 rounded-sm
@@ -99,6 +106,19 @@ function Otp() {
                     onClick={ handleSubmit }>
                         Verfiy Phone Number
                     </button>
+                    )}
+
+                    { isLoading && (
+                        <button className="bg-gradient-to-r from-indigo-400 to-red-400
+                        text-white text-sm
+                        hover:bg-red-600 rounded-sm
+                        hover:text-white p-2 w-full mb-2"
+                        disabled>
+                            <FontAwesomeIcon icon={ faSpinner } 
+                            className='space-x-4 spinner mr-3'/>
+                            verifying number...
+                        </button>
+                    )}
                 </div>
             </form>
         </div>

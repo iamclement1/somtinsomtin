@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -19,6 +21,7 @@ function  SignUpForm () {
     const [ number, setNumber ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ ivCode, setIvCode ] = useState('');
+    const [ isLoading, setIsLoading ] = useState(false);
 
     useEffect(() => {
         const number = localStorage.getItem('number')
@@ -28,6 +31,7 @@ function  SignUpForm () {
 
 
     const handleSubmit = (event) => {
+        setIsLoading(true)
         event.preventDefault();
         const data = {
             "first_name" : firstName,
@@ -42,6 +46,7 @@ function  SignUpForm () {
         .then ( response => {  
             console.log(response.data);
             toast.success('Account created successfully');
+            setIsLoading(false);
 
             if (response.data.response_code === "100") {
                 navigate('/login')
@@ -49,6 +54,8 @@ function  SignUpForm () {
         })
         .catch (error => {
             console.log(error.response)
+            toast.error('User Not Registered')
+            setIsLoading(false);
         })
 
     }
@@ -126,12 +133,25 @@ function  SignUpForm () {
                         text-sm transition duration-150 ease-in-out mb-3`} />
                 </div>
                 <div>
+                    { !isLoading && (
                     <button className="bg-gradient-to-r from-indigo-400 to-red-400
                     font-semibold text-white hover:bg-red-600
                     hover:text-white p-2 w-full mb-2 rounded-sm"
                     onClick={ handleSubmit }>
                         Sign Up
                     </button>
+                    )}
+
+                    { isLoading && (
+                        <button className="bg-gradient-to-r from-indigo-400 to-red-400
+                        text-sm text-white hover:bg-red-600
+                        hover:text-white p-2 w-full mb-2 rounded-sm"
+                        disabled>
+                            <FontAwesomeIcon icon={ faSpinner }
+                            className='space-x-4 spinner mr-3' />
+                            loading...
+                        </button>
+                    )}
                 </div>
                 <div className="flex text-center text-start text-xs
                 mt-2 text-gray-600 align-center space-x-3">

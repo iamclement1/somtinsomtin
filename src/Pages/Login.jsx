@@ -17,7 +17,7 @@ function Login() {
         const number = localStorage.getItem('number', 'password')
         setNumber(number)
         setPassword(password)
-    }, [])
+    }, [password])
 
 
     const handleSubmit = async (event) => {

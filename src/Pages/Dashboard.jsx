@@ -3,7 +3,7 @@ import Sidebar from '../Components/Sidebar/Sidebar'
 function Dashboard() {
   return (
     <Sidebar className="">
-      <div className="px-3 py-4">
+      <div className="container-fluid px-3 py-4">
       <h2>
         Welcome to Sometin Sometin
       </h2>

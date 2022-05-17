@@ -16,18 +16,18 @@ function Sidebar({ children}) {
     return (
     <div className="flex bg-gray-50">
         <div className={`${isOpen ? 'w-52' : 'w-20'} relative duration-300 h-screen
-        p-4 pt-5 bg-white shadow-md login-background`}>
+        p-4 pt-5 bg-white shadow-md login-background `}>
             <div>
                 <img src= { Icon } alt="brand-logo"
                 className={`absolute cursor-pointer -right-3 top-9
                 w-7 text-warning text-2xl ${!isOpen && 'rotate-180'}`}
                 onClick={() => setIsOpen(!isOpen)} />
             </div>
-            <div className="flex text-center gap-x-8 align-center items-center">
+            <div className="flex text-center gap-x-6 align-center items-center">
                 <FontAwesomeIcon icon={ faGifts }
-                className='cursor-pointer duration-500 text-red-500 text-2xl' />
+                className='cursor-pointer duration-500 text-red-500 text-xl' />
                 <h1 className={` text-white origin-left font-medium text-xl
-                duration-300 text-center pt-3 ${!isOpen && 'scale-0'}`}>
+                duration-300 text-center pt-2 ${!isOpen && 'scale-0'}`}>
                     Sometin
                 </h1>
             </div>

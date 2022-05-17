@@ -1,4 +1,4 @@
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
@@ -34,6 +34,13 @@ function Navbar() {
                         className="nav-item nav-link">
                             Sign up
                         </NavLink>
+                        <div className="flex px-4 py-2 items-center rounded-md bg-blue-800 p-2">
+                            <FontAwesomeIcon icon={faSearch} className="float-left block text-white
+                            mr-3" />
+                            <input type={"search"} className="text-base bg-transparent w-full text-white
+                            focus:outline-none"
+                            placeholder='Search here...' />
+                        </div>
                     </div>
                 </div>
 

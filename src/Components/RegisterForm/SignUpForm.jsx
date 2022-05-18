@@ -114,7 +114,7 @@ function  SignUpForm () {
                         <input type="password"
                         id="password" 
                         name="password" 
-                        placeholder="Pin"
+                        placeholder="Enter your four digit pin"
                         value={password}
                         onChange={ (e) => setPassword(e.target.value)}
                         className={`w-full p-2 text-gray-600 border rounded-md outline-none
@@ -134,7 +134,7 @@ function  SignUpForm () {
                 </div>
                 <div>
                     { !isLoading && (
-                    <button className="bg-gradient-to-r from-indigo-400 to-red-400
+                    <button className="bg-red-400
                     font-semibold text-white hover:bg-red-600
                     hover:text-white p-2 w-full mb-2 rounded-sm"
                     onClick={ handleSubmit }>
@@ -143,8 +143,8 @@ function  SignUpForm () {
                     )}
 
                     { isLoading && (
-                        <button className="bg-gradient-to-r from-indigo-400 to-red-400
-                        text-sm text-white hover:bg-red-600
+                        <button className="bg-red-400
+                        text-sm text-white hover:bg-red-700
                         hover:text-white p-2 w-full mb-2 rounded-sm"
                         disabled>
                             <FontAwesomeIcon icon={ faSpinner }
@@ -161,7 +161,7 @@ function  SignUpForm () {
                     <Link to='/login'
                     className="text-xs text-indigo-600 no-underline hover:text-red-400
                     ">
-                        Sign in
+                        Log in
                     </Link>
                 </div>
             </form>

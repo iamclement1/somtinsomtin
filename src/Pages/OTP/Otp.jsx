@@ -99,7 +99,7 @@ function Otp() {
                 </div>
                 <div>
                     { !isLoading && (
-                    <button className="bg-gradient-to-r from-indigo-400 to-red-400
+                    <button className="bg-red-400
                     text-white font-semibold
                     hover:bg-red-600 rounded-sm
                     hover:text-white p-2 w-full mb-2"
@@ -109,7 +109,7 @@ function Otp() {
                     )}
 
                     { isLoading && (
-                        <button className="bg-gradient-to-r from-indigo-400 to-red-400
+                        <button className="bg-red-700
                         text-white text-sm
                         hover:bg-red-600 rounded-sm
                         hover:text-white p-2 w-full mb-2"

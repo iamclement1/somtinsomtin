@@ -59,8 +59,8 @@ function Login() {
         shadow-md py-8 md:px-16 px-8">
             <img src={ Logo } alt="brand-logo"
             className="w-14 m-auto" />
-            <h1 className='text-sm font-medium text-dark mt-2 mb-2 text-start'> 
-                Enter your phone number to get started
+            <h1 className='text-sm font-medium text-dark mt-2 mb-2 text-center'> 
+                Enter your phone number to Log in
             </h1>
 
             <form action="">
@@ -85,16 +85,16 @@ function Login() {
                 </div>
                 <div className=''>
                     { !isLoading && (
-                    <button className="bg-gradient-to-r from-indigo-400 to-red-400
+                    <button className="bg-red-400
                     font-semibold text-white mr-2
-                    hover:bg-gradient hover:text-white p-2 w-full mb-2 rounded-sm"
+                    hover:bg-red-700 hover:text-white p-2 w-full mb-2 rounded-sm"
                     onClick={ handleSubmit }>
-                        Sign In
+                        Log in
                     </button>
                     
                     )}
                     { isLoading && (
-                        <button className="bg-gradient-to-r from-indigo-400 to-red-400
+                        <button className="bg-red-400
                         text-sm text-white space-x-5
                         hover:bg-gradient hover:text-white p-2 w-full mb-2 rounded-sm"
                         disabled>
@@ -107,7 +107,7 @@ function Login() {
                 <div className="flex text-center text-start text-xs
                 mt-2 text-gray-600 align-center space-x-3">
                     <p>
-                    want to be a merchant?
+                    Don't have an account yet? 
                     </p>
                     <Link to='/register'
                     className="text-xs text-indigo-600 no-underline hover:text-red-400

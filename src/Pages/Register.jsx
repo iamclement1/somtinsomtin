@@ -57,7 +57,7 @@ function Register() {
             <img src={ Logo } alt="brand-logo"
             className="w-14 m-auto" />
             <h1 className='text-sm font-medium text-dark mt-2 mb-2 text-center'> 
-                Sign up your account
+                Enter your phone number to sign up
             </h1>
 
             <form action="">
@@ -80,16 +80,16 @@ function Register() {
             
                 <div>
                     { !isLoading && (
-                    <button className="bg-gradient-to-r from-indigo-400 to-red-400
+                    <button className="bg-red-400
                     font-semibold text-white rounded-sm 
-                    hover:bg-red-600
+                    hover:bg-red-700
                     hover:text-white p-2 w-full mb-2"
                     onClick={ handleSubmit }>
                         Get Started
                     </button>
                     )}
                     { isLoading && (
-                        <button className="bg-gradient-to-r from-indigo-400 to-red-400
+                        <button className="bg-red-400
                         text-sm text-white rounded-sm 
                         hover:bg-red-600
                         hover:text-white p-2 w-full mb-2"
@@ -108,7 +108,7 @@ function Register() {
                     <Link to='/login'
                     className="text-xs text-indigo-600 no-underline hover:text-red-400
                     ">
-                        Sign in
+                        Log in
                     </Link>
                 </div>
             </form>

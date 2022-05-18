@@ -40,14 +40,8 @@ function Sidebar({ children}) {
 
     return (
     <div className="flex bg-gray-50 h-screen">
-        <div className={`${isOpen ? 'w-52' : 'w-20'} relative duration-300
-        p-4 pt-5 bg-white shadow-md login-background `}>
-            <div>
-                {/* <img src= { Icon } alt="brand-logo"
-                className={`absolute cursor-pointer -right-3 top-9
-                w-7 text-warning text-2xl ${!isOpen && 'rotate-180'}`}
-                onClick={() => setIsOpen(!isOpen)} /> */}
-            </div>
+        <div className={`${isOpen ? 'w-50' : 'w-20'} relative duration-300
+        p-4 pt-5 bg-white shadow-md login-background sidebar`}>
             <div className="flex text-center gap-x-2 align-center items-center">
                 <img src={ Logo } alt="brand-logo"
                 className={`${isOpen ? "w-1/4" : "w-4/4"} cursor-pointer text-xl
@@ -57,13 +51,13 @@ function Sidebar({ children}) {
                 mr-2 ${ isOpen && "rotate-[360deg]"}`} /> */}
                 <h1 className={` text-white origin-left font-medium text-xl
                 duration-300 text-center pt-2 ${!isOpen && 'scale-0'}`}>
-                    Sometin
+                    Somtin
                 </h1>
             </div>
         </div>
 
         {/* navbar session */}
-        <div className="relative text-indigo-800">
+        <div className="relative">
             <div className="containe-xxl w-full">
                 <nav className="navbar navbar-expand-lg px-4 px-lg-5
                 py-3 py-lg-0 stick-top bg-white shadow-sm text-dark">

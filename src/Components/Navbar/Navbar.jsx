@@ -1,13 +1,10 @@
 import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import Icon from '../../Assets/icon.png'
 
 function Navbar() {
 
 
-    const [isOpen, setIsOpen] = useState(true)
 
     return (
     <div className="text-red-500 pt-2 w-full -z-0">
@@ -15,10 +12,6 @@ function Navbar() {
             <nav className=" navbar navbar-expand-lg 
             px-4 px-lg-5 py-3 py-lg-0 sticky-top bg-white
             shadow-md text-red-dark p-6 ">
-                <img src= { Icon } alt="brand-logo"
-                className={`absolute cursor-pointer top-9
-                w-7 text-warning text-2xl ${!isOpen && 'rotate-180'}`}
-                onClick={() => setIsOpen(!isOpen)} />
                 <Link to='/' className="navbar-brand p-3 text-blue-800">
                     <h2>
                         Dashboard

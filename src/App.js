@@ -5,6 +5,8 @@ import Login from './Pages/Login';
 import Otp from './Pages/OTP/Otp';
 import Register from './Pages/Register';
 import { ToastContainer } from 'react-toastify'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 import 'react-toastify/dist/ReactToastify.css'
 import SignUpForm  from './Components/RegisterForm/SignUpForm';
 import Dashboard from './Pages/Dashboard';

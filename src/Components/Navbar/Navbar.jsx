@@ -7,7 +7,7 @@ function Navbar() {
 
 
     return (
-    <div className="text-red-500 pt-2 w-full -z-0">
+    <div className="text-red-500 pt-2 w-[80vw] -z-0">
         <div className={` container-xxl position-relative`}>
             <nav className=" navbar navbar-expand-lg 
             px-4 px-lg-5 py-3 py-lg-0 sticky-top bg-white

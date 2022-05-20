@@ -2,7 +2,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import { ToastContainer } from 'react-toastify'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js';
 import 'react-toastify/dist/ReactToastify.css'
 import Routing from './Components/router/router';
 

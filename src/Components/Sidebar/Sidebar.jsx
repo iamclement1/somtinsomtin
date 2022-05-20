@@ -1,5 +1,10 @@
-export default function Sidebar ()  {
+import React from 'react'
+
+function Sidebar() {
     return (
-        <div></div>
+    <div>Sidebar</div>
+
     )
 }
+
+export default Sidebar

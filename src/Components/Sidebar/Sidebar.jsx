@@ -2,7 +2,7 @@ import {  faBarsStaggered,
     faBoxOpen, faGears, faGift, faStore, faWallet } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import {  NavLink } from 'react-router-dom'
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 
 

@@ -5,6 +5,11 @@ import Otp from "../../Pages/OTP/Otp";
 import Register from "../../Pages/Register";
 import SignUpForm from "../RegisterForm/SignUpForm";
 import Marketplace from "../../Pages/Marketplace/Marketplace"
+import Merchants from "../../Pages/Merchants/Merchant"
+import Wallet from "../../Pages/Wallet/Wallet";
+import Voucher from "../../Pages/Voucher/MyVoucher"
+import DepVoucher from "../../Pages/Voucher/DepVoucher"
+import Settings from "../../Pages/Settings/Settings"
 
 export default function Routing() {
     return (
@@ -16,6 +21,11 @@ export default function Routing() {
                 <Route path='/otp-page' element={ <Otp /> } />
                 <Route path='/signup' element={ <SignUpForm /> } />
                 <Route path="/dashboard" element={ <Dashboard /> } />
+                <Route path="/merchants" element={ <Merchants /> } />
+                <Route path="/my-wallet" element={ <Wallet /> } />
+                <Route path="/my-voucher" element={ <Voucher /> } />
+                <Route path="/depleted-voucher" element={ <DepVoucher /> } />
+                <Route path="/settings" element={ <Settings /> } />
             </Routes>
         </div>
     )

@@ -1,9 +1,14 @@
 import Sidebar from "../../Components/Sidebar/Sidebar";
+import MarketCard from './MarketCard'
 
 export default function Marketplace () {
     return (
         <Sidebar>
-            <h1>This is Marketplace</h1>
+            <div className="container-fluid">
+                <div className="row">
+                    <MarketCard />
+                </div>
+            </div>
         </Sidebar>
     )
 }

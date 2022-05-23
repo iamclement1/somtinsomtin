@@ -6,6 +6,7 @@ import { Link, NavLink } from 'react-router-dom'
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 
 
+
 export default function Sidebar ( { children } ) {
 
     const [isOpen, setIsOpen] = useState(false)
@@ -63,13 +64,15 @@ export default function Sidebar ( { children } ) {
                         flex items-center gap-x-4 cursor-pointer p-2
                         hover:bg-red-700 hover:text-white rounded-md
                         ${menu.gap ? 'mt-4' : 'mt-2'}`}>
-                            <span className="text-2xl">
-                                {menu.icon}
-                            </span>
-                            <span className={` ${ !isOpen && 'hidden'} origin-left
-                            duration-200`}>
-                                {menu.title}
-                            </span>
+                            
+                                <span className="text-2xl">
+                                    {menu.icon}
+                                </span>
+                                <span className={` ${ !isOpen && 'hidden'} origin-left
+                                duration-200`}>
+                                    {menu.title}
+                                </span>
+                            
                         </li>
                     ))}
                 </ul>

@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import Routing from './Components/router/router';
 
 
-function App() {
+function App( className="font-roboto") {
   return (
     <Router>
       <div className="App">

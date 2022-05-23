@@ -1,29 +1,81 @@
-import {  faBarsStaggered, faStore } from '@fortawesome/free-solid-svg-icons'
+import {  faBarsStaggered,
+    faBoxOpen, faGears, faGift, faStore, faWallet } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 
+
 export default function Sidebar ( { children } ) {
 
     const [isOpen, setIsOpen] = useState(false)
+
+    
+    const Menus = [
+        {
+            title: 'Market Place',
+            icon: <FontAwesomeIcon icon={ faStore} />,
+            link: "/marketplace",
+            gap: true,
+        },
+        { 
+            title: 'Merchants',
+            icon: <FontAwesomeIcon icon={ faBoxOpen } />,
+            gap: true,
+        },
+        {
+            title: 'My Wallet',
+            icon: <FontAwesomeIcon icon={ faWallet} />,
+            gap: true,
+        },
+        {
+            title: 'My Vouchers',
+            icon: <FontAwesomeIcon icon={ faGift }/>,
+            gap: true,
+        },
+        {
+            title: 'Depleted Vouchers',
+            icon: <FontAwesomeIcon icon={ faGift} />,
+            gap: true,
+        },
+        {
+            title: 'Settings',
+            icon: <FontAwesomeIcon icon={ faGears }/>,
+            gap: true,
+
+        }
+    ]
     return (
         <div className="flex">
-            <div className=" bg-white shadow-md sidebar">
-                <div className={` ${isOpen ? 'w-60' : 'w-20'} relative
-                duration-300 h-screen p-4 pt-5`}>
-                    <div className="flex text-center gap-x-4 align-center items-center">
-                        <img src={ Logo} alt="brand-logo"
-                            className={`cursor-pointer duration-500 text-red-500
-                            ${ isOpen ? "w-1/6" : "w-10" } `} />
-                            <h1 className={` text-dark origin-left font-medium text-xl
-                                duration-300 text-center pt-3 ${!isOpen && 'scale-0'}`}>
-                                    SomtinSomtin
-                            </h1>
-                    </div>
+            <div className={`h-screen bg-white shadow-md
+            ${ isOpen ? 'w-72' : 'w-20'} duration-300 p-3 pt-8`}>
+                <div className="flex gap-x-4 items-center">
+                    <img src={ Logo } alt="brand-logo"
+                    className={`w-14`} />
+                    <h1 className={`text-[#362F62] origin-left
+                    font-bold text-xl duration-300
+                    ${ !isOpen && 'scale-0'}`}>somtin somtin</h1>
                 </div>
+
+                <ul className={`p-0`}>
+                    {Menus.map((menu, index) => (
+                        <li key={index} className={`text-gray-400 text-xl
+                        flex items-center gap-x-4 cursor-pointer p-2
+                        hover:bg-red-700 hover:text-white rounded-md
+                        ${menu.gap ? 'mt-4' : 'mt-2'}`}>
+                            <span className="text-2xl">
+                                {menu.icon}
+                            </span>
+                            <span className={` ${ !isOpen && 'hidden'} origin-left
+                            duration-200`}>
+                                {menu.title}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+                
             </div>
-            <div className="container-fluid rleative pt-2">
+            <div className="container-fluid rleative pt-2 flex-1 h-screen">
                 <div className="row">
                     <div className="col-md-12">
                         <nav className=" navbar navbar-expand-lg 

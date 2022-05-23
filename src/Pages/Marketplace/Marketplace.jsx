@@ -1,6 +1,9 @@
+import Sidebar from "../../Components/Sidebar/Sidebar";
 
 export default function Marketplace () {
     return (
-        <div></div>
+        <Sidebar>
+            <h1>This is Marketplace</h1>
+        </Sidebar>
     )
 }

@@ -16,32 +16,37 @@ export default function Sidebar ( { children } ) {
         {
             title: 'Market Place',
             icon: <FontAwesomeIcon icon={ faStore} />,
-            link: "/marketplace",
+            link: "/",
             gap: true,
         },
         { 
             title: 'Merchants',
             icon: <FontAwesomeIcon icon={ faBoxOpen } />,
+            link: "/merchants",
             gap: true,
         },
         {
             title: 'My Wallet',
             icon: <FontAwesomeIcon icon={ faWallet} />,
+            link: "/my-wallet",
             gap: true,
         },
         {
             title: 'My Vouchers',
             icon: <FontAwesomeIcon icon={ faGift }/>,
+            link: "/my-voucher",
             gap: true,
         },
         {
             title: 'Depleted Vouchers',
             icon: <FontAwesomeIcon icon={ faGift} />,
+            link: "/depleted-voucher",
             gap: true,
         },
         {
             title: 'Settings',
             icon: <FontAwesomeIcon icon={ faGears }/>,
+            link: "/settings",
             gap: true,
 
         }
@@ -58,12 +63,15 @@ export default function Sidebar ( { children } ) {
                     ${ !isOpen && 'scale-0'}`}>somtin somtin</h1>
                 </div>
 
-                <ul className={`p-0`}>
+                <ul className='p-0'>
                     {Menus.map((menu, index) => (
                         <li key={index} className={`text-gray-400 text-xl
                         flex items-center gap-x-4 cursor-pointer p-2
                         hover:bg-red-700 hover:text-white rounded-md
-                        ${menu.gap ? 'mt-4' : 'mt-2'}`}>
+                        ${menu.gap ? 'mt-4' : 'mt-2'}`}
+                        onClick={()=> {
+                            window.location.pathname = menu.link;
+                        }}>
                             
                                 <span className="text-2xl">
                                     {menu.icon}

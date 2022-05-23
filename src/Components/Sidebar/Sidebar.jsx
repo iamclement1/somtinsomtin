@@ -86,12 +86,12 @@ export default function Sidebar ( { children } ) {
                 </ul>
                 
             </div>
-            <div className="container-fluid rleative pt-2 flex-1 h-screen">
+            <div className="container-fluid relative pt-2 flex-1 h-screen ">
                 <div className="row">
                     <div className="col-md-12">
                         <nav className=" navbar navbar-expand-lg 
                             px-4 px-lg-5 py-4 py-lg-0 sticky-top bg-white
-                            shadow-md text-red-dark p-6 ">
+                            shadow-md text-red-dark p-6 fixed">
                                 <div className=" space-x-12 py-2">
                                     <div>
                                         <FontAwesomeIcon icon={ faBarsStaggered }

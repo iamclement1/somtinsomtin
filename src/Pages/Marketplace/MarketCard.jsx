@@ -12,7 +12,7 @@ export default function MarketCard( props   ) {
     <Container fluid>
         <Row>
             <Col xs={12} md={6} lg={3}>
-                <Card>
+                <Card className="shadow-md">
                     <div className="overflow">
                         <Card.Img variant='top' src={ Img1 } className="card-image" />
                     </div>
@@ -31,7 +31,7 @@ export default function MarketCard( props   ) {
             </Col>
 
             <Col xs={12} md={6} lg={3}>
-                <Card>
+                <Card className="shadow-md">
                     <div className="overflow">
                         <Card.Img variant='top' src={ Img2 } className="card-image" />
                     </div>
@@ -50,7 +50,7 @@ export default function MarketCard( props   ) {
             </Col>
 
             <Col xs={12} md={6} lg={3}>
-                <Card>
+                <Card className="shadow-md">
                     <div className="overflow">
                         <Card.Img variant='top' src={ Img3 } className="card-image" />
                     </div>
@@ -69,7 +69,7 @@ export default function MarketCard( props   ) {
             </Col>
 
             <Col xs={12} md={6} lg={3}>
-                <Card>
+                <Card className="shadow-md">
                     <div className="overflow">
                         <Card.Img variant='top' src={ Img4 } className="card-image" />
                     </div>

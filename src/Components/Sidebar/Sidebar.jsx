@@ -59,7 +59,7 @@ export default function Sidebar ( { children } ) {
                     <img src={ Logo } alt="brand-logo"
                     className={`w-14`} />
                     <h1 className={`text-[#362F62] origin-left
-                    font-bold text-xl duration-300
+                    font-bold text-2xl duration-300
                     ${ !isOpen && 'scale-0'}`}>somtin somtin</h1>
                 </div>
 
@@ -67,7 +67,7 @@ export default function Sidebar ( { children } ) {
                     {Menus.map((menu, index) => (
                         <li key={index} className={`text-gray-400 text-xl
                         flex items-center gap-x-4 cursor-pointer p-2
-                        hover:bg-red-700 hover:text-white rounded-md
+                        hover:bg-[#E4043C] hover:text-white rounded-md
                         ${menu.gap ? 'mt-4' : 'mt-2'}`}
                         onClick={()=> {
                             window.location.pathname = menu.link;
@@ -86,7 +86,7 @@ export default function Sidebar ( { children } ) {
                 </ul>
                 
             </div>
-            <div className="container-fluid relative pt-2 flex-1 h-screen ">
+            <div className="container-fluid relative pt-2 flex-1 h-screen bg-[#FBFBFB] ">
                 <div className="row">
                     <div className="col-md-12">
                         <nav className=" navbar navbar-expand-lg 
@@ -96,12 +96,12 @@ export default function Sidebar ( { children } ) {
                                     <div>
                                         <FontAwesomeIcon icon={ faBarsStaggered }
                                         className={`absolute cursor-pointer -left top-4
-                                        w-7 text-red-700 text-4xl ${!isOpen && 'rotate-180'}`}
+                                        w-7 text-[#E4043C] text-4xl ${!isOpen && 'rotate-180'}`}
                                         onClick={() => setIsOpen(!isOpen)} />
                                     </div>
                                     <div className="flex justify-content items-center">
                                         <div>
-                                            <h1>Marketplace</h1>
+                                            <h1>Market Place</h1>
                                         </div>
                                         <div>
                                             <NavLink to="/login" className="nav-item nav-link">

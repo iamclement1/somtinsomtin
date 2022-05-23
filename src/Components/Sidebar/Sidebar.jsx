@@ -1,7 +1,7 @@
-import {  faBarsStaggered } from '@fortawesome/free-solid-svg-icons'
+import {  faBarsStaggered, faStore } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 
 export default function Sidebar ( { children } ) {
@@ -9,7 +9,7 @@ export default function Sidebar ( { children } ) {
     const [isOpen, setIsOpen] = useState(false)
     return (
         <div className="flex">
-            <div className=" bg-white shadow-md sidebar">
+            {/* <div className=" bg-white shadow-md sidebar">
                 <div className={` ${isOpen ? 'w-60' : 'w-20'} relative
                 duration-300 h-screen p-4 pt-5`}>
                     <div className="flex text-center gap-x-4 align-center items-center">
@@ -21,8 +21,16 @@ export default function Sidebar ( { children } ) {
                                     SomtinSomtin
                             </h1>
                     </div>
+                    <div>
+                        <Link to='/marketplace' >
+                            <FontAwesomeIcon icon={ faStore }/>
+                            <span >Market Place</span>
+                        </Link>
+                    </div>
                 </div>
-            </div>
+            </div> */}
+
+            
             <div className="container-fluid rleative pt-2">
                 <div className="row">
                     <div className="col-md-12">

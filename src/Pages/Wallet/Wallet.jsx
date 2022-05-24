@@ -38,7 +38,7 @@ function Wallet() {
             </Container>
         </section>
     </Sidebar>
-  )
+    )
 }
 
 export default Wallet

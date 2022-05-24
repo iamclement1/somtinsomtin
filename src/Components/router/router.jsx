@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import Dashboard from "../../Pages/Dashboard";
 import Login from "../../Pages/Login";
 import Otp from "../../Pages/OTP/Otp";
 import Register from "../../Pages/Register";
@@ -20,7 +19,6 @@ export default function Routing() {
                 <Route path="/register" element={ <Register /> }/>
                 <Route path='/otp-page' element={ <Otp /> } />
                 <Route path='/signup' element={ <SignUpForm /> } />
-                <Route path="/dashboard" element={ <Dashboard /> } />
                 <Route path="/merchants" element={ <Merchants /> } />
                 <Route path="/my-wallet" element={ <Wallet /> } />
                 <Route path="/my-voucher" element={ <Voucher /> } />

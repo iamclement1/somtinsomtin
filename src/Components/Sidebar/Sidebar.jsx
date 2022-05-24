@@ -1,8 +1,7 @@
 import {  faBarsStaggered,
-    faBoxOpen, faGears, faGift, faStore, faWallet } from '@fortawesome/free-solid-svg-icons'
+    faBoxOpen, faGears, faGift, faStore, faWallet, faBell, faMessage } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
-import {  NavLink } from 'react-router-dom'
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 
 
@@ -91,38 +90,28 @@ export default function Sidebar ( { children } ) {
                     <div className="col-md-12">
                         <nav className=" navbar navbar-expand-lg 
                             px-4 px-lg-5 py-4 py-lg-0 sticky-top bg-white
-                            shadow-md text-red-dark p-6 fixed">
-                                <div className=" space-x-12 py-2">
+                            shadow-md text-red-dark p-6">
+                                <div className="w-full space-x-12 py-2">
                                     <div>
                                         <FontAwesomeIcon icon={ faBarsStaggered }
                                         className={`absolute cursor-pointer -left top-4
                                         w-7 text-[#E4043C] text-4xl ${!isOpen && 'rotate-180'}`}
                                         onClick={() => setIsOpen(!isOpen)} />
                                     </div>
-                                    <div className="flex justify-content items-center">
-                                        <div>
-                                            <h1>Market Place</h1>
+                                    <div className="flex justify-between w-full
+                                    align-center text-center">
+                                        <div className="navbar-brand">
+                                            <h1>Marketplace</h1>
                                         </div>
-                                        <div>
-                                            <NavLink to="/login" className="nav-item nav-link">
-                                                Sign in
-                                            </NavLink>
+                                        <div className="nav-item pr-8 py-4 space-x-6">
+                                            <FontAwesomeIcon icon={ faBell } className="text-gray-400
+                                            text-2xl" />
+                                            <FontAwesomeIcon icon={ faMessage }
+                                            className="text-gray-400 text-2xl" />
 
                                         </div>
                                     </div>
                                 </div>
-                                            
-                                        
-
-                                    {/* <button className="navbar-toggler"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#navbarCollapse">
-                                        <FontAwesomeIcon icon={ faBars } />
-                                    </button> */}
-
-                            <div className="collapse navbar-collapse" id="navbarCollapse">
-                            </div>
                         </nav>
                     </div>
                     <div className="col-md-12">

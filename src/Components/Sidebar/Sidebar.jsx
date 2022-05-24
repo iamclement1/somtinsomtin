@@ -53,7 +53,8 @@ export default function Sidebar ( { children } ) {
     return (
         <div className="flex">
             <div className={`h-screen bg-white shadow-md
-            ${ isOpen ? 'w-72' : 'w-20'} duration-300 p-3 pt-8`}>
+            ${ isOpen ? 'w-72' : 'w-20'} duration-300 p-3 pt-8
+            `}>
                 <div className="flex gap-x-4 items-center">
                     <img src={ Logo } alt="brand-logo"
                     className={`w-14`} />

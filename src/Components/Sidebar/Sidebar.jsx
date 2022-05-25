@@ -150,7 +150,7 @@ export default function Sidebar ( { children } ) {
                     <div className="col-md-12">
                         <nav className="navbar navbar-expand-lg 
                             px-4 px-lg-5 py-4 py-lg-0 bg-white
-                            shadow-md text-red-dark p-6 fixed">
+                            shadow-md text-red-dark p-6 sticky">
                                 <div className="w-full space-x-12 md:py-2 ">
                                     <div>
                                         <FontAwesomeIcon icon={ faBarsStaggered }
@@ -160,16 +160,12 @@ export default function Sidebar ( { children } ) {
                                     </div>
                                     <div className="flex justify-between w-full
                                     align-center text-center">
-                                        <div className="navbar-brand hidden md:flex">
+                                        <div className="navbar-brand hidden md:block ">
                                             <h1>Marketplace</h1>
                                         </div>
-                                        <div className="nav-item pr-24 md:py-2 space-x-6">
+                                        <div className=" nav-item pr-24 md:py-2 space-x-6">
                                             <FontAwesomeIcon icon={ faBell } className="text-white
                                             md:text-2xl bg-[#E4043C] p-2 rounded-full" />
-                                            <FontAwesomeIcon icon={ faMessage }
-                                            className="text-white md:text-2xl bg-[#e4043c] p-2 rounded-full" />
-
-
                                         </div>
                                     </div>
                                 </div>

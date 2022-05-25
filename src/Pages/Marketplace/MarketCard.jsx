@@ -88,7 +88,7 @@ export default function MarketCard( props   ) {
             </Col>
         </Row>
 
-        <Row>
+        <Row className="pt-4">
             <Col xs={12} md={6} lg={3}>
                 <Card className="shadow-md">
                     <div className="overflow">

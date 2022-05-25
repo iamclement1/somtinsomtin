@@ -51,9 +51,9 @@ export default function Sidebar ( { children } ) {
         }
     ]
     return (
-        <div className="flex">
+        <div className="flex flex-grow">
             <div className={`h-screen bg-white shadow-md
-            ${ isOpen ? 'w-72' : 'w-20'} duration-300 p-3 pt-8
+            ${ isOpen ? 'w-72' : 'w-20'} duration-200 p-3 pt-8
             `}>
                 <div className="flex gap-x-4 items-center">
                     <img src={ Logo } alt="brand-logo"
@@ -86,29 +86,30 @@ export default function Sidebar ( { children } ) {
                 </ul>
                 
             </div>
-            <div className="container-fluid relative pt-2 flex-1 h-screen bg-[#FBFBFB] ">
+            <div className="container-fluid relative pt-2 flex-1 h-screen bg-[#FBFBFB] stickty-top">
                 <div className="row">
                     <div className="col-md-12">
                         <nav className=" navbar navbar-expand-lg 
                             px-4 px-lg-5 py-4 py-lg-0 sticky-top bg-white
                             shadow-md text-red-dark p-6">
-                                <div className="w-full space-x-12 py-2">
+                                <div className="w-full space-x-12 md:py-2">
                                     <div>
                                         <FontAwesomeIcon icon={ faBarsStaggered }
-                                        className={`absolute cursor-pointer -left top-4
+                                        className={`absolute cursor-pointer -left md:top-4
                                         w-7 text-[#E4043C] text-4xl ${!isOpen && 'rotate-180'}`}
                                         onClick={() => setIsOpen(!isOpen)} />
                                     </div>
                                     <div className="flex justify-between w-full
                                     align-center text-center">
-                                        <div className="navbar-brand">
+                                        <div className="navbar-brand hidden md:flex">
                                             <h1>Marketplace</h1>
                                         </div>
-                                        <div className="nav-item pr-8 py-4 space-x-6">
-                                            <FontAwesomeIcon icon={ faBell } className="text-gray-400
-                                            text-2xl" />
+                                        <div className="nav-item pr-8 md:py-2 space-x-6 border border-red-400">
+                                            <FontAwesomeIcon icon={ faBell } className="text-white
+                                            md:text-2xl bg-[#E4043C] p-2 rounded-full" />
                                             <FontAwesomeIcon icon={ faMessage }
-                                            className="text-gray-400 text-2xl" />
+                                            className="text-white md:text-2xl bg-[#e4043c] p-2 rounded-full" />
+
 
                                         </div>
                                     </div>

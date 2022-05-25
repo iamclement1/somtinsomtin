@@ -3,11 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import MarketCard from './MarketCard'
 
-export default function Marketplace () {
+function Marketplace () {
     return (
         <Sidebar>
             <div className="container-fluid pt-10">
-                {/* <div className="row mb-6">
+                <div className="row mb-6">
                     <div className="search__body sm:w-2/6">
                         <div className="search__text border border-dark-purple
                         w-2/6 p-2 px-6 rounded-lg">
@@ -18,7 +18,7 @@ export default function Marketplace () {
                             </div>
                         </div>
                     </div>
-                </div> */}
+                </div>
                 <div className="row">
                     <MarketCard />
                 </div>
@@ -26,3 +26,5 @@ export default function Marketplace () {
         </Sidebar>
     )
 }
+
+export default Marketplace

@@ -2,14 +2,23 @@ import {  faBarsStaggered,
     faBoxOpen, faGears, faGift, faStore, faWallet,
     faBell, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { Nav, NavDropdown } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 
 
 
 export default function Sidebar ( { children } ) {
 
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
+    const userLogin = useSelector((state) => state.userLogin)
+    const { userInfo } = userLogin();
+
+    useEffect(() => {},
+    [userInfo])
+
 
     
     const Menus = [
@@ -54,7 +63,7 @@ export default function Sidebar ( { children } ) {
     return (
         <div className="flex">
             <div>
-                <div className='fixed z-10'>
+                <div className='fixed z-30'>
                 <aside className="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
                     <div className="sticky inset-0 overflow-hidden">
                         <div className="relative overflow-hidden">
@@ -149,7 +158,7 @@ export default function Sidebar ( { children } ) {
                     <div className="col-md-12">
                         <nav className={`w-full
                             px-4 px-lg-5 py-4 py-lg-0 bg-white
-                            text-red-dark p-6 fixed z-10`}>
+                            text-red-dark p-8 fixed z-10`}>
                                 <div className={`w-full space-x-12 md:py-2 z-10
                                 ${ isOpen ? 'pl-72' : 'pl-8'} `}>
                                     <div>
@@ -161,11 +170,24 @@ export default function Sidebar ( { children } ) {
                                     <div className="flex justify-between w-full
                                     align-center text-center">
                                         <div className="navbar-brand hidden md:block ">
-                                            <h1>Marketplace</h1>
+                                            <h1 className="text-4xl">Market Place</h1>
                                         </div>
-                                        <div className=" nav-item pr-24 md:py-2 space-x-6">
-                                            <FontAwesomeIcon icon={ faBell } className="text-white
-                                            md:text-2xl bg-[#E4043C] p-2 rounded-full" />
+                                        <div className="flex nav-item pr-24 md:py-2 space-x-6">
+                                            <FontAwesomeIcon icon={ faBell } className="text-[#e4043c]
+                                            md:text-2xl p-2 rounded-full" />
+                                            <Nav>
+                                                <NavDropdown title={` ${userInfo.name}`}>
+                                                    <NavDropdown.Item>
+                                                        <Link to="">
+                                                            My Profile
+                                                        </Link>
+                                                    </NavDropdown.Item>
+                                                    <NavDropdown.Divider />
+                                                    <NavDropdown.Item>
+                                                        Logout
+                                                    </NavDropdown.Item>
+                                                </NavDropdown>
+                                            </Nav>
                                         </div>
                                     </div>
                                 </div>
@@ -174,10 +196,12 @@ export default function Sidebar ( { children } ) {
                 </div>
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-md-12 py-20">
-                            <div className={` ${ isOpen ? 'pl-72' : 'pl-16'}`}>
+                        <div className={`col-md-12 py-20`}>
+                            <div className={` ${isOpen ? 'pl-72' : 'pl-12'} `}>
                                 { children }
+
                             </div>
+
                         </div>
                     </div>
                 </div>

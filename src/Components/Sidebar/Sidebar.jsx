@@ -62,7 +62,7 @@ export default function Sidebar ( { children } ) {
                             <div className="">
                                 <div className={`h-screen bg-white
                                 ${ isOpen ? 'w-72' : 'hidden'} duration-200 p-3 pt-8
-                                md:hidden relative flex flex-col z-30 ease-in-out`}>
+                                md:hidden relative flex flex-col z-10 ease-in-out`}>
                                     <div className="flex gap-x-4 items-center">
                                         <FontAwesomeIcon icon={ faXmark } 
                                         className={`text-3xl text-[#E4043C]`} 
@@ -100,15 +100,14 @@ export default function Sidebar ( { children } ) {
                 </div>
 
                 {/* desktop view sidebar */}
-                <aside className="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
-                    <div className="sticky inset-0 overflow-hidden">
+                <aside className="fixed z-20" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+                    <div className="inset-0 overflow-hidden">
                         <div className="relative overflow-hidden">
 
                             <div className="">
                                 <div className={`h-screen bg-white
-                                ${ isOpen ? 'w-72' : 'w-20'} duration-200 
-                                ease-in-out p-3 pt-8 fixed z-30
-                                hidden md:block`}>
+                                ${ isOpen ? 'w-72' : 'w-20' } duration-200 
+                                ease-in-out p-3 pt-8 hidden md:block`}>
                                     <div className="flex gap-x-4 items-center">
                                         <img src={ Logo } alt="brand-logo"
                                         className={`w-14`} />
@@ -148,10 +147,10 @@ export default function Sidebar ( { children } ) {
             <div className="container-fluid relative h-screen bg-[#FBFBFB]">
                 <div className="row">
                     <div className="col-md-12">
-                        <nav className={`w-full fixed z-10
+                        <nav className={`w-full
                             px-4 px-lg-5 py-4 py-lg-0 bg-white
-                            text-red-dark p-6`}>
-                                <div className={`w-full space-x-12 md:py-2
+                            text-red-dark p-6 fixed z-10`}>
+                                <div className={`w-full space-x-12 md:py-2 z-10
                                 ${ isOpen ? 'pl-72' : 'pl-8'} `}>
                                     <div>
                                         <FontAwesomeIcon icon={ faBarsStaggered }
@@ -175,8 +174,10 @@ export default function Sidebar ( { children } ) {
                 </div>
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-md-12">
-                            { children }
+                        <div className="col-md-12 py-20">
+                            <div className={` ${ isOpen ? 'pl-72' : 'pl-16'}`}>
+                                { children }
+                            </div>
                         </div>
                     </div>
                 </div>

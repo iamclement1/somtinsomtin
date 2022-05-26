@@ -2,9 +2,7 @@ import {  faBarsStaggered,
     faBoxOpen, faGears, faGift, faStore, faWallet,
     faBell, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { Nav, NavDropdown } from 'react-bootstrap'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 
@@ -12,14 +10,8 @@ import Logo from '../../Assets/sometinlogo250-150-red.png'
 
 export default function Sidebar ( { children } ) {
 
-    const [isOpen, setIsOpen] = useState(false);
-    const userLogin = useSelector((state) => state.userLogin)
-    const { userInfo } = userLogin();
-
-    useEffect(() => {},
-    [userInfo])
-
-
+    const [isOpen, setIsOpen] = useState(false)
+    const  user  = JSON.parse(localStorage.getItem('currentUser'))
     
     const Menus = [
         {
@@ -175,19 +167,7 @@ export default function Sidebar ( { children } ) {
                                         <div className="flex nav-item pr-24 md:py-2 space-x-6">
                                             <FontAwesomeIcon icon={ faBell } className="text-[#e4043c]
                                             md:text-2xl p-2 rounded-full" />
-                                            <Nav>
-                                                <NavDropdown title={` ${userInfo.name}`}>
-                                                    <NavDropdown.Item>
-                                                        <Link to="">
-                                                            My Profile
-                                                        </Link>
-                                                    </NavDropdown.Item>
-                                                    <NavDropdown.Divider />
-                                                    <NavDropdown.Item>
-                                                        Logout
-                                                    </NavDropdown.Item>
-                                                </NavDropdown>
-                                            </Nav>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -197,7 +177,7 @@ export default function Sidebar ( { children } ) {
                 <div className="container-fluid">
                     <div className="row">
                         <div className={`col-md-12 py-20`}>
-                            <div className={` ${isOpen ? 'pl-72' : 'pl-12'} `}>
+                            <div className={` ${isOpen ? 'pl-72' : 'pl-12'} duration-200 ease-in-out `}>
                                 { children }
 
                             </div>
@@ -209,3 +189,6 @@ export default function Sidebar ( { children } ) {
         </div>
     )
 }
+
+
+// 1101010101

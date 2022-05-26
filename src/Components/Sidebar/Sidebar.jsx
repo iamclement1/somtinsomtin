@@ -1,6 +1,6 @@
 import {  faBarsStaggered,
     faBoxOpen, faGears, faGift, faStore, faWallet,
-    faBell, faMessage, faXmark } from '@fortawesome/free-solid-svg-icons'
+    faBell, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
 import Logo from '../../Assets/sometinlogo250-150-red.png'
@@ -60,9 +60,9 @@ export default function Sidebar ( { children } ) {
                         <div className="relative overflow-hidden">
 
                             <div className="">
-                                <div className={`h-screen bg-white shadow-md
+                                <div className={`h-screen bg-white
                                 ${ isOpen ? 'w-72' : 'hidden'} duration-200 p-3 pt-8
-                                md:hidden relative flex flex-col z-10 ease-in-out`}>
+                                md:hidden relative flex flex-col z-30 ease-in-out`}>
                                     <div className="flex gap-x-4 items-center">
                                         <FontAwesomeIcon icon={ faXmark } 
                                         className={`text-3xl text-[#E4043C]`} 
@@ -105,9 +105,9 @@ export default function Sidebar ( { children } ) {
                         <div className="relative overflow-hidden">
 
                             <div className="">
-                                <div className={`h-screen bg-white shadow-md
+                                <div className={`h-screen bg-white
                                 ${ isOpen ? 'w-72' : 'w-20'} duration-200 
-                                ease-in-out p-3 pt-8
+                                ease-in-out p-3 pt-8 fixed z-30
                                 hidden md:block`}>
                                     <div className="flex gap-x-4 items-center">
                                         <img src={ Logo } alt="brand-logo"
@@ -148,10 +148,11 @@ export default function Sidebar ( { children } ) {
             <div className="container-fluid relative h-screen bg-[#FBFBFB]">
                 <div className="row">
                     <div className="col-md-12">
-                        <nav className="navbar navbar-expand-lg 
+                        <nav className={`w-full fixed z-10
                             px-4 px-lg-5 py-4 py-lg-0 bg-white
-                            shadow-md text-red-dark p-6 sticky">
-                                <div className="w-full space-x-12 md:py-2 ">
+                            text-red-dark p-6`}>
+                                <div className={`w-full space-x-12 md:py-2
+                                ${ isOpen ? 'pl-72' : 'pl-8'} `}>
                                     <div>
                                         <FontAwesomeIcon icon={ faBarsStaggered }
                                         className={`absolute cursor-pointer -left md:top-4
@@ -171,8 +172,12 @@ export default function Sidebar ( { children } ) {
                                 </div>
                         </nav>
                     </div>
-                    <div className="col-md-12">
-                        { children }
+                </div>
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-md-12">
+                            { children }
+                        </div>
                     </div>
                 </div>
             </div>

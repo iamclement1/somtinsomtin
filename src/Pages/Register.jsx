@@ -39,7 +39,10 @@ function Register() {
 
             if (response.data.response_code === "200") {
                 navigate('/otp-page')
-            } 
+            } else {
+                toast.error("User Already Exist")
+            }
+            
         })
 
         .catch( error => {

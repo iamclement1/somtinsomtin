@@ -3,7 +3,7 @@ import {  faBarsStaggered,
     faBell, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 
 
@@ -11,7 +11,7 @@ import Logo from '../../Assets/sometinlogo250-150-red.png'
 export default function Sidebar ( { children } ) {
 
     const [isOpen, setIsOpen] = useState(false)
-    const  user  = JSON.parse(localStorage.getItem('currentUser'))
+    // const  user  = JSON.parse(localStorage.getItem('currentUser'))
     
     const Menus = [
         {
@@ -176,8 +176,8 @@ export default function Sidebar ( { children } ) {
                 </div>
                 <div className="container-fluid">
                     <div className="row">
-                        <div className={`col-md-12 py-20`}>
-                            <div className={` ${isOpen ? 'pl-72' : 'pl-12'} duration-200 ease-in-out `}>
+                        <div className={`col-md-12 py-20 `}>
+                            <div className={` ${isOpen ? 'pl-72' : 'pl-14'} duration-200 ease-in-out `}>
                                 { children }
 
                             </div>

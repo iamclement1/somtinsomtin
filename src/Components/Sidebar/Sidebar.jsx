@@ -183,6 +183,11 @@ export default function Sidebar({ children }) {
                 <div className="container-fluid">
                     <div className="row">
                         <div className={`col-md-12 py-20 relative `}>
+                            <div className={` ${isOpen ? 'pl-72' : 'pl-14'} pl-0 md:pl-72 md:hidden duration-200 ease-in-out `}>
+                                {children}
+
+                            </div>
+                            {/* Desktop */}
                             <div className={` ${isOpen ? 'pl-72' : 'pl-14'} duration-200 ease-in-out `}>
                                 {children}
 

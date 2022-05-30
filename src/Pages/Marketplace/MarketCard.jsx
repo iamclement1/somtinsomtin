@@ -10,7 +10,7 @@ export default function MarketCard( props   ) {
 
     return (
     <Container fluid>
-        <Row>
+        <Row className="pl-0">
             <Col xs={12} md={6} lg={3}>
                 <Card className="shadow-md">
                     <div className="overflow">

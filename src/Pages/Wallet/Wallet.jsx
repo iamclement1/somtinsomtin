@@ -19,17 +19,17 @@ function Wallet() {
         <section className=" md:p-4 p-1 bg-white
         rounded-sm shadow-md h-40">
             <Container>
-                <Row>
+                <Row className="">
                     <Col xs={12} md={6} lg={6}
-                    className="py-4">
+                    className=" py:0 md:py-5 ">
                         <h1 className="text-xl">Transaction History</h1>
                         <span className="text-gray-400 text-xs">
                             All transactions on your wallet
                         </span>
                     </Col>
                     <Col xs={12} md={6} lg={6}
-                    className="py-4">
-                        <p>
+                    className="py:0 md:py-5">
+                        <p className="text-xs md:text-sm">
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo odio optio tempore a, nam placeat atque. Perferendis qui distinctio earum?
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, libero.
                         </p>

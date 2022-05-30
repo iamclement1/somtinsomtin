@@ -1,9 +1,10 @@
-export const NavTitle = [
+export const routes = [
     {
         title: 'Marketplace',
         path: "/",
         sidebar: () => <div>Marketplace</div>,
         main: () => <h1> Marketplace</h1>,
+        exact: true,
     },
     {
         title: 'Merchants',

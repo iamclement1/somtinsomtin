@@ -3,11 +3,12 @@ import {
     faBell, faXmark
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Button } from '@mui/material';
 import Tooltip from '@mui/material/Tooltip';
 import { useState } from 'react'
+import { Route, Routes } from 'react-router-dom';
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 import { Menus } from '../../Utils/MenuData'
+import { routes } from '../../Utils/NavTitle'
 
 
 
@@ -26,7 +27,7 @@ export default function Sidebar({ children }) {
                             <div className="relative overflow-hidden">
 
                                 <div className="">
-                                    <div className={`h-screen bg-white
+                                    <div className={`h-full bg-white
                                 ${isOpen ? 'w-72' : 'hidden'} duration-200 p-3 pt-8
                                 md:hidden relative flex flex-col z-10 ease-in-out`}>
                                         <div className="flex gap-x-4 items-center">
@@ -45,20 +46,13 @@ export default function Sidebar({ children }) {
                                                     onClick={() => {
                                                         window.location.pathname = menu.link;
                                                     }}>
-                                                    <Tooltip title='icon' placement='top'>
-                                                        <Button>
-                                                            <span className="text-2xl">
-                                                                {menu.icon}
-                                                            </span>
-
-                                                        </Button>
-                                                            
-                                                        
-                                                    </Tooltip>
-                                                        <span className={` ${!isOpen && 'hidden'} origin-left
+                                                    <span className="text-2xl">
+                                                        {menu.icon}
+                                                    </span>
+                                                    <span className={` ${!isOpen && 'hidden'} origin-left
                                                         duration-200`}>
-                                                            {menu.title}
-                                                        </span>
+                                                        {menu.title}
+                                                    </span>
 
                                                 </li>
                                             ))}
@@ -91,26 +85,25 @@ export default function Sidebar({ children }) {
                                     <ul className='p-0 menu-item'
                                         data-tooltip-target="tooltip-default">
                                         {Menus.map((menu, index) => (
-                                            <li key={index} className={`text-gray-400 text-xl
+                                            <Tooltip title={menu.title} arrow key={menu}>
+                                                <li key={index} className={`text-gray-400 text-xl
                                             flex items-center gap-x-4 cursor-pointer p-2
                                             hover:bg-[#E4043C] hover:text-white rounded-md
                                             ${menu.gap ? 'mt-4' : 'mt-2'}`}
-                                                onClick={() => {
-                                                    window.location.pathname = menu.link;
-                                                }}>
-
-                                                <div id="tooltip-default" role="tooltip"
-                                                    className="">
+                                                    onClick={() => {
+                                                        window.location.pathname = menu.link;
+                                                    }}>
                                                     <span className="text-2xl">
                                                         {menu.icon}
                                                     </span>
                                                     <span className={` ${!isOpen && 'hidden'} origin-left
-                                                    duration-200`}>
+                                                        duration-200`}>
                                                         {menu.title}
                                                     </span>
-                                                </div>
+                                                </li>
+                                            </Tooltip>
 
-                                            </li>
+
                                         ))}
                                     </ul>
 
@@ -134,19 +127,29 @@ export default function Sidebar({ children }) {
                                         w-7 text-[#E4043C] text-4xl ${!isOpen && 'rotate-180'}`}
                                         onClick={() => setIsOpen(!isOpen)} />
                                 </div>
-                                <div className="flex justify-between w-full
-                                        align-center text-center">
-                                    <div className="navbar-brand hidden md:block ">
-                                        <h1 className="text-4xl">
-                                            Market Place
-                                        </h1>
-                                    </div>
+                                <div className="flex justify-between w-full align-center text-center">
+                                    {routes.map((route, index) => (
+                                        <div className="flex justify-between w-full
+                                                align-center text-center">
+                                            <div className="navbar-brand hidden md:block ">
+                                                <Routes>
+
+                                                    <Route key={index}
+                                                        path={route.path}
+                                                        exact={route.exact}
+                                                        element={<route.main />} />
+                                                </Routes>
+
+                                            </div>
+                                        </div>
+                                    ))}
                                     <div className="flex nav-item pr-24 md:py-2 space-x-6">
                                         <FontAwesomeIcon icon={faBell} className="text-[#e4043c]
-                                                md:text-2xl p-2 rounded-full" />
+                                                        md:text-2xl p-2 rounded-full" />
                                         <h2>Clement</h2>
 
                                     </div>
+
                                 </div>
                             </div>
                         </nav>
@@ -160,7 +163,7 @@ export default function Sidebar({ children }) {
 
                             </div>
                             {/* Desktop */}
-                            <div className={` ${isOpen ? 'pl-72' : 'pl-14'} duration-200 ease-in-out `}>
+                            <div className={` ${isOpen ? 'pl-72' : 'pl-14'} md:block hidden duration-200 ease-in-out `}>
                                 {children}
 
                             </div>
@@ -172,6 +175,3 @@ export default function Sidebar({ children }) {
         </div>
     )
 }
-
-
-// 1101010101

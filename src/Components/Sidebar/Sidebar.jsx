@@ -136,8 +136,7 @@ export default function Sidebar({ children }) {
 
                                                     <Route key={index}
                                                         path={route.path}
-                                                        exact={route.exact}
-                                                        element={<route.main />} />
+                                                        element={ <route.main/> }/>
                                                 </Routes>
 
                                             </div>

@@ -16,7 +16,6 @@ import { routes } from '../../Utils/NavTitle'
 export default function Sidebar({ children }) {
 
     const [isOpen, setIsOpen] = useState(false)
-    const  user  = JSON.parse(localStorage.getItem('currentUser'))
 
     return (
         <div className="flex">

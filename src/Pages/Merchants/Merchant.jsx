@@ -5,7 +5,20 @@ function Merchant() {
 
     return (
     <Sidebar>
-        <h1 className='text-3xl'>Welcome to the Merchant Page</h1>
+        <main className=" px-4 py-4">
+          <div className="container-full">
+            <div className="row">
+              <div className="col-md-12">
+                <h4 className="text-xl text-[#E00] ">
+                  Merchants
+                </h4>
+                <p className="text-sm text-gray-500">
+                  Approved Sometin Merchants
+                </p>
+              </div>
+            </div>
+          </div>
+        </main>
     </Sidebar>
   )
 }

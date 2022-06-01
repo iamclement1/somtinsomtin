@@ -1,11 +1,12 @@
 import Sidebar from '../../Components/Sidebar/Sidebar'
+import SettingsContent from './SettingsContent'
 
 function Settings() {
 
     return (
     <Sidebar>
         <main className="py-4 px-7">
-            <div className="container">
+            <div className="container-full">
                 <div className="row">
                     <div className="col-md-12">
                         <h4 className="text-xl text-[#E0013F]">
@@ -15,6 +16,10 @@ function Settings() {
                             Make you Sometin App look like you.
                         </p>
                     </div>
+                </div>
+
+                <div className="row">
+                    <SettingsContent />
                 </div>
             </div>
         </main>

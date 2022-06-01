@@ -5,7 +5,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Tooltip from '@mui/material/Tooltip';
 import { useState } from 'react'
-import { Route, Routes } from 'react-router-dom';
+import { NavLink, Route, Routes } from 'react-router-dom';
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 import { Menus } from '../../Utils/MenuData'
 import { routes } from '../../Utils/NavTitle'
@@ -16,7 +16,7 @@ import { routes } from '../../Utils/NavTitle'
 export default function Sidebar({ children }) {
 
     const [isOpen, setIsOpen] = useState(false)
-    // const  user  = JSON.parse(localStorage.getItem('currentUser'))
+    const  user  = JSON.parse(localStorage.getItem('currentUser'))
 
     return (
         <div className="flex">
@@ -142,10 +142,13 @@ export default function Sidebar({ children }) {
                                             </div>
                                         </div>
                                     ))}
-                                    <div className="flex nav-item pr-24 md:py-2 space-x-6">
+                                    <div className="flex nav-item pr-24 md:py-2 md:space-x-4">
                                         <FontAwesomeIcon icon={faBell} className="text-[#e4043c]
                                                         md:text-2xl p-2 rounded-full" />
-                                        <h2>Clement</h2>
+                                        <NavLink to="" className="nav-link">
+                                            {/* {user.first_name.substring(0, user.first_name.length)} */}
+                                            Clement
+                                        </NavLink>
 
                                     </div>
 

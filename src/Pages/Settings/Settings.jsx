@@ -4,11 +4,22 @@ function Settings() {
 
     return (
     <Sidebar>
-        <h1 className="text-3xl">
-            Settings
-        </h1>
+        <main className="py-4 px-7">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-12">
+                        <h4 className="text-xl text-[#E0013F]">
+                            Hi, welcome back!
+                        </h4>
+                        <p className="text-sm text-gray-500">
+                            Make you Sometin App look like you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
     </Sidebar>
-  )
+)
 }
 
 export default Settings

@@ -1,4 +1,5 @@
 
+import Footer from '../../Components/Footer/Footer';
 import Sidebar from '../../Components/Sidebar/Sidebar'
 import MerchantCard from './MerchantCard';
 
@@ -29,6 +30,7 @@ function Merchant() {
                 <MerchantCard />
               </div>
             </div>
+            <Footer />
           </div>
         </main>
     </Sidebar>

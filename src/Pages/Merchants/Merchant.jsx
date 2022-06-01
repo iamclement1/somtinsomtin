@@ -7,7 +7,7 @@ function Merchant() {
 
     return (
     <Sidebar>
-        <main className=" px-4 py-4">
+        <main className=" md:px-4 py-4">
           <div className="container-full">
             <div className="row">
               <div className="col-md-12">
@@ -20,7 +20,7 @@ function Merchant() {
               </div>
             </div>
             <div className="row">
-              <div className="col-md-4">
+              <div className="col-md-4 col-sm-12">
                 <MerchantCard />
               </div>
               <div className="col-md-4">

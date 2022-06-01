@@ -4,7 +4,7 @@ import Sidebar from '../../Components/Sidebar/Sidebar'
 function DepVoucher() {
   return (
     <Sidebar>
-        <main className="px-5 py-3">
+        <main className="md:px-5 py-3">
           <div className="containter-full">
             <div className="row">
               <div className="col-md-12">
@@ -13,7 +13,7 @@ function DepVoucher() {
               </div>
             </div>
             <div className="row">
-              <div className="col-md-12 bg-indigo-100 p-4 rounded-md shadow-sm">
+              <div className="col-md-12 bg-indigo-100 p-4 rounded-md shadow-md">
                 <p className="text-[#362F62] text-xm py-2">
                 😔
                   <span className='font-bold'> Sorry! </span>  We couldn't find any vouchers to show.

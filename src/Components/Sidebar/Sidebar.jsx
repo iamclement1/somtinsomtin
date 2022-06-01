@@ -70,7 +70,7 @@ export default function Sidebar({ children }) {
                         <div className="relative overflow-hidden">
 
                             <div className="">
-                                <div className={`h-screen bg-white
+                                <div className={`h-full bg-white
                                 ${isOpen ? 'w-72' : 'w-20'} duration-200 
                                 ease-in-out p-3 pt-8 hidden md:block`}>
                                     <div className="flex gap-x-4 items-center">
@@ -112,7 +112,7 @@ export default function Sidebar({ children }) {
                     </div>
                 </aside>
             </div>
-            <div className="container-fluid relative h-screen bg-[#FBFBFB]">
+            <div className="container-fluid relative h-full bg-[#FBFBFB]">
                 <div className="row">
                     <div className="col-md-12">
                         <nav className={`w-full

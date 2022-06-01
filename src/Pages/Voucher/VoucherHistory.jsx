@@ -18,13 +18,13 @@ function VoucherHistory() {
                             <button className="btn dropdown-toggle border border-indigo-400
                             rounded-md"
                                 type="button"
-                                id='dropdownMenuButton1'
+                                id='dropdownMenuLink'
                                 aria-expanded="false"
                                 data-bs-toggle="dropdown">
                                 All Transaction Types
                             </button>
-                            <ul className="dropdown-menu"
-                                aria-labelledby="dropdownMenuButton1">
+                            <ul className="dropdown-menu p-3"
+                                aria-labelledby="dropdownMenuLink">
                                 <li>
                                     <Link to="" className="no-underline text-gray-400 hover:text-gray-400">
                                         All Transaction Types

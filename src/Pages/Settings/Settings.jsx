@@ -6,7 +6,7 @@ function Settings() {
     return (
     <Sidebar>
         <main className="py-4 px-7">
-            <div className="container-full">
+            <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-12">
                         <h4 className="text-xl text-[#E0013F]">

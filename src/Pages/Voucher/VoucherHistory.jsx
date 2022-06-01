@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 function VoucherHistory() {
@@ -16,7 +15,7 @@ function VoucherHistory() {
                     </div>
                     <div>
                         <div className="dropdown show">
-                            <button className="btn dropdown-toggle border border-gray-400
+                            <button className="btn dropdown-toggle border border-indigo-400
                             rounded-md"
                                 type="button"
                                 id='dropdownMenuButton1'

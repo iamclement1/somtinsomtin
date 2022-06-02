@@ -13,7 +13,7 @@ function Settings() {
                             Hi, welcome back!
                         </h4>
                         <p className="text-sm text-gray-500">
-                            Make you Sometin App look like you.
+                            Let's make your Somtin App look like you.
                         </p>
                     </div>
                 </div>

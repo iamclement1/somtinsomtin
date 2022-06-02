@@ -31,7 +31,7 @@ function TabPassword() {
                             <input className="form-control" type="password" name="password" id="password"
                             placeholder="" />
                         </div>
-                        <button className="bg-[#362F62] mt-4 p-2 text-white rounded-md"
+                        <button className="bg-[#282060] mt-4 p-2 text-white rounded-md"
                         onClick={handleSubmit}>
                             Change Password
                         </button>

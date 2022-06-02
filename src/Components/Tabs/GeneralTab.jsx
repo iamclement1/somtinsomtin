@@ -18,9 +18,9 @@ function GeneralTab() {
                                 <p className="text-gray-400">Deplet vouchers from oldest to latest</p>
                             </div>
                         </div>
-                        <div className="pt-4 text-[#e00] text-xl cursor-pointer">
+                        {/* <div className="pt-4 text-[#e00] text-xl cursor-pointer">
                             <FontAwesomeIcon icon={ faArrowAltCircleRight }/>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <hr />
@@ -39,9 +39,9 @@ function GeneralTab() {
                                 </p>
                             </div>
                         </div>
-                        <div className="pt-4 text-[#e00] text-xl cursor-pointer">
+                        {/* <div className="pt-4 text-[#e00] text-xl cursor-pointer">
                             <FontAwesomeIcon icon={ faArrowAltCircleRight } />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <hr />

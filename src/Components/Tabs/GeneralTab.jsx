@@ -27,7 +27,7 @@ function GeneralTab() {
                 <div className="col-md-12">
                     <div className="tab__content flex justify-between">
                         <div className="flex space-x-4">
-                            <p className=" text-[#3D4765] first-letter:text-xl py-4">
+                            <p className=" text-[#3D4765] text-xl py-4">
                                 <FontAwesomeIcon icon={ faMoneyCheckDollar } />
                             </p>
                             <div className="py-3">
@@ -48,7 +48,7 @@ function GeneralTab() {
                 <div className="col-md-12">
                     <div className="tab__content flex justify-between">
                         <div className="flex space-x-4">
-                            <p className=" text-[#3D4765] first-letter:text-xl py-4">
+                            <p className=" text-[#3D4765] text-xl py-4">
                                 <FontAwesomeIcon icon={ faQuestionCircle } />
                             </p>
                             <div className="py-3">
@@ -69,7 +69,7 @@ function GeneralTab() {
                 <div className="col-md-12">
                     <div className="tab__content flex justify-between">
                         <div className="flex space-x-4">
-                            <p className=" text-[#3D4765] first-letter:text-xl py-4">
+                            <p className=" text-[#3D4765] text-xl py-4">
                                 <FontAwesomeIcon icon={ faShieldVirus } />
                             </p>
                             <div className="py-3">

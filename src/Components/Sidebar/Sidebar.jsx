@@ -41,11 +41,11 @@ export default function Sidebar({ children }) {
                                                 <li key={index} className={`text-gray-400 text-xl
                                             flex items-center gap-x-6 cursor-pointer p-2
                                             hover:bg-[#E4043C] hover:text-white rounded-md
-                                            ${menu.gap ? 'mt-4' : 'mt-2'}`}
+                                            ${menu.gap ? 'mt-4' : 'mt-2'} ${index === 0 && 'bg-[#e4043c]'}`}
                                                     onClick={() => {
                                                         window.location.pathname = menu.link;
                                                     }}>
-                                                    <span className="text-2xl">
+                                                    <span className={`text-2xl`}>
                                                         {menu.icon}
                                                     </span>
                                                     <span className={` ${!isOpen && 'hidden'} origin-left
@@ -135,7 +135,7 @@ export default function Sidebar({ children }) {
 
                                                     <Route key={index}
                                                         path={route.path}
-                                                        element={ <route.main/> }/>
+                                                        element={<route.main />} />
                                                 </Routes>
 
                                             </div>

@@ -23,7 +23,7 @@ export default function MarketCard( props   ) {
                         <Card.Text>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, consequuntur?
                         </Card.Text>
-                        <Button variant="danger">
+                        <Button variant="danger" data-toogle='modal' data-target='#exampleModalCenter'>
                             Get Voucher
                         </Button>
                     </Card.Body>

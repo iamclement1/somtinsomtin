@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Row, Tab, Tabs } from 'react-bootstrap'
+import Billing from '../../Pages/Checkout/Billing'
 
 function CheckoutTab() {
     return (
@@ -11,7 +12,7 @@ function CheckoutTab() {
                         for self
                     </Tab>
                     <Tab eventKey="tab-2" title="Get Voucher for others">
-                        for others
+                        <Billing />
                     </Tab>
                 </Tabs>
             </Row>

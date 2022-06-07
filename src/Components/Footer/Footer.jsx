@@ -6,7 +6,7 @@ function Footer() {
             <div className="container-full">
                 <div className="row">
                     <div className="col-md-12">
-                        <p className="text-gray-500 text-xs text-center py-5">
+                        <p className="text-gray-500 text-xs text-center mt-5">
                             Copyright &copy; <span className="text-[#e00]">Somtin Somtin </span> 2022
                         </p>
                     </div>

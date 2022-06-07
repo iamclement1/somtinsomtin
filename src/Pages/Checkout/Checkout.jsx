@@ -1,6 +1,7 @@
 import React from 'react'
 import Sidebar from '../../Components/Sidebar/Sidebar'
 import CheckoutTab from '../../Components/Tabs/CheckoutTab'
+import Footer from '../../Components/Footer/Footer'
 
 function Checkout() {
     return (
@@ -18,6 +19,7 @@ function Checkout() {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </main>
         </Sidebar>
     )

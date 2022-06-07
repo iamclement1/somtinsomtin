@@ -9,6 +9,7 @@ import Wallet from "../../Pages/Wallet/Wallet";
 import Voucher from "../../Pages/Voucher/MyVoucher"
 import DepVoucher from "../../Pages/Voucher/DepVoucher"
 import Settings from "../../Pages/Settings/Settings"
+import Checkout from '../../Pages/Checkout/Checkout'
 
 export default function Routing() {
     return (
@@ -24,6 +25,7 @@ export default function Routing() {
                 <Route path="/my-voucher" element={ <Voucher /> } />
                 <Route path="/depleted-voucher" element={ <DepVoucher /> } />
                 <Route path="/settings" element={ <Settings /> } />
+                <Route path="/checkout" element={ <Checkout /> } />
             </Routes>
         </div>
     )

@@ -13,7 +13,7 @@ import { routes } from '../../Utils/NavTitle'
 
 
 
-export default function Sidebar({ children }) {
+export default function Sidebar({ children }, props) {
 
     const [isOpen, setIsOpen] = useState(false)
 

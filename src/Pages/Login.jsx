@@ -19,7 +19,7 @@ function Login() {
     const [ user, setUser ] = useState();
 
     useEffect(() => {
-        const loggedInUser = localStorage.getItem("user");
+        const loggedInUser = localStorage.getItem("user", user);
         if ( loggedInUser ) {
             const foundUser = JSON.parse(loggedInUser)
             setUser( foundUser );
@@ -27,7 +27,7 @@ function Login() {
         const number = localStorage.getItem('number', 'password')
         setNumber(number)
         setPassword(password)
-    }, [password])
+    }, [password, user])
 
 
     const handleSubmit = async (event) => {

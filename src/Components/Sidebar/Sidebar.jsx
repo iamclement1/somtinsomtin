@@ -37,20 +37,20 @@ export default function Sidebar({ children }) {
                                         </div>
 
                                         <ul className='p-0'>
-                                            {Menus.map((menu, index) => (
+                                            {Menus.map((sidemenu, index) => (
                                                 <li key={index} className={`text-gray-400 text-xl
                                             flex items-center gap-x-6 cursor-pointer p-2
                                             hover:bg-[#E4043C] hover:text-white rounded-md
-                                            ${menu.gap ? 'mt-4' : 'mt-2'} ${index === 0 && 'bg-[#e4043c]'}`}
+                                            ${sidemenu.gap ? 'mt-4' : 'mt-2'} ${index === 0 && 'bg-[#e4043c]'}`}
                                                     onClick={() => {
-                                                        window.location.pathname = menu.link;
+                                                        window.location.pathname = sidemenu.link;
                                                     }}>
                                                     <span className={`text-2xl`}>
-                                                        {menu.icon}
+                                                        {sidemenu.icon}
                                                     </span>
                                                     <span className={` ${!isOpen && 'hidden'} origin-left
                                                         duration-200`}>
-                                                        {menu.title}
+                                                        {sidemenu.title}
                                                     </span>
 
                                                 </li>
@@ -83,9 +83,9 @@ export default function Sidebar({ children }) {
 
                                     <ul className='p-0 menu-item'
                                         data-tooltip-target="tooltip-default">
-                                        {Menus.map((menu, index) => (
+                                        {Menus.map((menu, menus) => (
                                             <Tooltip title={menu.title} arrow key={menu}>
-                                                <li key={index} className={`text-gray-400 text-xl
+                                                <li key={menus} className={`text-gray-400 text-xl
                                             flex items-center gap-x-4 cursor-pointer p-2
                                             hover:bg-[#E4043C] hover:text-white rounded-md
                                             ${menu.gap ? 'mt-4' : 'mt-2'}`}
@@ -127,13 +127,13 @@ export default function Sidebar({ children }) {
                                         onClick={() => setIsOpen(!isOpen)} />
                                 </div>
                                 <div className="flex justify-between w-full align-center text-center">
-                                    {routes.map((route, index) => (
+                                    {routes.map((route, routes) => (
                                         <div className="flex justify-between w-full
                                                 align-center text-center">
                                             <div className="navbar-brand hidden md:block ">
                                                 <Routes>
 
-                                                    <Route key={index}
+                                                    <Route key={routes}
                                                         path={route.path}
                                                         element={<route.main />} />
                                                 </Routes>
@@ -146,7 +146,7 @@ export default function Sidebar({ children }) {
                                                         md:text-2xl p-2 rounded-full" />
                                         <NavLink to="" className="nav-link">
                                             {/* {user.first_name.substring(0, user.first_name.length)} */}
-                                            Clement
+
                                         </NavLink>
 
                                     </div>

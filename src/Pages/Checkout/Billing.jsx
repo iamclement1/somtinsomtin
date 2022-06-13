@@ -48,13 +48,13 @@ function Billing() {
                                 </p>
                                 <div className="space-x-2">
                                     <input type="checkbox" id="creditCard" name="creditCard" />
-                                    <label htmlFor="information" className="text-gray-500">
+                                    <label htmlFor="creditCard" className="text-gray-500">
                                         Credit Card
                                     </label>
                                 </div>
                                 <div className="space-x-2">
                                     <input type="checkbox" id="debitCard" name="debitCard" />
-                                    <label htmlFor="information" className="text-gray-500">
+                                    <label htmlFor="debitCard" className="text-gray-500">
                                         Debit Card
                                     </label>
                                 </div>
@@ -96,7 +96,7 @@ function Billing() {
                             </div>
                         </div>
                         <div>
-                            <input type="text" id="code" name="code"
+                            <input type="text" id="code" name="promo__code"
                             placeholder="Promo Code"
                             className="form-control mt-3"/>
                             <button className="bg-[#E4043C] text-white p-2 mt-2 text-sm rounded-md">

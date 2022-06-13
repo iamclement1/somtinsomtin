@@ -24,8 +24,8 @@ export default function Routing() {
                 <Route path="/my-wallet" element={ <Wallet /> } />
                 <Route path="/my-voucher" element={ <Voucher /> } />
                 <Route path="/depleted-voucher" element={ <DepVoucher /> } />
-                <Route path="/settings" element={ <Settings /> } />
-                <Route path="/checkout" element={ <Checkout /> } />
+                <Route path="/settings/*" element={ <Settings /> } />
+                <Route path="/checkout/*" element={ <Checkout /> } />
             </Routes>
         </div>
     )

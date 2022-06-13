@@ -16,8 +16,14 @@ function Login() {
     const [ number, setNumber ] = useState();
     const [ password, setPassword ] = useState();
     const [ isLoading, setIsLoading ] = useState(false);
+    const [ user, setUser ] = useState();
 
     useEffect(() => {
+        const loggedInUser = localStorage.getItem("user");
+        if ( loggedInUser ) {
+            const foundUser = JSON.parse(loggedInUser)
+            setUser( foundUser );
+        }
         const number = localStorage.getItem('number', 'password')
         setNumber(number)
         setPassword(password)
@@ -34,6 +40,7 @@ function Login() {
 
         axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/login/', data)
         .then (response => {
+            localStorage.setItem('user', response.data)
             console.log(response.data);
             toast.success('User Login Successfully')
             setIsLoading(false);

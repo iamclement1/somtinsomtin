@@ -13,7 +13,7 @@ import { userValidation } from '../../Validations/UserValidation'
 
 
 
-function  SignUpForm () {
+function  SignUpForm (props) {
 
     const navigate = useNavigate('')
 
@@ -25,9 +25,9 @@ function  SignUpForm () {
     const [ ivCode, setIvCode ] = useState('');
     const [ isLoading, setIsLoading ] = useState(false);
 
-    const { register, onSubmit, formState: {errors} } = useForm({
-        resolver: yupResolver(userValidation)
-    })
+
+
+  
 
     useEffect(() => {
         const number = localStorage.getItem('number')
@@ -49,7 +49,10 @@ function  SignUpForm () {
         }
 
         axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/complete_signup/', data)
-        .then ( response => {  
+        .then ( response => {
+            const { token } = response.data;
+            localStorage.setItem('token', token);
+            localStorage.getItem('token');  
             console.log(response.data);
             toast.success('Account created successfully');
             setIsLoading(false);

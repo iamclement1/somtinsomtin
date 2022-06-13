@@ -7,9 +7,7 @@ import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
-import { useForm } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup';
-import { userValidation } from '../../Validations/UserValidation'
+
 
 
 
@@ -90,11 +88,11 @@ function  SignUpForm (props) {
                         name="firstName" 
                         placeholder="First Name"
                         value ={firstName}
-                        {...register('firstName', { required: true })}
+                        
                         onChange={ (e) => setFirstName(e.target.value)}
                         className={`w-full p-2 text-gray-600 border rounded-md outline-none
                         text-sm transition duration-150 ease-in-out mb-3`} />
-                        <p> { errors?.message} </p>
+                        
                 </div>
 
                 <div>
@@ -104,11 +102,9 @@ function  SignUpForm (props) {
                         name="lastName"
                         placeholder="Last Name"
                         value={lastName}
-                        {...register('lastName', { required: true })}
                         onChange={ (e) => setLastName(e.target.value)}
                         className={`w-full p-2 text-gray-600 border rounded-md outline-none
                         text-sm transition duration-150 ease-in-out mb-3`} />
-                        <p> { errors?.message} </p>
                 </div>
                 <div>
                     <label htmlFor="Email"> </label>
@@ -117,11 +113,9 @@ function  SignUpForm (props) {
                         name="email" 
                         placeholder="Email Address"
                         value={email}
-                        {...register('email', { required: true })}
                         onChange={ (e) => setEmail(e.target.value)}
                         className={`w-full p-2 text-gray-600 border rounded-md outline-none
                         text-sm transition duration-150 ease-in-out mb-3`} />
-                        <p> { errors?.message } </p>
                 </div>
 
                 <div>
@@ -131,11 +125,9 @@ function  SignUpForm (props) {
                         name="password" 
                         placeholder="Enter your four digit pin"
                         value={password}
-                        {...register('password', { required: true })}
                         onChange={ (e) => setPassword(e.target.value)}
                         className={`w-full p-2 text-gray-600 border rounded-md outline-none
                         text-sm transition duration-150 ease-in-out mb-3`} />
-                        <p> {errors?.message} </p>
                 </div>
 
                 <div>
@@ -145,11 +137,9 @@ function  SignUpForm (props) {
                         name="invitation-code" 
                         placeholder="Invitation Code"
                         value={ivCode}
-                        {...register('test', { required: true })}
                         onChange={ (e) => setIvCode(e.target.value)}
                         className={`w-full p-2 text-gray-600 border rounded-md outline-none
                         text-sm transition duration-150 ease-in-out mb-3`} />
-                        {/* <p> { errors.firstName?.message} </p> */}
                 </div>
                 <div>
                     { !isLoading && (

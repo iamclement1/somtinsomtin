@@ -49,8 +49,8 @@ function TabPassword() {
                                 Current Password
                             </label>
                             <input type="password"
-                                id="old password"
-                                name="old password"
+                                
+                                name="oldPassword"
                                 value={oldPassword}
                                 onChange={(e) => setOldPassword(e.target.value)}
                                 className={`w-full p-2 text-gray-600 border rounded-md outline-none
@@ -61,8 +61,8 @@ function TabPassword() {
                                 New Password
                             </label>
                             <input type="password"
-                                id="new password"
-                                name="new password"
+                                
+                                name="newPassword"
                                 value={newPassword}
                                 onChange={(e) => setNewPassword(e.target.value)}
                                 className={`w-full p-2 text-gray-600 border rounded-md outline-none
@@ -73,7 +73,7 @@ function TabPassword() {
                                 Confirm New Password
                             </label>
                             <input type="password"
-                                id="confirmNewPassword"
+                                
                                 name="confirmNewpassword"
                                 value={confirmNewPassword}
                                 onChange={(e) => setConfirmNewPassword(e.target.value)}

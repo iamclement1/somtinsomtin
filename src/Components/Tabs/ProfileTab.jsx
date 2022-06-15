@@ -5,7 +5,8 @@ import axios from 'axios';
 function ProfileTab() {
 
 
-    const auth_token = localStorage.getItem('auth_token')
+    const auth_token = localStorage.getItem('token');
+    console.log(auth_token)
     const url = "https://somtinsomtin-api.herokuapp.com/api/v1.0/users/me/"
 
     const getUserData = () => {
@@ -16,6 +17,7 @@ function ProfileTab() {
         })
             .then(response => {
                 console.log(response)
+                localStorage.getItem('auth_token')
             })
             .catch(error => console.error(error))
     }

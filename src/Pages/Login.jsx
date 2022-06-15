@@ -40,6 +40,9 @@ function Login() {
 
         axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/login/', data)
         .then (response => {
+            const auth_token = response.data.results.auth_token
+            console.log(auth_token)
+            localStorage.setItem('token', auth_token);
             localStorage.setItem('user', response.data)
             console.log(response.data);
             toast.success('User Login Successfully')

@@ -5,7 +5,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Tooltip from '@mui/material/Tooltip';
 import { useState } from 'react'
-import {  NavLink, Route, Routes } from 'react-router-dom';
+import {  Link, NavLink, Route, Routes } from 'react-router-dom';
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 import { Menus } from '../../Utils/MenuData'
 import { routes } from '../../Utils/NavTitle'
@@ -143,7 +143,21 @@ export default function Sidebar({ children }, props) {
                                         <FontAwesomeIcon icon={faBell} className="text-[#e4043c]
                                                         md:text-2xl p-2 rounded-full" />
                                         <NavLink to="" className="nav-link">
-                                            {/* {user.first_name.substring(0, user.first_name.length)} */}
+                                            <div className="dropdown show">
+                                                <Link to="" className="btn dropdown-toggle"
+                                                role="button" id="dropdownMenuLink"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                                    User
+                                                </Link>
+
+                                                <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                    <Link to="/profile" className="dropdown-item">
+                                                        Profile
+                                                    </Link>
+                                        
+                                                </div>
+                                            </div>
 
                                         </NavLink>
 

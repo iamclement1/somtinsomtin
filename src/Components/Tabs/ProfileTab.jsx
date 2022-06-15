@@ -1,40 +1,34 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react'
+
 
 
 function ProfileTab() {
 
-    const [userData, setUserData] = useState([])
-    const auth_token = JSON.parse(sessionStorage.getItem('user'));
-    
 
-    useEffect(() => {
-        axios.get('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/me/', {
+    const auth_token = localStorage.getItem('auth_token')
+    const url = "https://somtinsomtin-api.herokuapp.com/api/v1.0/users/me/"
+
+    const getUserData = () => {
+        axios.get(url, {
             headers: {
-                "Authorisation": `Bearer ${auth_token}`,
-                
+                Authorization: `Bearer ${auth_token}`
             }
         })
-            .then((res) => {
-                console.log(res.data)
-                setUserData(res.data)
+            .then(response => {
+                console.log(response)
             })
-            .catch((error) => {
-                console.error(error)
-            })
-    }, [auth_token]);
+            .catch(error => console.error(error))
+    }
     return (
-        <>
-            <form action="">
-                {
-                    userData && userData.map(field => {
-                        return <input key={field.key} value={field.type} name={field.name} />
-                    })
-                }
 
-            </form>
-        </>
+        getUserData()
+
     )
 }
 
 export default ProfileTab
+
+
+
+
+// This is the smi

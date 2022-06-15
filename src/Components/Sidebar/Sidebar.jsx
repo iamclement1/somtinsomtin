@@ -13,7 +13,7 @@ import { routes } from '../../Utils/NavTitle'
 
 
 
-export default function Sidebar({ children }, props) {
+export default function Sidebar({ children }) {
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -37,22 +37,21 @@ export default function Sidebar({ children }, props) {
                                         </div>
 
                                         <ul className='p-0'>
-                                            {Menus.map((sidemenu, index) => (
+                                            {Menus.map((menu, index) => (
                                                 <li key={index} className={`text-gray-400 text-xl
                                             flex items-center gap-x-6 cursor-pointer p-2
                                             hover:bg-[#E4043C] hover:text-white rounded-md
-                                            ${sidemenu.gap ? 'mt-4' : 'mt-2'} ${index === 0 && 'bg-[#e4043c]'}`}
+                                            ${menu.gap ? 'mt-4' : 'mt-2'} ${index === 0 && 'bg-[#e4043c]'}`}
                                                     onClick={() => {
-                                                        window.location.pathname = sidemenu.link;
+                                                        window.location.pathname = menu.link;
                                                     }}>
                                                     <span className={`text-2xl`}>
-                                                        {sidemenu.icon}
+                                                        {menu.icon}
                                                     </span>
                                                     <span className={` ${!isOpen && 'hidden'} origin-left
-                                                        duration-200`}>
-                                                        {sidemenu.title}
+                                                        duration-200`} activeclassname="active">
+                                                        {menu.title}
                                                     </span>
-
                                                 </li>
                                             ))}
                                         </ul>
@@ -69,7 +68,7 @@ export default function Sidebar({ children }, props) {
                     <div className="inset-0 overflow-hidden">
                         <div className="relative overflow-hidden">
 
-                            <div className="">
+                            <div className="Sidebar">
                                 <div className={`h-full bg-white
                                 ${isOpen ? 'w-72' : 'w-20'} duration-200 
                                 ease-in-out p-3 pt-8 hidden md:block`}>
@@ -81,14 +80,15 @@ export default function Sidebar({ children }, props) {
                                         ${!isOpen && 'scale-0'}`}>somtin somtin</h1>
                                     </div>
 
-                                    <ul className='p-0 menu-item'
+                                    <ul className='p-0 menu-item SidebarList'
                                         data-tooltip-target="tooltip-default">
                                         {Menus.map((menu, menus) => (
-                                            <Tooltip title={menu.title} arrow key={menu}>
+                                            <Tooltip title={menu.title} arrow key={menu.id}>
                                                 <li key={menus} className={`text-gray-400 text-xl
-                                            flex items-center gap-x-4 cursor-pointer p-2
+                                            flex items-center gap-x-4 cursor-pointer p-2 active
                                             hover:bg-[#E4043C] hover:text-white rounded-md
                                             ${menu.gap ? 'mt-4' : 'mt-2'}`}
+                                            id={window.location.pathname === menu.link ? "active" : ""}
                                                     onClick={() => {
                                                         window.location.pathname = menu.link;
                                                     }}>
@@ -96,7 +96,7 @@ export default function Sidebar({ children }, props) {
                                                         {menu.icon}
                                                     </span>
                                                     <span className={` ${!isOpen && 'hidden'} origin-left
-                                                        duration-200`}>
+                                                        duration-200`} key={menu.id}>
                                                         {menu.title}
                                                     </span>
                                                 </li>

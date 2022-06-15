@@ -1,7 +1,6 @@
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-// import Loader from '../../Components/Loader/Loader'
 import axios from 'axios';
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
@@ -76,8 +75,8 @@ function SignUpForm(props) {
 
         axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/complete_signup/', data)
             .then(response => {
-                const { token } = response.data;
-                localStorage.setItem('token', token);
+                const { auth_token } = response.data;
+                localStorage.setItem('token', auth_token);
                 localStorage.getItem('token');
                 console.log(response.data);
                 toast.success('Account created successfully');

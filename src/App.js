@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import Routing from './Components/router/router';
 
 
+
 function App( className="font-roboto") {
   return (
     <Router>
@@ -13,6 +14,7 @@ function App( className="font-roboto") {
       <ToastContainer />
         <Routing />
       </div>
+      
     </Router>
   );
 }

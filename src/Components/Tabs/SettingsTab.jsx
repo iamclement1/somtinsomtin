@@ -2,7 +2,8 @@ import { Container, Row, Tabs, Tab } from "react-bootstrap"
 import GeneralTab from "./GeneralTab"
 import TabPassword from "./TabPassword"
 import './tab.css'
-import ProfileTab from "./ProfileTab"
+import ProfileTab from "./ProfileTab";
+import Footer from '../../Components/Footer/Footer'
 
 
 function SettingsTab() {
@@ -25,6 +26,7 @@ function SettingsTab() {
 
                 
             </Row>
+            <Footer />
         </Container>
     )
 }

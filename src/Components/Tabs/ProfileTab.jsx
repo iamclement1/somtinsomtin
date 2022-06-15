@@ -1,8 +1,11 @@
 import axios from 'axios';
+import { useState } from 'react';
 
 
 
 function ProfileTab() {
+
+    const [ userData, setUserData ] = useState([]);
 
 
     const auth_token = localStorage.getItem('token');
@@ -16,6 +19,7 @@ function ProfileTab() {
             }
         })
             .then(response => {
+                setUserData(response.data)
                 console.log(response)
                 localStorage.getItem('auth_token')
             })

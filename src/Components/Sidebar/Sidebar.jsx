@@ -5,7 +5,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Tooltip from '@mui/material/Tooltip';
 import { useState } from 'react'
-import { NavLink, Route, Routes } from 'react-router-dom';
+import {  NavLink, Route, Routes } from 'react-router-dom';
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 import { Menus } from '../../Utils/MenuData'
 import { routes } from '../../Utils/NavTitle'
@@ -13,10 +13,11 @@ import { routes } from '../../Utils/NavTitle'
 
 
 
-export default function Sidebar({ children }) {
+export default function Sidebar({ children }, props) {
 
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(true)
 
+    
     return (
         <div className="flex">
             <div>
@@ -88,24 +89,21 @@ export default function Sidebar({ children }) {
                                             flex items-center gap-x-4 cursor-pointer p-2 active
                                             hover:bg-[#E4043C] hover:text-white rounded-md
                                             ${menu.gap ? 'mt-4' : 'mt-2'}`}
-                                            id={window.location.pathname === menu.link ? "active" : ""}
+                                                    id={window.location.pathname === menu.link ? "active" : ""}
                                                     onClick={() => {
                                                         window.location.pathname = menu.link;
                                                     }}>
-                                                    <span className="text-2xl">
+                                                    <span className="text-2xl" key={menu.icon}>
                                                         {menu.icon}
                                                     </span>
                                                     <span className={` ${!isOpen && 'hidden'} origin-left
-                                                        duration-200`} key={menu.id}>
+                                                        duration-200`} key={menu.title}>
                                                         {menu.title}
                                                     </span>
                                                 </li>
                                             </Tooltip>
-
-
                                         ))}
                                     </ul>
-
                                 </div>
                             </div>
                         </div>
@@ -132,10 +130,10 @@ export default function Sidebar({ children }) {
                                                 align-center text-center">
                                             <div className="navbar-brand hidden md:block ">
                                                 <Routes>
-
                                                     <Route key={routes}
                                                         path={route.path}
-                                                        element={<route.main />} />
+                                                        exact={route.exact}
+                                                        element={window.location.pathname === route.path && <route.main /> } />
                                                 </Routes>
 
                                             </div>

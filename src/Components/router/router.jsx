@@ -10,22 +10,24 @@ import Voucher from "../../Pages/Voucher/MyVoucher"
 import DepVoucher from "../../Pages/Voucher/DepVoucher"
 import Settings from "../../Pages/Settings/Settings"
 import Checkout from '../../Pages/Checkout/Checkout'
+import NotFound from "../../Pages/NotFound/NotFound"
 
 export default function Routing() {
     return (
         <div>
             <Routes>
                 <Route path="/" element={ <Marketplace/> } />
-                <Route path="/login" element={ <Login />}  />
-                <Route path="/register" element={ <Register /> }/>
-                <Route path='/otp-page' element={ <Otp /> } />
-                <Route path='/signup' element={ <SignUpForm /> } />
-                <Route path="/merchants" element={ <Merchants /> } />
-                <Route path="/my-wallet" element={ <Wallet /> } />
-                <Route path="/my-voucher" element={ <Voucher /> } />
-                <Route path="/depleted-voucher" element={ <DepVoucher /> } />
-                <Route path="/settings/*" element={ <Settings /> } />
-                <Route path="/checkout/*" element={ <Checkout /> } />
+                <Route path="login" element={ <Login />}  />
+                <Route path="register" element={ <Register /> }/>
+                <Route path='otp-page' element={ <Otp /> } />
+                <Route path='signup' element={ <SignUpForm /> } />
+                <Route path="merchants" element={ <Merchants /> } />
+                <Route path="my-wallet" element={ <Wallet /> } />
+                <Route path="my-voucher" element={ <Voucher /> } />
+                <Route path="depleted-voucher" element={ <DepVoucher /> } />
+                <Route path="settings/*" element={ <Settings /> } />
+                <Route path="checkout/*" element={ <Checkout /> } />
+                <Route path="*" element={ <NotFound /> } />
             </Routes>
         </div>
     )

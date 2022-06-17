@@ -24,8 +24,9 @@ function Wallet() {
                     {showModal ? (
                         <>
                             <div className="justify-center items-center flex overflow-x-hidden
-                            overflow-y-auto fixed inset-0 outline-none focus:outline-none overlay">
-                                <div className="relative w-auto my-6 mx-auto max-w-4xl p-6">
+                            overflow-y-auto fixed inset-0 outline-none focus:outline-none overlay
+                            m-auto pl-64">
+                                <div className="relative w-4/6 my-6 mx-auto max-w-4xl p-6">
                                     {/* content */}
                                     <div className="border-0 rounded-md shadow-md relative flex flex-col w-full outline-none focus:outline-none bg-white">
                                         {/* header */}
@@ -71,12 +72,12 @@ function Wallet() {
                                                     <label htmlFor="Wallet Network" className="font-semibold text-gray-400">
                                                         Wallet Network
                                                     </label>
-                                                    <div className="dropdown w-[100]">
+                                                    <div className="dropdown">
                                                         <button className="btn btn-light dropdown-toggle w-full text-gray
                                                         text-start" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                                             Select Wallet Network
                                                         </button>
-                                                        <ul class="dropdown-menu dropdown-menu-light"
+                                                        <ul class="dropdown-menu dropdown-menu-light w-full"
                                                             aria-labelledby="dropdownMenuButton2">
                                                             <li>
                                                                 <Link to="" className="dropdown-item active">

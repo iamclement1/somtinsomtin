@@ -4,11 +4,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Tooltip from '@mui/material/Tooltip';
-import { useState } from 'react'
-import {  Link, NavLink, Route, Routes } from 'react-router-dom';
+import { useEffect, useState } from 'react'
+import {  Link, NavLink, useLocation } from 'react-router-dom';
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 import { Menus } from '../../Utils/MenuData'
-import { routes } from '../../Utils/NavTitle'
 
 
 
@@ -16,6 +15,29 @@ import { routes } from '../../Utils/NavTitle'
 export default function Sidebar({ children }, props) {
 
     const [isOpen, setIsOpen] = useState(true)
+    const [ title, setTitle ] = useState();
+
+    const location = useLocation()
+
+    useEffect(() => {
+        switch (location.pathname) {
+            case "/": setTitle("Marketplace");
+            break;
+            case "/merchants": setTitle("Merchant");
+            break;
+            case "/my-wallet": setTitle("My Wallet");
+            break;
+            case "/my-voucher": setTitle("My Voucher");
+            break;
+            case "/depleted-voucher": setTitle("Depleted Voucher");
+            break;
+            case "/settings": setTitle("Settings");
+            break;
+            default: setTitle("Marketplace");
+            break;
+        }
+    }, [location, setTitle])
+
 
     
     return (
@@ -125,20 +147,14 @@ export default function Sidebar({ children }, props) {
                                         onClick={() => setIsOpen(!isOpen)} />
                                 </div>
                                 <div className="flex justify-between w-full align-center text-center">
-                                    {routes.map((route, routes) => (
                                         <div className="flex justify-between w-full
                                                 align-center text-center">
                                             <div className="navbar-brand hidden md:block ">
-                                                <Routes>
-                                                    <Route key={routes}
-                                                        path={route.path}
-                                                        exact={route.exact}
-                                                        element={window.location.pathname === route.path && <route.main /> } />
-                                                </Routes>
-
+                                                <h2>
+                                                    {title}
+                                                </h2>
                                             </div>
                                         </div>
-                                    ))}
                                     <div className="flex nav-item pr-24 md:py-2 md:space-x-4">
                                         <FontAwesomeIcon icon={faBell} className="text-[#e4043c]
                                                         md:text-2xl p-2 rounded-full" />

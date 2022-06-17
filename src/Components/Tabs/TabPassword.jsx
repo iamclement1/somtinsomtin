@@ -12,8 +12,8 @@ function TabPassword() {
     const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
-        const oldPassword = localStorage.getItem("user", "password")
-        setOldPassword(oldPassword)
+        const password = localStorage.getItem("user", "password")
+        setOldPassword(password)
     }, [])
 
 
@@ -49,7 +49,6 @@ function TabPassword() {
                                 Current Password
                             </label>
                             <input type="password"
-                                
                                 name="oldPassword"
                                 value={oldPassword}
                                 onChange={(e) => setOldPassword(e.target.value)}

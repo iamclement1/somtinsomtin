@@ -49,7 +49,7 @@ export default function Sidebar({ children }, props) {
                             <div className="relative overflow-hidden">
 
                                 <div className="">
-                                    <div className={`h-full bg-white
+                                    <div className={`h-screen bg-white
                                 ${isOpen ? 'w-72' : 'hidden'} duration-200 p-3 pt-8
                                 md:hidden relative flex flex-col z-10 ease-in-out`}>
                                         <div className="flex gap-x-4 items-center">
@@ -92,7 +92,7 @@ export default function Sidebar({ children }, props) {
                         <div className="relative overflow-hidden">
 
                             <div className="Sidebar">
-                                <div className={`h-full bg-white
+                                <div className={`h-screen bg-white
                                 ${isOpen ? 'w-72' : 'w-20'} duration-200 
                                 ease-in-out p-3 pt-8 hidden md:block`}>
                                     <div className="flex gap-x-4 items-center">

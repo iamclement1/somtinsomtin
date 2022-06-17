@@ -17,14 +17,14 @@ function Wallet() {
                 <div>
                     <button className="bg-[#E4043C] text-sm text-white space-x-5
                     hover:bg-gradient hover:text-white p-2 mb-2 rounded-sm ease-linear 
-                    transition-all duration-250"
+                    transition-all duration-250 "
                         onClick={() => setShowModal(true)}>
                         + Add Wallet
                     </button>
                     {showModal ? (
                         <>
                             <div className="justify-center items-center flex overflow-x-hidden
-                            overflow-y-auto fixed inset-0 outline-none focus:outline-none">
+                            overflow-y-auto fixed inset-0 outline-none focus:outline-none overlay">
                                 <div className="relative w-auto my-6 mx-auto max-w-4xl p-6">
                                     {/* content */}
                                     <div className="border-0 rounded-md shadow-md relative flex flex-col w-full outline-none focus:outline-none bg-white">
@@ -68,17 +68,28 @@ function Wallet() {
                                                 </div>
 
                                                 <div>
-                                                    <div className="dropdown">
+                                                    <label htmlFor="Wallet Network" className="font-semibold text-gray-400">
+                                                        Wallet Network
+                                                    </label>
+                                                    <div className="dropdown w-[100]">
                                                         <button className="btn btn-light dropdown-toggle w-full text-gray
                                                         text-start" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                                             Select Wallet Network
                                                         </button>
                                                         <ul class="dropdown-menu dropdown-menu-light"
                                                             aria-labelledby="dropdownMenuButton2">
-                                                            <li><Link to="" className="dropdown-item active">Action</Link></li>
-                                                            <li><Link to="" className="dropdown-item">Another action</Link></li>
-                                                            <li><Link to="" className="dropdown-item">Something else here</Link></li>
-                                                            <li><hr className="dropdown-divider" /></li>
+                                                            <li>
+                                                                <Link to="" className="dropdown-item active">
+                                                                MTN Mobile Money
+                                                                </Link>
+                                                            </li>
+                                                            <li>
+                                                                <Link to="" className="dropdown-item">Vodafone Cash</Link>
+                                                            </li>
+                                                            <li>
+                                                                <Link to="" className="dropdown-item">AirtelTigo Cash</Link>
+                                                            </li>
+                                                            {/* <li><hr className="dropdown-divider" /></li> */}
 
                                                         </ul>
                                                     </div>

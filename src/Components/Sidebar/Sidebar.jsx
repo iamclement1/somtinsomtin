@@ -5,7 +5,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Tooltip from '@mui/material/Tooltip';
 import { useEffect, useState } from 'react'
-import {  Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 import { Menus } from '../../Utils/MenuData'
 
@@ -15,31 +15,33 @@ import { Menus } from '../../Utils/MenuData'
 export default function Sidebar({ children }, props) {
 
     const [isOpen, setIsOpen] = useState(true)
-    const [ title, setTitle ] = useState();
+    const [title, setTitle] = useState();
+
+
 
     const location = useLocation()
 
     useEffect(() => {
         switch (location.pathname) {
             case "/": setTitle("Marketplace");
-            break;
+                break;
             case "/merchants": setTitle("Merchant");
-            break;
+                break;
             case "/my-wallet": setTitle("My Wallet");
-            break;
+                break;
             case "/my-voucher": setTitle("My Voucher");
-            break;
+                break;
             case "/depleted-voucher": setTitle("Depleted Voucher");
-            break;
+                break;
             case "/settings": setTitle("Settings");
-            break;
+                break;
             default: setTitle("Marketplace");
-            break;
+                break;
         }
     }, [location, setTitle])
 
 
-    
+
     return (
         <div className="flex">
             <div>
@@ -147,38 +149,27 @@ export default function Sidebar({ children }, props) {
                                         onClick={() => setIsOpen(!isOpen)} />
                                 </div>
                                 <div className="flex justify-between w-full align-center text-center">
-                                        <div className="flex justify-between w-full
+                                    <div className="flex justify-between w-full
                                                 align-center text-center">
-                                            <div className="navbar-brand hidden md:block ">
-                                                <h2>
-                                                    {title}
-                                                </h2>
-                                            </div>
+                                        <div className="navbar-brand hidden md:block ">
+                                            <h2 className="font-bold text-4xl">
+                                                {title}
+                                            </h2>
                                         </div>
+                                    </div>
                                     <div className="flex nav-item pr-24 md:py-2 md:space-x-4">
                                         <FontAwesomeIcon icon={faBell} className="text-[#e4043c]
                                                         md:text-2xl p-2 rounded-full" />
-                                        <NavLink to="" className="nav-link">
-                                            <div className="dropdown show">
-                                                <Link to="" className="btn dropdown-toggle"
-                                                role="button" id="dropdownMenuLink"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                    User
-                                                </Link>
-
-                                                <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                    <Link to="/profile" className="dropdown-item">
-                                                        Profile
-                                                    </Link>
-                                        
-                                                </div>
-                                            </div>
-
-                                        </NavLink>
-
+                                        <div className="dropdown">
+                                            <button className="btn focus:outline-none dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Username
+                                            </button>
+                                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><Link className="dropdown-item" to="#">Profile</Link></li>
+                                                <li><Link className="dropdown-item" to="#">Logout</Link></li>
+                                            </ul>
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
                         </nav>

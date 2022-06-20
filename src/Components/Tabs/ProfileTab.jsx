@@ -23,6 +23,7 @@ function ProfileTab() {
                 setUserData(response.data)
                 console.log(response)
                 localStorage.getItem('auth_token')
+                localStorage.getItem('user')
             })
             .catch(error => console.error(error))
     }

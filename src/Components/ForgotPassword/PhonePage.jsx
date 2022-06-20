@@ -30,7 +30,6 @@ export default function PhonePage() {
             }
         })
             .then(response => {
-                localStorage.setItem("token")
                 localStorage.setItem('number')
                 console.log(response.data)
                 toast('otp sent successfully')
@@ -39,6 +38,11 @@ export default function PhonePage() {
                 if (response.data.response_code === "100") {
                     navigate('/forgot-password')
                 }
+            })
+            .catch(error => {
+                console.log(error.response)
+                toast.error('number not found')
+                setIsLoading(false)
             })
     }
 

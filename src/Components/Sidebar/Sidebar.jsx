@@ -17,7 +17,7 @@ export default function Sidebar({ children }, props) {
 
     const [isOpen, setIsOpen] = useState(true)
     const [title, setTitle] = useState();
-    
+    const { user } = localStorage.getItem('user')
 
     const Logout = () => {
         localStorage.removeItem('currentUser')
@@ -170,7 +170,7 @@ export default function Sidebar({ children }, props) {
                                                         md:text-2xl p-2 rounded-full" />
                                         <div className="dropdown">
                                             <button className="btn focus:outline-none dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                
+                                                {user}
                                             </button>
                                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                 <li>

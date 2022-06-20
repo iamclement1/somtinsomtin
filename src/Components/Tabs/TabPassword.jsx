@@ -11,6 +11,8 @@ function TabPassword() {
     const [confirmNewPassword, setConfirmNewPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false)
 
+    const auth_token = localStorage.getItem('token');
+
     useEffect(() => {
         const password = localStorage.getItem("user", "password")
         setOldPassword(password)
@@ -27,7 +29,11 @@ function TabPassword() {
         }
         // console.log('data', data);
 
-        axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/change_password/', data)
+        axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/change_password/', data, {
+            headers: { 
+                Authorization: `Bearer ${auth_token}`
+            }
+        })
             .then(response => {
                 console.log(response.data)
                 toast('password successfully changed')

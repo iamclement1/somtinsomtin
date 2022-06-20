@@ -57,7 +57,10 @@ function Login() {
             toast.error('Invalid number')
             setIsLoading(false);
         })
+    }
 
+    const forgetPassword = (event) => {
+        event.preventDefault();
 
     }
 
@@ -123,6 +126,12 @@ function Login() {
                     ">
                         Click Here
                     </Link>
+                </div>
+                <div className="flex text-center text-start text-xs text-indigo-300
+                hover:text-red-400   align-center space-x-3">
+                    <p role="button" onClick={forgetPassword}>
+                        Forgotten Password?
+                    </p>
                 </div>
             </form>
         </div>

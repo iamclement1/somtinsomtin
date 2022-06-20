@@ -126,7 +126,8 @@ function Wallet() {
                         </div>
                     </div>
 
-                    <main>
+
+                    <section>
                         <div>
                             <div className="md:flex justify-between bg-white p-3 rounded-md shadow-md">
                                 <div className="px-3 py-3">
@@ -181,7 +182,7 @@ function Wallet() {
                             </div>
                             
                         </div>
-                    </main>
+                    </section>
                 </div>
             </div>
 

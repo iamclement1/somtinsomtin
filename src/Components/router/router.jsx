@@ -11,6 +11,7 @@ import DepVoucher from "../../Pages/Voucher/DepVoucher"
 import Settings from "../../Pages/Settings/Settings"
 import Checkout from '../../Pages/Checkout/Checkout'
 import NotFound from "../../Pages/NotFound/NotFound"
+import PhonePage from "../ForgotPassword/PhonePage";
 
 export default function Routing() {
     return (
@@ -18,6 +19,7 @@ export default function Routing() {
             <Routes>
                 <Route path="/" element={ <Marketplace/> } />
                 <Route path="login" element={ <Login />}  />
+                <Route path="phone-verify" element={ <PhonePage /> } />
                 <Route path="register" element={ <Register /> }/>
                 <Route path='otp-page' element={ <Otp /> } />
                 <Route path='signup' element={ <SignUpForm /> } />

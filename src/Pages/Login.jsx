@@ -43,7 +43,7 @@ function Login() {
             const auth_token = response.data.results.auth_token
             console.log(auth_token)
             localStorage.setItem('token', auth_token);
-            localStorage.setItem('user', response.data)
+            localStorage.setItem('currentUser', JSON.stringify(response.data))
             console.log(response.data);
             toast.success('User Login Successfully')
             setIsLoading(false);

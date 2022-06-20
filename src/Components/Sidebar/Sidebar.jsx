@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Tooltip from '@mui/material/Tooltip';
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Logo from '../../Assets/sometinlogo250-150-red.png'
 import { Menus } from '../../Utils/MenuData'
 
@@ -16,6 +17,13 @@ export default function Sidebar({ children }, props) {
 
     const [isOpen, setIsOpen] = useState(true)
     const [title, setTitle] = useState();
+    
+
+    const Logout = () => {
+        localStorage.removeItem('currentUser')
+        window.location.reload()
+        toast('user logged out successfully')
+    }
 
 
 
@@ -162,11 +170,16 @@ export default function Sidebar({ children }, props) {
                                                         md:text-2xl p-2 rounded-full" />
                                         <div className="dropdown">
                                             <button className="btn focus:outline-none dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Username
+                                                
                                             </button>
                                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                <li><Link className="dropdown-item" to="#">Profile</Link></li>
-                                                <li><Link className="dropdown-item" to="#">Logout</Link></li>
+                                                <li>
+                                                    <Link className="dropdown-item" to="#">Profile</Link>
+                                                </li>
+                                                <li>
+                                                    <Link className="dropdown-item" to="/"
+                                                    onClick={Logout}>Logout</Link>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>

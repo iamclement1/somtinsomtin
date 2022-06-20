@@ -163,7 +163,7 @@ function SignUpForm(props) {
                             onChange={(e) => setPassword(e.target.value)}
                             className={`w-full p-2 text-gray-600 border rounded-md outline-none
                         text-sm transition duration-150 ease-in-out mb-3`} />
-                        { error.password && <div className="text-red-600" >{error.password}</div>   }
+                        {error.password && <div className="text-red-600" >{error.password}</div>}
                     </div>
 
                     <div>

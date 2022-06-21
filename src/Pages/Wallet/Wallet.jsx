@@ -3,12 +3,17 @@ import { Col, Container, Row } from "react-bootstrap"
 import Sidebar from "../../Components/Sidebar/Sidebar"
 import PhoneInput from 'react-phone-number-input'
 import { Link } from "react-router-dom"
-
+import {WalletList} from '../../Utils/WalletList'
 
 function Wallet() {
 
     const [showModal, setShowModal] = useState(false)
     const [number, setNumber] = useState('')
+    const [ value, setValue] = useState()
+
+    const handleSelect = (event) => {
+        setValue(event)
+    }
 
     return (
         <Sidebar>
@@ -76,23 +81,26 @@ function Wallet() {
                                                             </label>
                                                             <div className="dropdown">
                                                                 <button className="btn btn-light dropdown-toggle w-full text-gray
-                                                        text-start" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                    text-start" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" 
+                                                                    >
                                                                     Select Wallet Network
                                                                 </button>
                                                                 <ul class="dropdown-menu dropdown-menu-light w-full"
-                                                                    aria-labelledby="dropdownMenuButton2">
-                                                                    <li>
-                                                                        <Link to="" className="dropdown-item active">
-                                                                            MTN Mobile Money
-                                                                        </Link>
-                                                                    </li>
-                                                                    <li>
-                                                                        <Link to="" className="dropdown-item">Vodafone Cash</Link>
-                                                                    </li>
-                                                                    <li>
-                                                                        <Link to="" className="dropdown-item">AirtelTigo Cash</Link>
-                                                                    </li>
-                                                                    {/* <li><hr className="dropdown-divider" /></li> */}
+                                                                    aria-labelledby="dropdownMenuButton2" 
+                                                                    value={value} onSelect={handleSelect}>
+                                                                        {
+                                                                            WalletList.map((value, index) =>{
+                                                                                return(
+                                                                                    <li active={ index === 0 ? true : false }
+                                                                                    eventKey={value.name} role="button"
+                                                                                    className="pl-3 mb-1 hover:bg-red-600 p-2
+                                                                                    hover:text-white">
+                                                                                        { value.name }
+                                                                                    </li>
+                                                                                )
+                                                                            })
+                                                                        }
+                                                                    
 
                                                                 </ul>
                                                             </div>

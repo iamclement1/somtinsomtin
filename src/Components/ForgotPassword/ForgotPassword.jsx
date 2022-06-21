@@ -15,10 +15,11 @@ export default function ForgotPassword() {
     const [number, setNumber ]  = useState()
     const [ code, setCode ] = useState()
     const [ password, setPassword ] = useState()
+    const [ confirmNewPassword, setConfirmNewPassword ] = useState()
     const auth_token = localStorage.getItem('token');
 
     useEffect(() => {
-        const number = localStorage.getItem('number')
+        const number = localStorage.getItem('number', 'user')
         setNumber(number)
     }, [])
 
@@ -94,8 +95,8 @@ export default function ForgotPassword() {
                             id="confirmNewPassword"
                             name="password"
                             placeholder="Confirm New Pin"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            value={confirmNewPassword}
+                            onChange={(e) => setConfirmNewPassword(e.target.value)}
                             className={`w-full p-2 text-gray-600 border rounded-md outline-none
                         text-sm transition duration-150 ease-in-out mb-3`} />
                     </div>

@@ -29,9 +29,9 @@ export default function Wallet() {
                             <>
                                 <div className="justify-center items-center flex overflow-hidden
                             overflow-y-auto fixed outline-none focus:outline-none overlay
-                            m-auto md:pl-56">
+                            m-auto md:pl-56 ease transition-all duration-200">
                                     <div className="relative md:w-3/6 w-full md:my-6 mx-auto
-                                    md:max-w-4xl p-6 bg-white border border-red-400">
+                                    md:max-w-4xl p-6 bg-white">
                                         {/* content */}
                                         <div className="border-0 rounded-md relative flex flex-col w-full">
                                             {/* header */}
@@ -42,7 +42,7 @@ export default function Wallet() {
                                                 </h3>
                                             </div>
                                             {/* body */}
-                                            <div className="relative p-6 flex-auto">
+                                            <div className="p-6 flex-auto">
                                                 <form action="">
                                                     <div>
                                                         <label htmlFor="Wallet Alias" className="font-semibold text-gray-400">
@@ -97,6 +97,23 @@ export default function Wallet() {
                                                         </div>
                                                     </div>
                                                 </form>
+                                                {/* footer */}
+                                                <div className="flex items-center justify-end p-3 border-t rounded-b">
+                                                    <button className="text-[#E4043C] font-semibold uppercase
+                                            px-6 py-2 text-sm outline-none focus:outline-none mr-1"
+                                                        type="button" onClick={() => setShowModal(false)}>
+                                                        Close
+                                                    </button>
+                                                    <button
+                                                        className="bg-[#E4043C] text-white font-bold 
+                                                uppercase text-sm px-6 py-2 rounded shadow hover:shadow-lg outline-none 
+                                                focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                        type="button"
+                                                        onClick={() => setShowModal(false)}
+                                                    >
+                                                        Add Wallet
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -133,7 +150,7 @@ export default function Wallet() {
                                                 return (
                                                     <li active={index === 0 ? true : false}
                                                         eventKey={transaction.name} role="button"
-                                                        className="p-1 hover:bg-[#E4043C] hover:text-white rounded-sm">
+                                                        className=" hover:bg-[#E4043C] hover:text-white rounded-sm">
                                                         {transaction.name}
                                                     </li>
                                                 )

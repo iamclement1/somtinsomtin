@@ -1,9 +1,18 @@
 
+import axios from 'axios';
 import Footer from '../../Components/Footer/Footer';
 import Sidebar from '../../Components/Sidebar/Sidebar'
 import MerchantCard from './MerchantCard';
 
 function Merchant() {
+
+  const getMerchants = () => {
+    axios.get('https://somtinsomtin-api.herokuapp.com/api/v1.0/merchants/approved_merchants/')
+    .then((response) => {
+      
+    })
+    .catch(error => console.log(error))
+  }
 
     return (
     <Sidebar>
@@ -32,6 +41,7 @@ function Merchant() {
             </div>
             <Footer />
           </div>
+          
         </main>
     </Sidebar>
   )

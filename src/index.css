@@ -58,6 +58,9 @@
   height: 4em;
   width: 4em
 }
+.dropdown-toggle::after {
+  display: none !important; 
+}
 
 
 .spinner {

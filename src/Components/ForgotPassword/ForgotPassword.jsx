@@ -79,9 +79,9 @@ export default function ForgotPassword() {
                     <div>
                         <label htmlFor="Password"> </label>
                         <input type="password"
-                            id="password"
+                            id="newPassword"
                             name="password"
-                            placeholder="Enter New Password"
+                            placeholder="Enter New Pin"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             className={`w-full p-2 text-gray-600 border rounded-md outline-none
@@ -91,9 +91,9 @@ export default function ForgotPassword() {
                     <div>
                         <label htmlFor="Confirm Password" className="font-bold text-gray-500"> </label>
                         <input type="password"
-                            id="password"
+                            id="confirmNewPassword"
                             name="password"
-                            placeholder="Confirm New Password"
+                            placeholder="Confirm New Pin"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             className={`w-full p-2 text-gray-600 border rounded-md outline-none

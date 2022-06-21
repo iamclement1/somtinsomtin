@@ -2,7 +2,7 @@ import Logo from '../../Assets/sometinlogo250-150-red.png'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -37,7 +37,7 @@ export default function PhonePage () {
             toast.success('OTP successfully sent!')
             setIsLoading(false);
 
-            if (response.data.response_code === "200") {
+            if (response.data.response_code === "100") {
                 navigate('/forget-password')
             } else {
                 toast.error("User Already Exist")

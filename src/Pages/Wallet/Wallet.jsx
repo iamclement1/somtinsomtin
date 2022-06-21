@@ -4,12 +4,17 @@ import Sidebar from '../../Components/Sidebar/Sidebar'
 import { WalletTransactions } from '../../Utils/WalletTransaction'
 import { WalletList } from '../../Utils/WalletList'
 import Footer from '../../Components/Footer/Footer'
+import { Button, Modal } from 'react-bootstrap';
 
 export default function Wallet() {
 
     const [value, setValue] = useState();
-    const [showModal, setShowModal] = useState(false)
-    const [number, setNumber] = useState()
+    const [number, setNumber] = useState();
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const handleSelect = (event) => {
         setValue(event)
@@ -19,107 +24,85 @@ export default function Wallet() {
             <div className="container">
                 <div className="row">
                     <div className="pt-3">
-                        <button className="bg-[#E4043C] p-2 rounded-md text-white font-semibold "
-                            style={{
-                                float: 'right'
-                            }} onClick={() => setShowModal(true)}>
+                        <Button variant="#e4043c" onClick={handleShow}
+                        style={{
+                            float: 'right'
+                        }}>
                             + Add Wallet
-                        </button>
-                        {showModal ? (
-                            <>
-                                <div className="justify-center items-center flex overflow-hidden
-                            overflow-y-auto fixed outline-none focus:outline-none overlay
-                            m-auto md:pl-56 ease transition-all duration-200">
-                                    <div className="relative md:w-3/6 w-full md:my-6 mx-auto
-                                    md:max-w-4xl p-6 bg-white">
-                                        {/* content */}
-                                        <div className="border-0 rounded-md relative flex flex-col w-full">
-                                            {/* header */}
-                                            <div className="flex items-start justify-between p-3 border-b
-                                            border-gray-400 rounded-t">
-                                                <h3 className="text-2xl font-semibold">
-                                                    Add Wallet
-                                                </h3>
-                                            </div>
-                                            {/* body */}
-                                            <div className="p-6 flex-auto">
-                                                <form action="">
-                                                    <div>
-                                                        <label htmlFor="Wallet Alias" className="font-semibold text-gray-400">
-                                                            Wallet Alias
-                                                        </label>
-                                                        <input type="text" name="wallet_alias"
-                                                            placeholder="Enter Wallet Alias" value=""
-                                                            className="w-full p-2 text-gray-400 border rounded-md outline-none 
+                        </Button>
+
+                        <Modal show={show} onHide={handleClose}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Add Wallet</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <form action="">
+                                    <div>
+                                        <label htmlFor="Wallet Alias" className="font-semibold text-gray-400">
+                                            Wallet Alias
+                                        </label>
+                                        <input type="text" name="wallet_alias"
+                                            placeholder="Enter Wallet Alias" value=""
+                                            className="w-full p-2 text-gray-400 border rounded-md outline-none 
                                                         text-sm transition duration-150 ease-in-out mb-4 focus:outline-none" />
-                                                    </div>
-                                                    <div>
-                                                        <label htmlFor="Phone Number"
-                                                            className="font-semibold text-gray-400">Wallet Number</label>
-                                                        <PhoneInput placeholder="Enter phone number"
-                                                            international
-                                                            defaultCountry='GH'
-                                                            value={number}
-                                                            onChange={setNumber}
-                                                            className={`w-full p-2 text-gray-400 border rounded-md outline-none 
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor="Phone Number"
+                                            className="font-semibold text-gray-400">Wallet Number</label>
+                                        <PhoneInput placeholder="Enter phone number"
+                                            international
+                                            defaultCountry='GH'
+                                            value={number}
+                                            onChange={setNumber}
+                                            className={`w-full p-2 text-gray-400 border rounded-md outline-none 
                                                         text-sm transition duration-150 ease-in-out mb-4 focus:outline-none`} />
-                                                    </div>
+                                    </div>
 
-                                                    <div>
-                                                        <label htmlFor="Wallet Network" className="font-semibold text-gray-400">
-                                                            Wallet Network
-                                                        </label>
-                                                        <div className="dropdown">
-                                                            <button className="btn btn-light dropdown-toggle w-full text-gray
+                                    <div>
+                                        <label htmlFor="Wallet Network" className="font-semibold text-gray-400">
+                                            Wallet Network
+                                        </label>
+                                        <div className="dropdown">
+                                            <button className="btn btn-light dropdown-toggle w-full text-gray
                                                                     text-start" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"
-                                                                value={value}
-                                                                onSelect={handleSelect}
-                                                            >
-                                                                Select Wallet Network
-                                                            </button>
-                                                            <ul class="dropdown-menu dropdown-menu-light w-full"
-                                                                aria-labelledby="dropdownMenuButton2" >
-                                                                {
-                                                                    WalletList.map((value, index) => {
-                                                                        return (
-                                                                            <li active={index === 0 ? true : false}
-                                                                                eventKey={value.name} role="button"
-                                                                                className="pl-3 mb-1 hover:bg-red-600 p-2
+                                                value={value}
+                                                onSelect={handleSelect}
+                                            >
+                                                Select Wallet Network
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-light w-full"
+                                                aria-labelledby="dropdownMenuButton2" >
+                                                {
+                                                    WalletList.map((value, index) => {
+                                                        return (
+                                                            <li active={index === 0 ? true : false}
+                                                                eventKey={value.name} role="button"
+                                                                className="pl-3 mb-1 hover:bg-red-600 p-2
                                                                                     hover:text-white">
-                                                                                {value.name}
-                                                                            </li>
-                                                                        )
-                                                                    })
-                                                                }
+                                                                {value.name}
+                                                            </li>
+                                                        )
+                                                    })
+                                                }
 
 
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                                {/* footer */}
-                                                <div className="flex items-center justify-end p-3 border-t rounded-b">
-                                                    <button className="text-[#E4043C] font-semibold uppercase
-                                            px-6 py-2 text-sm outline-none focus:outline-none mr-1"
-                                                        type="button" onClick={() => setShowModal(false)}>
-                                                        Close
-                                                    </button>
-                                                    <button
-                                                        className="bg-[#E4043C] text-white font-bold 
-                                                uppercase text-sm px-6 py-2 rounded shadow hover:shadow-lg outline-none 
-                                                focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                                        type="button"
-                                                        onClick={() => setShowModal(false)}
-                                                    >
-                                                        Add Wallet
-                                                    </button>
-                                                </div>
-                                            </div>
+                                            </ul>
                                         </div>
                                     </div>
-                                </div>
-                            </>
-                        ) : null}
+
+                                </form>
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Close
+                                </Button>
+                                <Button variant="primary" onClick={handleClose}>
+                                    Save Changes
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
+
                     </div>
                     <div className="col-md-12 pt-3">
                         <div className="md:flex justify-between bg-white p-3 shadow-md rounded-md">

@@ -2,7 +2,6 @@ import { Container, Row, Tabs, Tab } from "react-bootstrap"
 import GeneralTab from "./GeneralTab"
 import TabPassword from "./TabPassword"
 import './tab.css'
-import ProfileTab from "./ProfileTab";
 import Footer from '../../Components/Footer/Footer'
 
 
@@ -18,9 +17,6 @@ function SettingsTab() {
                         </Tab>
                         <Tab eventKey="tab-2" title="Security">
                             <TabPassword />
-                        </Tab>
-                        <Tab eventKey="tab-3" title="Profile">
-                            <ProfileTab />
                         </Tab>
                     </Tabs>
 

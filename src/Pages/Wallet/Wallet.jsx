@@ -6,9 +6,9 @@ import { WalletList } from '../../Utils/WalletList'
 import Footer from '../../Components/Footer/Footer'
 import { Button, Modal } from 'react-bootstrap';
 
-export default function Wallet() {
+export default function Wallet(props) {
 
-    const [value, setValue] = useState();
+    const [value, setValue] = useState(WalletList.name);
     const [number, setNumber] = useState();
 
     const [show, setShow] = useState(false);
@@ -17,23 +17,33 @@ export default function Wallet() {
     const handleShow = () => setShow(true);
 
     const handleSelect = (event) => {
-        setValue(event)
+        setValue(event.id)
+    }
+
+    const handleAddWallet = (event) => {
+        event.preventDefault()
     }
     return (
         <Sidebar>
             <div className="container">
                 <div className="row">
                     <div className="pt-3">
-                        <Button variant="#e4043c" onClick={handleShow}
+                        <Button onClick={handleShow}
                         style={{
-                            float: 'right'
+                            float: 'right',
+                            backgroundColor: '#e4043c',
+                            border: 'none',
+                            outline: "none"
                         }}>
                             + Add Wallet
                         </Button>
 
-                        <Modal show={show} onHide={handleClose}>
+                        <Modal show={show} onHide={handleClose}
+                        {...props}
+                        aria-labelledby="contained-modal-title-vcenter"
+                        centered>
                             <Modal.Header closeButton>
-                                <Modal.Title>Add Wallet</Modal.Title>
+                                <Modal.Title id="contained-modal-title-vcenter">Add Wallet</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
                                 <form action="">
@@ -66,9 +76,7 @@ export default function Wallet() {
                                         <div className="dropdown">
                                             <button className="btn btn-light dropdown-toggle w-full text-gray
                                                                     text-start" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"
-                                                value={value}
-                                                onSelect={handleSelect}
-                                            >
+                                                value={value} onChange={handleSelect}>
                                                 Select Wallet Network
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-light w-full"
@@ -77,11 +85,13 @@ export default function Wallet() {
                                                     WalletList.map((value, index) => {
                                                         return (
                                                             <li active={index === 0 ? true : false}
-                                                                eventKey={value.name} role="button"
+                                                                key={value.id} role="button" value={value.value}
                                                                 className="pl-3 mb-1 hover:bg-red-600 p-2
-                                                                                    hover:text-white">
+                                                                            hover:text-white" 
+                                                                            onSelect={handleSelect}>
                                                                 {value.name}
                                                             </li>
+                                                            
                                                         )
                                                     })
                                                 }
@@ -94,10 +104,17 @@ export default function Wallet() {
                                 </form>
                             </Modal.Body>
                             <Modal.Footer>
-                                <Button variant="secondary" onClick={handleClose}>
+                                <Button style={{
+                                    backgroundColor: "#e4043c",
+                                    border: 'none'
+                                }}  onClick={handleClose}>
                                     Close
                                 </Button>
-                                <Button variant="primary" onClick={handleClose}>
+                                <Button variant="primary"
+                                style={{
+                                    backgroundColor: "#88C057",
+                                    border: "none"
+                                }} onClick={handleAddWallet}>
                                     Save Changes
                                 </Button>
                             </Modal.Footer>
@@ -132,8 +149,8 @@ export default function Wallet() {
                                             WalletTransactions.map((transaction, index) => {
                                                 return (
                                                     <li active={index === 0 ? true : false}
-                                                        eventKey={transaction.name} role="button"
-                                                        className=" hover:bg-[#E4043C] hover:text-white rounded-sm">
+                                                        eventKey={transaction.name} role="button" value={setValue}
+                                                        className=" hover:bg-[#E4043C] hover:text-white rounded-sm p-1">
                                                         {transaction.name}
                                                     </li>
                                                 )

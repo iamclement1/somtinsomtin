@@ -1,6 +1,6 @@
 import {
     faBarsStaggered,
-    faBell, faXmark
+    faXmark
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Tooltip from '@mui/material/Tooltip';
@@ -17,7 +17,7 @@ export default function Sidebar({ children }, props) {
 
     const [isOpen, setIsOpen] = useState(false)
     const [title, setTitle] = useState();
-    const { user } = localStorage.getItem('user')
+    
 
     const Logout = () => {
         localStorage.removeItem('currentUser')

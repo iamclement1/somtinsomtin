@@ -13,6 +13,7 @@ import Checkout from '../../Pages/Checkout/Checkout'
 import NotFound from "../../Pages/NotFound/NotFound"
 import PhonePage from "../ForgotPassword/PhonePage";
 import ForgotPassword from "../ForgotPassword/ForgotPassword";
+import Profile from '../../Pages/Profile/Profile'
 
 export default function Routing() {
     return (
@@ -30,7 +31,7 @@ export default function Routing() {
                 <Route path="my-voucher" element={ <Voucher /> } />
                 <Route path="depleted-voucher" element={ <DepVoucher /> } />
                 <Route path="settings/*" element={ <Settings /> } />
-                <Route path="profile/" element={ <Settings /> } />
+                <Route path="profile/" element={ <Profile /> } />
                 <Route path="checkout/*" element={ <Checkout /> } />
                 <Route path="*" element={ <NotFound /> } />
             </Routes>

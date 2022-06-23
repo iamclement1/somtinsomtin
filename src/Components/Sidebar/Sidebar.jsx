@@ -17,7 +17,7 @@ export default function Sidebar({ children }, props) {
 
     const [isOpen, setIsOpen] = useState(false)
     const [title, setTitle] = useState();
-    
+
 
     const Logout = () => {
         localStorage.removeItem('currentUser')
@@ -168,19 +168,15 @@ export default function Sidebar({ children }, props) {
                                     <div className="flex nav-item pr-24 md:py-2 md:space-x-4">
                                         {/* <FontAwesomeIcon icon={faBell} className="text-[#e4043c]
                                                         md:text-2xl p-2 rounded-full" /> */}
-                                        <div className="dropdown">
-                                            <button className="btn focus:outline-none dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                user
+                                        <div>
+                                            <Link to="/profile">
+                                                <h2>ExampleUser</h2>
+                                            </Link>
+                                        </div>
+                                        <div>
+                                            <button className="bg-[#e4043c] text-white p-2 rounded-sm " onClick={Logout}>
+                                                Logout
                                             </button>
-                                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                <li>
-                                                    <Link className="dropdown-item" to="/profile">Profile</Link>
-                                                </li>
-                                                <li>
-                                                    <Link className="dropdown-item" to="/"
-                                                    onClick={Logout}>Logout</Link>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>

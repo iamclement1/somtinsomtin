@@ -1,4 +1,4 @@
-import { faBoxOpen, faGears, faGift, faStore, faWallet } from "@fortawesome/free-solid-svg-icons";
+import { faBoxOpen, faGears, faGift, faGifts, faStore, faWallet } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Menus = [
@@ -22,7 +22,7 @@ export const Menus = [
     },
     {
         title: 'My Vouchers',
-        icon: <FontAwesomeIcon icon={faGift} />,
+        icon: <FontAwesomeIcon icon={faGifts} />,
         link: "/my-voucher",
         gap: true,
     },

@@ -49,7 +49,7 @@ function Login() {
                 setIsLoading(false);
 
                 if (response.data.response_code === "100") {
-                    navigate('/')
+                    navigate('/marketplace')
                 }
             })
             .catch(error => {

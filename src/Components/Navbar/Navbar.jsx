@@ -54,13 +54,21 @@ export default function Navbar(fixed) {
                         </ul>
                     </div>
                     <div>
-                        <ul className=" flex flex-col lg:flex-row lg:ml-auto">
+                        <ul className=" flex flex-col lg:flex-row lg:ml-auto space-x-6 items-center">
                             <li className="flex ">
                                 <Link to="/login" className="nav-item text-[#222544] 
-                                no-underline uppercase">
-                                    <FontAwesomeIcon icon={faUser} className="space-x-3" />
-                                    Consumer
+                                no-underline uppercase space-x-2">
+                                    <FontAwesomeIcon icon={faUser} className="" />
+                                    <span className="text-sm font-bold">
+                                        Consumer
+                                    </span>
                                 </Link>
+                            </li>
+                            <li className="nav-item">
+                                <button className="bg-[#E0013F] p-2 rounded-sm uppercase font-semibold
+                                text-white text-sm hover:bg-white focus:text-red-600 focus:outline-red-600 ">
+                                    Vendor Login
+                                </button>
                             </li>
 
                         </ul>

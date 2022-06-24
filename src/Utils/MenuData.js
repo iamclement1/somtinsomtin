@@ -5,7 +5,7 @@ export const Menus = [
     {
         title: 'Market Place',
         icon: <FontAwesomeIcon icon={faStore} />,
-        link: "/",
+        link: "/marketplace",
         gap: true,
     },
     {

@@ -4,7 +4,8 @@ import { Transition } from "@headlessui/react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Logo from '../../Assets/sometinlogo250-150-red.png'
-export default function Navbar() {
+
+export default function Navbar(fixed) {
     const [showNav, setShowNav] = useState(false);
 
     const handleNav = () => {
@@ -12,9 +13,9 @@ export default function Navbar() {
     }
     return (
         <div>
-            <nav className='absolute w-full top-0 md:justify-between z-50 md:bg-transparent
-            text-white font-Poppins backdrop-filter-blur'>
-                <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+            <nav className='fixed top-0 z-10 w-full md:justify-between bg-white bg-opacity-75
+            text-white font-Poppins '>
+                <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative'>
                     <div className='flex items-center justify-between px-4 py-5'>
                         <div className='flex-shrink-0 relative mr-auto'>
                             <Link to='/'>

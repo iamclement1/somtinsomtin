@@ -1,7 +1,6 @@
-import { faAppleWhole, faDisplay, faPlayCircle } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
 import Image from '../../Assets/hero-img.png'
+import { FaApple, FaGooglePlay } from "react-icons/fa";
 export default function Hero() {
 
     return (
@@ -27,19 +26,19 @@ export default function Hero() {
                         </p>
                         <div className="md:flex md:space-x-2 pt-4 ">
                             <div>
-                                <Link to="" className="p-3 bg-[#0E1133] text-white rounded-sm
-                                hover:bg-white hover:text-black ">
-                                    <FontAwesomeIcon icon={ faAppleWhole }/>
+                                <Link to="" className="flex no-underline p-3 bg-[#0E1133] 
+                                text-white rounded-sm items-center">
+                                    <FaApple />
                                     <button className="ml-2">
                                         Download for iOS
                                     </button>
                                 </Link>
                             </div>
-                            <div className="pt-5">
-                                <Link to="" className="p-3 text-[#0E1133] rounded-sm
+                            <div className="">
+                                <Link to="" className="flex p-3 text-[#0E1133] rounded-sm no-underline items-center
                                 border-2 border-solid border-[#0E1133] hover:bg-[#0E1133] hover:text-white
                                 hover:border-none ">
-                                    <FontAwesomeIcon icon={ faPlayCircle} />
+                                    <FaGooglePlay />
                                     <button className="ml-2">
                                         Download for Android
                                     </button>

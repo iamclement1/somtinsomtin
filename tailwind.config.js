@@ -7,6 +7,10 @@ module.exports = {
       'sans': "sans-serif",
       'roboto': [ "Roboto", 'sans-serif']
     },
+    backdropFilter: {
+      'none': 'none',
+      'blur': 'blur(20px)',
+    },
     extend: {
       colors: {
         "dark-red": "#8b0000",
@@ -15,5 +19,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-filters'),
+  ],
 }

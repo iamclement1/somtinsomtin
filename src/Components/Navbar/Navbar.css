@@ -1,0 +1,27 @@
+
+@media (max-width: 992px) {
+    
+    .navbar.collapsing .navbar-nav {
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: -45%;
+        transition: all 0.2s ease;
+        color: #000;
+    }
+
+    .navbar-collapse.show .navbar-nav {
+        position: fixed;
+        background: white;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        flex-direction: column;
+        height: auto;
+        width: 50%;
+        padding: 15px;
+        transition: left 0.35s ease;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+}

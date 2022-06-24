@@ -3,6 +3,10 @@ import Image from '../../Assets/hero-img.png'
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 export default function Hero() {
 
+    const iosDownload = () =>{
+        window.location.href("https://apps.apple.com/gh/app/somtin-somtin/id1597263559")
+    }
+
     return (
         <main>
             <div className=" relative flex pt-11">
@@ -24,16 +28,19 @@ export default function Hero() {
                         </p>
                         <div className="md:flex md:space-x-2 pt-4 ">
                             <div>
-                                <Link to="" className="flex justify-center no-underline p-3 bg-[#0E1133] 
+                                <span 
+                                target="_blank" className="flex justify-center no-underline p-3 bg-[#0E1133] 
                                 text-white rounded-sm items-center">
                                     <FaApple />
-                                    <button className="ml-2">
+                                    <button className="ml-2"
+                                    onClick={iosDownload}>
                                         Download for iOS
                                     </button>
-                                </Link>
+                                </span>
                             </div>
                             <div className="">
-                                <Link to="" className="flex justify-center p-3 text-[#0E1133] rounded-sm no-underline items-center
+                                <Link to={{ pathname: "https://play.google.com/store/apps/details?id=com.somtinsomtin.app"}}
+                                target="_blank" className="flex justify-center p-3 text-[#0E1133] rounded-sm no-underline items-center
                                 border-2 border-solid border-[#0E1133] hover:bg-[#0E1133] hover:text-white
                                 hover:border-none ">
                                     <FaGooglePlay />

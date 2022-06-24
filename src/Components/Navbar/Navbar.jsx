@@ -1,55 +1,72 @@
-import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Link, NavLink } from 'react-router-dom'
+import { faUser } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useState } from "react"
+import { Link } from "react-router-dom"
+import Logo from '../../Assets/sometinlogo250-150-red.png'
 
-function Navbar() {
-
-
-
+export default function Navbar(fixed) {
+    const [isOpen, setIsOpen] = useState()
     return (
-    <div className="text-red-500 pt-2 w-[80vw] -z-0">
-        <div className={` container-xxl position-relative`}>
-            <nav className=" navbar navbar-expand-lg 
-            px-4 px-lg-5 py-3 py-lg-0 sticky-top bg-white
-            shadow-md text-red-dark p-6 ">
-                <Link to='/' className="navbar-brand p-3 text-blue-800">
-                    <h2>
-                        Dashboard
-                    </h2>
-                </Link>
+        <>
+            <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-transparent mb-3 shadow-sm">
+                <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+                    <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+                        <img src={Logo} alt="Brand" className="w-2/6" />
+                        <button
+                            className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+                            type="button"
+                            onClick={() => setIsOpen(!isOpen)}
+                        >
+                            <i className="fas fa-bars"></i>
+                        </button>
+                    </div>
+                    <div
+                        className={
+                            "lg:flex flex-grow items-center" +
+                            (isOpen ? " flex" : " hidden")
+                        }
+                        id="example-navbar-danger">
+                        <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+                            <li className="nav-item">
+                                <Link to="/" className="px-3 py-2 flex no-underline items-center text-sm uppercase font-bold
+                                    leading-snug text-[#222544] hover:opacity-75">
+                                    Home
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/login" className="px-3 py-2 flex no-underline items-center text-sm uppercase font-bold
+                                    leading-snug text-[#222544] hover:opacity-75">
+                                    Consumers
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="" className="px-3 py-2 flex no-underline items-center text-sm uppercase font-bold
+                                    leading-snug text-[#222544] hover:opacity-75" >
+                                    Vendors
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="" className="px-3 py-2 flex no-underline items-center text-sm uppercase font-bold
+                                    leading-snug text-[#222544] hover:opacity-75" >
+                                    Support
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul className=" flex flex-col lg:flex-row lg:ml-auto">
+                            <li className="flex ">
+                                <Link to="/login" className="nav-item text-[#222544] 
+                                no-underline uppercase">
+                                    <FontAwesomeIcon icon={faUser} className="space-x-3" />
+                                    Consumer
+                                </Link>
+                            </li>
 
-                <button className="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse">
-                    <FontAwesomeIcon icon={ faBars } />
-                </button>
-
-                <div className="collapse navbar-collapse" id="navbarCollapse">
-                    <div className="navbar-nav ms-auto py-0 px-3 text-start">
-                        <NavLink to='/login'
-                        className="nav-item nav-link">
-                            Sign in
-                        </NavLink>
-                        <NavLink to='/register'
-                        className="nav-item nav-link">
-                            Sign up
-                        </NavLink>
-                        <div className="flex px-4 py-2 items-center rounded-md bg-blue-800 p-2">
-                            <FontAwesomeIcon icon={faSearch} className="float-left block text-white
-                            mr-3" />
-                            <input type={"search"} className="text-base bg-transparent w-full text-white
-                            focus:outline-none"
-                            placeholder='Search here...' />
-                        </div>
+                        </ul>
                     </div>
                 </div>
-
             </nav>
-        </div>
-    </div>
-
-)
+        </>
+    )
 }
-
-export default Navbar

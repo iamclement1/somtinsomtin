@@ -6,17 +6,21 @@ function MerchantCard ({ name, number, img}) {
     return (
         <div className="container-full">
             <div className="row">
-                <ul style={{
-                    listStyleType: 'none'
-                }}>
-                    { MerchantData.map(MerchantData => {
-                        return <MerchantList MerchantData={MerchantData}
-                        key={MerchantData.id} />
-                    }) }
-                </ul>
+                {
+                    MerchantData.map((MerchantData) => (
+                        <ul>
+                            <li>
+                                <MerchantList MerchantData={MerchantData}
+                                key={MerchantData.id} />
+                            </li>
+                        </ul>
+                    ))
+                }
+                
             </div>
         </div>
     )
 }
 
 export default MerchantCard
+

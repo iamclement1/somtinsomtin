@@ -14,12 +14,14 @@ import NotFound from "../../Pages/NotFound/NotFound"
 import PhonePage from "../ForgotPassword/PhonePage";
 import ForgotPassword from "../ForgotPassword/ForgotPassword";
 import Profile from '../../Pages/Profile/Profile'
+import Landing from "../../Pages/Landing/Landing";
 
 export default function Routing() {
     return (
         <div>
             <Routes>
-                <Route path="/" element={ <Marketplace/> } />
+                <Route path="/" element={ <Landing /> } />
+                <Route path="/marketplace" element={ <Marketplace/> } />
                 <Route path="login" element={ <Login />}  />
                 <Route path="phone-verify" element={ <PhonePage /> } />
                 <Route path="forget-password" element={ <ForgotPassword /> } />

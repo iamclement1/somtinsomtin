@@ -17,7 +17,7 @@ export default function Wallet(props) {
     const handleShow = () => setShow(true);
 
     const handleSelect = (event) => {
-        setValue(event.id)
+        setValue(event)
     }
 
     const handleAddWallet = (event) => {
@@ -84,13 +84,13 @@ export default function Wallet(props) {
                                                 {
                                                     WalletList.map((value, index) => {
                                                         return (
-                                                            <li active={index === 0 ? true : false}
-                                                                key={value.id} role="button" value={value.value}
+                                                            <li
+                                                                key={value.id} role="button"
                                                                 className="pl-3 mb-1 hover:bg-red-600 p-2
-                                                                            hover:text-white" 
-                                                                            onSelect={handleSelect}>
+                                                                            hover:text-white" onClick={setValue}>
                                                                 {value.name}
                                                             </li>
+                                                            
                                                             
                                                         )
                                                     })
@@ -148,8 +148,8 @@ export default function Wallet(props) {
                                         {
                                             WalletTransactions.map((transaction, index) => {
                                                 return (
-                                                    <li active={index === 0 ? true : false}
-                                                        eventKey={transaction.name} role="button" value={setValue}
+                                                    <li
+                                                        key={transaction.name} role="button"
                                                         className=" hover:bg-[#E4043C] hover:text-white rounded-sm p-1">
                                                         {transaction.name}
                                                     </li>

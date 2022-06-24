@@ -169,13 +169,15 @@ export default function Sidebar({ children }, props) {
                                         {/* <FontAwesomeIcon icon={faBell} className="text-[#e4043c]
                                                         md:text-2xl p-2 rounded-full" /> */}
                                         <div>
-                                            <Link to="/profile" className="no-underline text-black">
-                                                <h2>ExampleUser</h2>
+                                            <Link to="/profile" className="no-underline text-black text-xl">
+                                                <h2 className="text-xl">ExampleUser</h2>
                                             </Link>
                                         </div>
                                         <div>
                                             <button className="bg-[#e4043c] text-white p-2 rounded-sm " onClick={Logout}>
+
                                                 Logout
+                                                
                                             </button>
                                         </div>
                                     </div>

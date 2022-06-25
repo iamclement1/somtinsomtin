@@ -9,7 +9,7 @@ export default function Merchant() {
 
   useEffect(() => {
     fetchMerchant()
-  }, [])
+  }, )
 
 
   const fetchMerchant = () => {

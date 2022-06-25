@@ -38,7 +38,7 @@ export default function Profile() {
                 <div className="w-[90px] pt-3 mb-3">
                     <img src={ProfileLogo} alt="" />
                 </div>
-                
+                { userData.first_name}
             </div>
         </Sidebar>
     )

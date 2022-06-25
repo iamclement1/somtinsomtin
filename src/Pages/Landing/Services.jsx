@@ -1,4 +1,3 @@
-import { MotionAnimate } from 'react-motion-animate'
 import Icon1 from '../../Assets/icons/1.png'
 import Icon2 from '../../Assets/icons/2.png'
 import Icon3 from '../../Assets/icons/3.png'
@@ -17,7 +16,7 @@ export default function Services() {
                         Its more than a gift voucher; its a way to say I Dey 4 U
                     </p>
                 </div>
-                <MotionAnimate animation="fadeInUp" reset={true}>
+                
                     <div className="md:flex md:p-24 md:space-x-8 md:space-y-0 space-y-4">
                         <div className="bg-white text-center rounded-md p-5 ">
                             <div className="m-auto">
@@ -72,7 +71,6 @@ export default function Services() {
                             </p>
                         </div>
                     </div>
-                </MotionAnimate>
             </div>
         </main>
     )

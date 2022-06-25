@@ -1,3 +1,11 @@
+.bg-shape {
+    background: url(../../Assets/shape.svg);
+    width: 20%;
+    height: 30%;
+    position: absolute;
+    left: 62rem;
+}
+
 .back-to-top {
     position: fixed;
     bottom: 20px;

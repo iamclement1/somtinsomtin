@@ -3,7 +3,7 @@ import Image from '../../Assets/hero-img.png'
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 export default function Hero() {
 
-    const iosDownload = () =>{
+    const iosDownload = () => {
         window.location.href("https://apps.apple.com/gh/app/somtin-somtin/id1597263559")
     }
 
@@ -20,27 +20,29 @@ export default function Hero() {
                         <h3 className="md:block flex justify-center text-xl text-[#E0013F] ">
                             SomtinSomtin
                         </h3>
-                        <h2 className="md:block flex justify-center font-bold md:text-6xl text-3xl text-[#0E1133]">
+                        <h2 className="md:block font-bold md:text-6xl 
+                        text-4xl text-[#0E1133]">
                             A Gift Voucher That Rewards U
                         </h2>
-                        <p className="md:block flex justify-center text-gray-600 pt-3">
+                        <p className="md:block flex justify-center md:text-xl 
+                        items-center align-center md:text-start text-xl text-gray-600 pt-3">
                             Buy, Share, Send & TopUp Your SomtinSomtin Gift Voucher; Earn Loyalty Points You Can Use Anywhere & Anytime!
                         </p>
                         <div className="md:flex md:space-x-2 pt-4 ">
                             <div>
-                                <span 
-                                target="_blank" className="flex justify-center no-underline p-3 bg-[#0E1133] 
-                                text-white rounded-sm items-center">
+                                <span
+                                    target="_blank" className="flex justify-center no-underline p-3 bg-[#FF9900] 
+                                text-white rounded-sm items-center hover:bg-amber-400">
                                     <FaApple />
                                     <button className="ml-2"
-                                    onClick={iosDownload}>
+                                        onClick={iosDownload}>
                                         Download for iOS
                                     </button>
                                 </span>
                             </div>
                             <div className="">
-                                <Link to={{ pathname: "https://play.google.com/store/apps/details?id=com.somtinsomtin.app"}}
-                                target="_blank" className="flex justify-center p-3 text-[#0E1133] rounded-sm no-underline items-center
+                                <Link to={{ pathname: "https://play.google.com/store/apps/details?id=com.somtinsomtin.app" }}
+                                    target="_blank" className="flex justify-center p-3 text-[#0E1133] rounded-sm no-underline items-center
                                 border-2 border-solid border-[#0E1133] hover:bg-[#0E1133] hover:text-white
                                 hover:border-none ">
                                     <FaGooglePlay />
@@ -51,7 +53,7 @@ export default function Hero() {
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </main>

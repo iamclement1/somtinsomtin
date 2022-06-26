@@ -4,6 +4,7 @@ import Hero from "./Hero";
 import Services from "./Services";
 import { BsFillArrowUpSquareFill } from "react-icons/bs";
 import './Landing.css'
+import Footer from "./Footer";
 
 export default function Landing () {
     const [ showButton, setShowButton ] = useState(false);
@@ -29,6 +30,7 @@ export default function Landing () {
             <Navbar />
             <Hero />
             <Services />
+            <Footer />
 
             { showButton && (
                 <button onClick={scrollToTop} className="back-to-top">

@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { BsFillArrowUpSquareFill } from "react-icons/bs";
 import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "./Footer";
 
 export default function Terms() {
-    const [ showButton, setShowButton ] = useState(false);
+    const [showButton, setShowButton] = useState(false);
 
     useEffect(() => {
         window.addEventListener("scroll", () => {
-            if (window.pageYOffset > 250 ) {
+            if (window.pageYOffset > 250) {
                 setShowButton(true);
             } else {
                 setShowButton(false);
@@ -21,7 +22,7 @@ export default function Terms() {
             behavior: 'smooth'
         })
     }
-    
+
     return (
         <main className="">
             <Navbar />
@@ -167,12 +168,13 @@ export default function Terms() {
                         </div>
                     </div>
                 </div>
-                { showButton && (
+            </div>
+            <Footer />
+            {showButton && (
                 <button onClick={scrollToTop} className="back-to-top">
                     <BsFillArrowUpSquareFill />
                 </button>
             )}
-            </div>
         </main>
     )
 }

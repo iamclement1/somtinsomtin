@@ -1,11 +1,7 @@
-import { Link } from 'react-router-dom'
 import Image from '../../Assets/hero-img.png'
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 export default function Hero() {
 
-    const iosDownload = () => {
-        window.location.href("https://apps.apple.com/gh/app/somtin-somtin/id1597263559")
-    }
 
     return (
         <main>
@@ -30,18 +26,17 @@ export default function Hero() {
                         </p>
                         <div className="md:flex md:space-x-2 pt-4 ">
                             <div>
-                                <span
+                                <button onClick={() => window.location.href = "https://apps.apple.com/gh/app/somtin-somtin/id1597263559"}
                                     target="_blank" className="flex justify-center no-underline p-3 bg-[#FF9900] 
                                 text-white rounded-sm items-center hover:bg-amber-400">
                                     <FaApple />
-                                    <button className="ml-2"
-                                        onClick={iosDownload}>
+                                    <button className="ml-2">
                                         Download for iOS
                                     </button>
-                                </span>
+                                </button>
                             </div>
                             <div className="">
-                                <Link to={{ pathname: "https://play.google.com/store/apps/details?id=com.somtinsomtin.app" }}
+                                <button onClick={() => window.location.href = "https://play.google.com/store/apps/details?id=com.somtinsomtin.app"}
                                     target="_blank" className="flex justify-center p-3 text-[#0E1133] rounded-sm no-underline items-center
                                 border-2 border-solid border-[#0E1133] hover:bg-[#0E1133] hover:text-white
                                 hover:border-none ">
@@ -49,7 +44,7 @@ export default function Hero() {
                                     <button className="ml-2">
                                         Download for Android
                                     </button>
-                                </Link>
+                                </button>
                             </div>
                         </div>
                     </div>

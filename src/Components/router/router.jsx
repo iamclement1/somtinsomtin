@@ -16,6 +16,7 @@ import ForgotPassword from "../ForgotPassword/ForgotPassword";
 import Profile from '../../Pages/Profile/Profile'
 import Landing from "../../Pages/Landing/Landing";
 import Terms from "../../Pages/Landing/Terms";
+import ConsumerTerms from "../../Pages/Landing/ConsumerTerms";
 
 export default function Routing() {
     return (
@@ -23,6 +24,7 @@ export default function Routing() {
             <Routes>
                 <Route path="/" element={ <Landing /> } />
                     <Route path="terms" element={ <Terms /> } />
+                    <Route path="consumer-terms" element={ <ConsumerTerms /> } />
                 <Route path="/marketplace" element={ <Marketplace/> } />
                 <Route path="login" element={ <Login />}  />
                 <Route path="phone-verify" element={ <PhonePage /> } />

@@ -21,7 +21,7 @@ export default function Footer() {
                     <div className="col-md-2">
                         <div>
                             <h2 className="text-xl font-bold text-[#0E1133]">Home</h2>
-                            <Link to="/" className="text-gray-600 no-underline font-semibold text-sm hover:text-red-700 ">
+                            <Link to="/login" className="text-gray-600 no-underline font-semibold text-sm hover:text-red-700 ">
                                 <p>Consumers</p>
                             </Link>
                             <Link to="/" className="text-gray-600 no-underline font-semibold text-sm hover:text-red-700 ">

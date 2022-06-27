@@ -28,7 +28,7 @@ export default function Hero() {
                             <div>
                                 <button onClick={() => window.location.href = "https://apps.apple.com/gh/app/somtin-somtin/id1597263559"}
                                     target="_blank" className="flex justify-center no-underline p-3 bg-[#FF9900] 
-                                text-white rounded-sm items-center hover:bg-amber-400">
+                                text-white rounded-sm items-center hover:bg-amber-400 w-full">
                                     <FaApple />
                                     <button className="ml-2">
                                         Download for iOS
@@ -39,7 +39,7 @@ export default function Hero() {
                                 <button onClick={() => window.location.href = "https://play.google.com/store/apps/details?id=com.somtinsomtin.app"}
                                     target="_blank" className="flex justify-center p-3 text-[#0E1133] rounded-sm no-underline items-center
                                 border-2 border-solid border-[#0E1133] hover:bg-[#0E1133] hover:text-white
-                                hover:border-none ">
+                                hover:border-none w-full">
                                     <FaGooglePlay />
                                     <button className="ml-2">
                                         Download for Android

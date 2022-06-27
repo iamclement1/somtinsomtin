@@ -43,7 +43,7 @@ export default function Footer() {
                             <Link to="/consumer-terms" className="text-gray-600 no-underline font-semibold text-sm hover:text-red-700 ">
                                 <p>Terms of Sale</p>
                             </Link>
-                            <Link to="/" className="text-gray-600 no-underline font-semibold text-sm hover:text-red-700 ">
+                            <Link to="/corporate-terms" className="text-gray-600 no-underline font-semibold text-sm hover:text-red-700 ">
                                 <p>Corporate Terms Of Sale</p>
                             </Link>
                             <Link to="/" className="text-gray-600 no-underline font-semibold text-sm hover:text-red-700 ">

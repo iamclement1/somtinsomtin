@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Transition } from "@headlessui/react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import Logo from '../../Assets/sometinlogo250-150-red.png'
+import Logo from '../../Assets/brand-logo/sometinlogo250-150-red.png'
 
 export default function Navbar(fixed) {
     const [showNav, setShowNav] = useState(false);

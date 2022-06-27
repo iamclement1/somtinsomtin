@@ -1,4 +1,4 @@
-import Logo from '../../Assets/sometinlogo250-150-red.png'
+import Logo from '../../Assets/brand-logo/sometinlogo250-150-red.png'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import { useEffect, useState } from 'react'

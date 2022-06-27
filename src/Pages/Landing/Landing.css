@@ -22,3 +22,9 @@
 .back-to-top:hover {
     background: orange;
 }
+
+.bg-hero {
+    background: url(../../Assets/hero-bg.svg);
+    position: relative;
+    bottom: 90px;
+}

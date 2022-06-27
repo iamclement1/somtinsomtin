@@ -7,10 +7,10 @@ export default function Hero() {
         <main>
             <div className=" relative flex pt-11">
                 <div className="flex flex-col w-full justify-between items-center
-                md:flex-row-reverse pt-11">
+                md:flex-row-reverse pt-11 bg-hero">
                     <div className="md:w-5/6 mx-auto md:px-11 md:py-5 md:pt-11 md:mb-0">
                         <img src={Image} alt="hero-Landing"
-                            className="pt-16" />
+                            className="pt-36" />
                     </div>
                     <div className=" md:mx-20 md:w-4/6 w-full">
                         <h3 className="md:block flex justify-center text-xl text-[#E0013F] ">

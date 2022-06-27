@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Sidebar from "../../Components/Sidebar/Sidebar";
-import ProfileLogo from '../../Assets/sometinlogo1024.png'
+import ProfileLogo from '../../Assets/brand-logo/sometinlogo1024.png'
 
 
 export default function Profile() {

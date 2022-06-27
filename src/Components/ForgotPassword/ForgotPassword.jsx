@@ -5,7 +5,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import { toast } from "react-toastify";
-import Logo from '../../Assets/sometinlogo250-150-red.png'
+import Logo from '../../Assets/brand-logo/sometinlogo250-150-red.png'
 
 export default function ForgotPassword() {
 

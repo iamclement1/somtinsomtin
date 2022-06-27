@@ -18,6 +18,7 @@ import Landing from "../../Pages/Landing/Landing";
 import Terms from "../../Pages/Landing/Terms";
 import Consumer from "../../Pages/Landing/Consumer"
 import Corporate from "../../Pages/Landing/Corporate";
+import Privacy from "../../Pages/Landing/Privacy";
 
 export default function Routing() {
     return (
@@ -27,6 +28,7 @@ export default function Routing() {
                     <Route path="terms" element={ <Terms /> } />
                     <Route path="consumer-terms" element={ <Consumer /> } />
                     <Route path="corporate-terms" element={ <Corporate />} />
+                    <Route path="privacy-terms" element={ <Privacy />} />
                 <Route path="/marketplace" element={ <Marketplace/> } />
                 <Route path="login" element={ <Login />}  />
                 <Route path="phone-verify" element={ <PhonePage /> } />

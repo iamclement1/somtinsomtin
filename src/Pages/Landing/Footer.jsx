@@ -37,7 +37,7 @@ export default function Footer() {
                             <h2 className="text-xl font-bold text-[#0E1133]">
                                 Resources
                             </h2>
-                            <Link to="/" className="text-gray-600 no-underline font-semibold text-sm hover:text-red-700 ">
+                            <Link to="/terms" className="text-gray-600 no-underline font-semibold text-sm hover:text-red-700 ">
                                 <p>Terms of Service</p>
                             </Link>
                             <Link to="/" className="text-gray-600 no-underline font-semibold text-sm hover:text-red-700 ">

@@ -27,7 +27,7 @@ export default function Hero() {
                         <div className="md:flex md:space-x-2 pt-4 ">
                             <div>
                                 <button onClick={() => window.location.href = "https://apps.apple.com/gh/app/somtin-somtin/id1597263559"}
-                                    target="_blank" className="flex justify-center no-underline p-3 bg-[#FF9900] 
+                                    target="_blank" className="flex justify-center no-underline p-3 bg-[#fca21a] 
                                 text-white rounded-sm items-center hover:bg-amber-400 w-full">
                                     <FaApple />
                                     <button className="ml-2">

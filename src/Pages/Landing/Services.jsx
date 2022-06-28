@@ -1,11 +1,10 @@
-import Icon1 from '../../Assets/icons/1.png'
-import Icon2 from '../../Assets/icons/2.png'
-import Icon3 from '../../Assets/icons/3.png'
-import Icon4 from '../../Assets/icons/4.png'
+import { BiWallet } from 'react-icons/bi';
+import { AiFillShopping, AiOutlineSend } from 'react-icons/ai'
 import './Landing.css'
 import Aos from "aos"
 import "aos/dist/aos.css"
 import { useEffect } from 'react'
+import { BsFillWalletFill } from 'react-icons/bs'
 
 export default function Services() {
     useEffect(() => {
@@ -30,9 +29,9 @@ export default function Services() {
                         data-aos-duration="1000"
                         data-aos-easing="ease-in-out">
                         <div className="m-auto">
-                            <img src={Icon1} alt="icon"
+                            <AiFillShopping
                                 className="bg-gradient-to-r from-purple-500 to-pink-500
-                                        p-3 rounded-bl-lg  rounded-tr-lg m-auto" />
+                                        p-3 rounded-md m-auto text-white text-6xl" />
                         </div>
                         <h2 className="text-[#0E1133] pt-3 font-bold text-xl" >
                             Buy
@@ -47,9 +46,9 @@ export default function Services() {
                         data-aos-duration="1000"
                         data-aos-easing="ease-in-out">
                         <div className="m-auto">
-                            <img src={Icon2} alt="icon"
+                            <AiOutlineSend
                                 className="bg-gradient-to-r from-orange-300 to-orange-500
-                                        p-3 rounded-br-lg  rounded-tl-lg m-auto" />
+                                        p-3 rounded-md m-auto text-white text-6xl" />
                         </div>
                         <h2 className="text-[#0E1133] pt-3 font-bold text-xl" >
                             Send
@@ -64,9 +63,9 @@ export default function Services() {
                         data-aos-duration="1000"
                         data-aos-easing="ease-in-out">
                         <div className="m-auto">
-                            <img src={Icon3} alt="icon"
+                            <BsFillWalletFill
                                 className="bg-gradient-to-r from-green-300 to-green-500
-                                        p-3 rounded-bl-lg  rounded-tr-lg m-auto" />
+                                p-3 rounded-md m-auto text-white text-6xl" />
                         </div>
                         <h2 className="text-[#0E1133] pt-3 font-bold text-xl" >
                             Top Up
@@ -81,9 +80,9 @@ export default function Services() {
                         data-aos-duration="1000"
                         data-aos-easing="ease-in-out">
                         <div className="m-auto">
-                            <img src={Icon4} alt="icon"
+                            <BiWallet
                                 className="bg-gradient-to-r from-purple-400 to-purple-600
-                                        p-3 rounded-lg m-auto" />
+                                        p-3 rounded-md m-auto text-white text-6xl" />
                         </div>
                         <h2 className="text-[#0E1133] pt-3 font-bold text-xl" >
                             Earn Cash

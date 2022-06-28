@@ -24,11 +24,13 @@ export default function Profile() {
                 Authorization: `Bearer ${auth_token}`
             }
         })
+        
             .then(response => {
                 setUserData(response.data)
                 console.log(response)
                 localStorage.getItem('auth_token')
                 localStorage.getItem('user')
+
             })
             .catch(error => console.error(error))
     }
@@ -38,7 +40,7 @@ export default function Profile() {
                 <div className="w-[90px] pt-3 mb-3">
                     <img src={ProfileLogo} alt="" />
                 </div>
-                { userData.first_name}
+                
             </div>
         </Sidebar>
     )

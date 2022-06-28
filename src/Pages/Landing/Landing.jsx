@@ -5,6 +5,7 @@ import Services from "./Services";
 import { BsFillArrowUpSquareFill } from "react-icons/bs";
 import './Landing.css'
 import Footer from "./Footer";
+import Everyone from "./Everyone";
 
 export default function Landing () {
     const [ showButton, setShowButton ] = useState(false);
@@ -30,6 +31,7 @@ export default function Landing () {
             <Navbar />
             <Hero />
             <Services />
+            <Everyone />
             <Footer />
 
             { showButton && (

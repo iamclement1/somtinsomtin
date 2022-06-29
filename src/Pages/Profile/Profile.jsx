@@ -8,12 +8,6 @@ export default function Profile() {
 
     const [userData, setUserData] = useState([]);
 
-    useEffect(() => {
-        getUserData();
-    })
-
-
-
     const auth_token = localStorage.getItem('token');
     console.log(auth_token)
     const url = "https://somtinsomtin-api.herokuapp.com/api/v1.0/users/me/"
@@ -24,7 +18,7 @@ export default function Profile() {
                 Authorization: `Bearer ${auth_token}`
             }
         })
-        
+
             .then(response => {
                 setUserData(response.data)
                 console.log(response)
@@ -34,6 +28,13 @@ export default function Profile() {
             })
             .catch(error => console.error(error))
     }
+
+
+    useEffect(() => {
+        getUserData();
+    }, [])
+
+
     return (
         <Sidebar>
             <div>
@@ -41,6 +42,20 @@ export default function Profile() {
                     <img src={ProfileLogo} alt="" />
                 </div>
                 
+                <button onClick={getUserData}>User Data</button>
+                {userData.length > 0 && (
+
+                    <ul>
+
+                        {userData.map(user => (
+
+                            <li key={user.id}>{user}</li>
+
+                        ))}
+
+                    </ul>
+
+                )}
             </div>
         </Sidebar>
     )

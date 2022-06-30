@@ -1,5 +1,3 @@
-import './Merchant.css';
-
 
 function MerchantCard(props) {
 
@@ -9,21 +7,24 @@ function MerchantCard(props) {
         if (merchants.length > 0) {
             return (
                 merchants.map((merchant, index) => {
-                    console.log(merchant);
+                    // console.log(merchant);
                     return (
-                        <div className="max-w-sm w-full lg:max-w-2/4 flex items-center bg-white shadow-md" key={merchant.id}>
-                            <img src={merchant.logo} alt="merchant__logo" className="w-3/6"
+                        <>
+                            <div className="max-w-sm w-full lg:max-w-2/4 flex items-center bg-white shadow-md border mb-4" key={merchant.id}>
+                                <img src={merchant.logo} alt="merchant__logo" className="w-3/6"
                                     style={{
                                         width: '80px',
                                         height: '60px',
-                                        padding: '4px',
+                                        margin: '18px',
                                         align: 'center'
                                     }} />
-                            <div className="bg-white rounded-md p-4 flex flex-col justify-between leading-normal">
-                                <h2 className="merchat__title">{merchant.name}</h2>
-                                <p className="merchant__body">{merchant.merchant_code}</p>
+                                <div className="bg-white rounded-md p-4 flex flex-col justify-between leading-normal">
+                                    <h2 className="merchat__title text-xl">{merchant.name}</h2>
+                                    <p className="merchant__body">{merchant.merchant_code}</p>
+                                </div>
                             </div>
-                        </div>
+
+                        </>
                     )
                 })
             )

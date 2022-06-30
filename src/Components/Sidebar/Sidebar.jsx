@@ -28,7 +28,8 @@ export default function Sidebar({ children }, props) {
         toast('user logged out successfully')
     }
 
-    const fetchUser = () => {
+
+    useEffect(() => {
         axios.get('https://somtinsomtin-api.herokuapp.com/api/v1.0/merchants/me/', {
             headers: {
                 Authorization: `Bearer ${auth_token}`
@@ -36,16 +37,12 @@ export default function Sidebar({ children }, props) {
         } )
         .then((response) => {
             setUsers(response.data.results)
-            console.log(response.data.results)
+            // console.log(response.data.results)
         })
         .catch((error) => {
             console.log(error)
         })
-    }
-
-    useEffect(() => {
-        fetchUser()
-    }, [])
+    }, [auth_token])
 
 
 
@@ -191,13 +188,13 @@ export default function Sidebar({ children }, props) {
                                         {/* <FontAwesomeIcon icon={faBell} className="text-[#e4043c]
                                                         md:text-2xl p-2 rounded-full" /> */}
                                         <div>
-                                            {/* { users && (
+                                            { users && (
                                             <Link to="/profile" className="no-underline text-black text-xl">
-                                                { users.map(user => (
+                                                {/* { users.map((user, index) => (
                                                     <li key={user.id}> {user.first_name} </li>
-                                                ))}
+                                                ))} */}
                                             </Link>
-                                            )} */}
+                                            )}
                                         </div>
                                         <div>
                                             <button className="bg-[#e4043c] text-white p-2 rounded-sm " onClick={Logout}>

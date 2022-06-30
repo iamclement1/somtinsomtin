@@ -1,25 +1,47 @@
 import './Merchant.css';
-import { MerchantData } from '../../Utils/MerchantData'
-import MerchantList from './MerchantList';
 
-function MerchantCard ({ name, number, img}) {
+
+function MerchantCard(props) {
+
+    const displayMerchant = (props) => {
+        const { merchants } = props;
+
+        if (merchants.length > 0) {
+            return (
+                merchants.map((merchant, index) => {
+                    console.log(merchant);
+                    return (
+                        <div className="max-w-sm w-full lg:max-w-2/4 flex items-center bg-white shadow-md" key={merchant.id}>
+                            <img src={merchant.logo} alt="merchant__logo" className="w-3/6"
+                                    style={{
+                                        width: '80px',
+                                        height: '60px',
+                                        padding: '4px',
+                                        align: 'center'
+                                    }} />
+                            <div className="bg-white rounded-md p-4 flex flex-col justify-between leading-normal">
+                                <h2 className="merchat__title">{merchant.name}</h2>
+                                <p className="merchant__body">{merchant.merchant_code}</p>
+                            </div>
+                        </div>
+                    )
+                })
+            )
+        }
+        else {
+            return (
+                <h3>
+                    No merchant found
+                </h3>
+            )
+        }
+    }
     return (
-        <div className="container-full">
-            <div className="row">
-                {
-                    MerchantData.map((MerchantData) => (
-                        <ul>
-                            <li>
-                                <MerchantList MerchantData={MerchantData}
-                                key={MerchantData.id} />
-                            </li>
-                        </ul>
-                    ))
-                }
-                
-            </div>
-        </div>
+        <>
+            {displayMerchant(props)}
+        </>
     )
+
 }
 
 export default MerchantCard

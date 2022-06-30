@@ -13,7 +13,7 @@ export default function Navbar(fixed) {
     }
     return (
         <div>
-            <nav className='fixed top-0 z-10 w-full md:justify-between bg-white bg-opacity-75
+            <nav className='fixed top-0 z-10 w-full md:justify-between bg-white
             text-white font-Poppins '>
                 <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative'>
                     <div className='flex items-center justify-between px-4 py-5'>

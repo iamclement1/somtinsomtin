@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Sidebar from "../../Components/Sidebar/Sidebar";
+import Loader from '../../Components/Loader/Loader'
+import MerchantCard from "./MerchantCard";
 
 export default function Merchant() {
 
@@ -8,22 +10,7 @@ export default function Merchant() {
   const [loading, setLoading] = useState(true);
   const auth_token = localStorage.getItem('token');
 
-  // const fetchMerchant = () => {
-  //   axios.get('https://somtinsomtin-api.herokuapp.com/api/v1.0/merchants/approved_merchants/', {
-  //     headers: {
-  //       Authorization: `Bearer ${auth_token}`
-  //     }
-  //   })
-
-  //   .then((response) => {
-  //     setMerchants(response.data.result)
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   })
-  // }
-
-  useEffect(() => {
+  const fetchMerchant = () => {
     axios.get('https://somtinsomtin-api.herokuapp.com/api/v1.0/merchants/approved_merchants/', {
       headers: {
         Authorization: `Bearer ${auth_token}`
@@ -31,21 +18,43 @@ export default function Merchant() {
     })
 
       .then((response) => {
-        setMerchants(response.data.result);
-        setLoading(false);
+        const allMerchants = response.data.results
+        setMerchants(allMerchants)
+        console.log(response.data.results)
+        setLoading(false)
+        
       })
       .catch((error) => {
         console.log(error);
       })
-  }, [loading])
-  console.log(merchants);
+  }
+
+  useEffect(() => {
+    fetchMerchant()
+  }, [])
+
+  // useEffect(() => {
+  //   axios.get('https://somtinsomtin-api.herokuapp.com/api/v1.0/merchants/approved_merchants/', {
+  //     headers: {
+  //       Authorization: `Bearer ${auth_token}`
+  //     }
+  //   })
+
+  //     .then((response) => {
+  //       setMerchants(response.data.result);
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     })
+  // }, [loading, auth_token])
 
   return (
     <Sidebar>
-      <div className="container-fluid m-auto pt-56">
+      <div className="container-fluid">
         {loading ? (
-          <div className="text-center">
-            loading...
+          <div className="text-center m-auto pt-56">
+            <Loader />
           </div>
         ) : (
           <>
@@ -54,13 +63,14 @@ export default function Merchant() {
               <p className="text-gray-500 text-sm"> Approved Somtins Merchants </p>
             </div>
             <div>
-              {
-            merchants.map(merchant => (
-              <div>
-                clement
-              </div>
-            ))
-          }
+              {/* {
+                merchants.map(merchant => (
+                  <div>
+                    { merchant.name }
+                  </div>
+                ))
+              } */}
+              <MerchantCard merchants={merchants} />
             </div>
           </>
         )}

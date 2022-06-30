@@ -4,6 +4,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Tooltip from '@mui/material/Tooltip';
+import axios from 'axios';
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -17,6 +18,8 @@ export default function Sidebar({ children }, props) {
 
     const [isOpen, setIsOpen] = useState(false)
     const [title, setTitle] = useState();
+    const [ users, setUsers ] = useState();
+    const auth_token = localStorage.getItem('token');
 
 
     const Logout = () => {
@@ -24,6 +27,25 @@ export default function Sidebar({ children }, props) {
         window.location.reload()
         toast('user logged out successfully')
     }
+
+    const fetchUser = () => {
+        axios.get('https://somtinsomtin-api.herokuapp.com/api/v1.0/merchants/me/', {
+            headers: {
+                Authorization: `Bearer ${auth_token}`
+            }
+        } )
+        .then((response) => {
+            setUsers(response.data.results)
+            console.log(response.data.results)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+
+    useEffect(() => {
+        fetchUser()
+    }, [])
 
 
 
@@ -169,15 +191,17 @@ export default function Sidebar({ children }, props) {
                                         {/* <FontAwesomeIcon icon={faBell} className="text-[#e4043c]
                                                         md:text-2xl p-2 rounded-full" /> */}
                                         <div>
+                                            {/* { users && (
                                             <Link to="/profile" className="no-underline text-black text-xl">
-                                                <h2 className="text-xl">ExampleUser</h2>
+                                                { users.map(user => (
+                                                    <li key={user.id}> {user.first_name} </li>
+                                                ))}
                                             </Link>
+                                            )} */}
                                         </div>
                                         <div>
                                             <button className="bg-[#e4043c] text-white p-2 rounded-sm " onClick={Logout}>
-
                                                 Logout
-                                                
                                             </button>
                                         </div>
                                     </div>

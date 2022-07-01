@@ -12,11 +12,11 @@ export default function ForgotPassword() {
     const navigate = useNavigate('')
 
     const [isLoading, setIsLoading] = useState(false)
-    const [number, setNumber ]  = useState()
-    const [ code, setCode ] = useState()
-    const [ password, setPassword ] = useState()
-    const [ confirmNewPassword, setConfirmNewPassword ] = useState()
-    const auth_token = localStorage.getItem('token');
+    const [number, setNumber] = useState()
+    const [code, setCode] = useState()
+    const [password, setPassword] = useState()
+    const [confirmNewPassword, setConfirmNewPassword] = useState()
+
 
     useEffect(() => {
         const number = localStorage.getItem('number', 'user')
@@ -28,32 +28,45 @@ export default function ForgotPassword() {
         event.preventDefault();
 
         const data = {
-            "phon_number": number,
+            "phone_number": number,
             "unique_code": code,
             "password": password,
 
         }
-        axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/forgot_password/', data, {
-            headers: {
-                Authorization: `Bearer ${auth_token}`
-            }
-        })
-        .then(response => {
-            const {auth_token } = response.data;
-            localStorage.setItem('token', auth_token);
-            console.log(response.data)
-            setIsLoading(false)
-            toast("password reset successfully")
+        axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/forgot_password/', data)
+            .then(response => {
+                const { auth_token } = response.data;
+                localStorage.setItem('token', auth_token);
+                console.log(response.data)
+                setIsLoading(false)
+                toast("password reset successfully")
 
-            if( response.data.response_code === "100") {
-                navigate('/login')
-            }
+                if (response.data.response_code === "100") {
+                    navigate('/login')
+                }
+            })
+            .catch(error => {
+                console.log(error.response);
+                setIsLoading(false)
+            })
+    }
+
+    const handleResend = (event) => {
+        const data ={
+            "phone_number": number,
+        }
+
+        axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/users/resend_signup_verification/', data)
+        .then( response => {
+            console.log(response.data);
+            toast.success('OTP resent')
         })
         .catch(error => {
-            console.log(error.response);
-            setIsLoading(false)
+            console.log(error)
         })
+
     }
+
     return (
         <div className=" container-xxl position-relative login-background h-screen flex bg-gray-bg1
         font-sans">
@@ -77,6 +90,16 @@ export default function ForgotPassword() {
                             className={`w-full p-2 text-gray-600 border rounded-md outline-none
                         text-sm transition duration-150 ease-in-out mb-3`} />
                     </div>
+                    <div className="flex space-x-4 justify-center">
+                        <p className="text-gray-600 text-center text-xs">
+                            Didn't receive OTP?
+                        </p>
+                        <p role="button" onClick={handleResend}
+                            className="text-red-400 text-center text-xs
+                    text-underline cursor-pointer hover:text-red-700">
+                            Resend OTP
+                        </p>
+                    </div>
                     <div>
                         <label htmlFor="Password"> </label>
                         <input type="password"
@@ -87,7 +110,7 @@ export default function ForgotPassword() {
                             onChange={(e) => setPassword(e.target.value)}
                             className={`w-full p-2 text-gray-600 border rounded-md outline-none
                         text-sm transition duration-150 ease-in-out mb-3`} />
-                        
+
                     </div>
                     <div>
                         <label htmlFor="Confirm Password" className="font-bold text-gray-500"> </label>

@@ -8,7 +8,7 @@ import { Button, Modal } from 'react-bootstrap';
 
 export default function Wallet(props) {
 
-    const [value, setValue] = useState(WalletList.name);
+    const [ selected, setSelected ] = useState("");
     const [number, setNumber] = useState();
 
     const [show, setShow] = useState(false);
@@ -17,7 +17,7 @@ export default function Wallet(props) {
     const handleShow = () => setShow(true);
 
     const handleSelect = (event) => {
-        setValue(event)
+        setSelected(event.name)
     }
 
     const handleAddWallet = (event) => {
@@ -76,19 +76,19 @@ export default function Wallet(props) {
                                         <div className="dropdown">
                                             <button className="btn btn-light dropdown-toggle w-full text-gray
                                                                     text-start" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"
-                                                value={value} onChange={handleSelect}>
+                                                selected={handleSelect}>
                                                 Select Wallet Network
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-light w-full"
                                                 aria-labelledby="dropdownMenuButton2" >
                                                 {
-                                                    WalletList.map((value, index) => {
+                                                    WalletList.map((selected, index) => {
                                                         return (
                                                             <li
-                                                                key={value.id} role="button"
+                                                                key={selected.id} role="button"
                                                                 className="pl-3 mb-1 hover:bg-red-600 p-2
-                                                                            hover:text-white" onClick={setValue}>
-                                                                {value.name}
+                                                                            hover:text-white" onClick={handleSelect}>
+                                                                {selected.name}
                                                             </li>
                                                             
                                                             
@@ -139,7 +139,7 @@ export default function Wallet(props) {
                                         id="dropdownMenuLink"
                                         aria-expanded="false"
                                         data-bs-toggle="dropdown"
-                                        onSelect={handleSelect}>
+                                        selected={handleSelect}>
                                         All Transaction Types
                                     </button>
                                     <ul className="dropdown-menu p-3"

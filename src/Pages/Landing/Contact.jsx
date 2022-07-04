@@ -2,6 +2,7 @@ import Footer from "../../Pages/Landing/Footer";
 import Navbar from "../../Components/Navbar/Navbar";
 import { BsHouseDoor } from "react-icons/bs";
 import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
+import Map from "./Map";
 
 export default function Contact() {
     return (
@@ -91,11 +92,7 @@ export default function Contact() {
                         </div>
 
                     </div>
-                    <div className="row">
-                        <div className="col-md-12">
-                            
-                        </div>
-                    </div>
+                    
                 </div>
 
             </div>

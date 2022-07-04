@@ -2,13 +2,13 @@ import Footer from "../../Pages/Landing/Footer";
 import Navbar from "../../Components/Navbar/Navbar";
 import { BsHouseDoor } from "react-icons/bs";
 import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
-import Map from "./Map";
+
 
 export default function Contact() {
     return (
         <>
             <Navbar />
-            <div className="container-fluid bg-gray-200">
+            <div className="container-fluid mb-4">
                 <div className="container pt-56">
                     <div className="row md:space-x-40">
                         <div className="col-md-4">
@@ -56,11 +56,11 @@ export default function Contact() {
 
                         </div>
                         <div className="col-md-6">
-                            <div className="bg-white p-12 ">
-                                <h3 className="text-[#0E1133] font-bold ">
+                            <div className="p-12 bg-[#0E1133] shadow-md">
+                                <h3 className="text-white font-bold ">
                                     Let's connect
                                 </h3>
-                                <p className="text-start md:text-sm text-xs">
+                                <p className="text-start md:text-sm text-xs text-white">
                                     Need help? Send us a message by clicking on the button below
                                 </p>
                                 <form action="" className="">
@@ -84,7 +84,7 @@ export default function Contact() {
                                             cols="30" rows="10"></textarea>
                                     </div>
                                     <button className="bg-[#E4043C] text-white p-3 rounded-md
-                                    hover:bg-[#0E1133]">
+                                    hover:bg-green-500">
                                         Send Message
                                     </button>
                                 </form>

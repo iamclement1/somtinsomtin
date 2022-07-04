@@ -24,7 +24,7 @@ export default function Hero() {
                         items-center align-center md:text-start text-xl text-gray-600 pt-3">
                             Buy, Share, Send & TopUp Your SomtinSomtin Gift Voucher; Earn Loyalty Points You Can Use Anywhere & Anytime!
                         </p>
-                        <div className="md:flex md:space-x-2 pt-4 ">
+                        <div className="md:flex md:space-x-2 pt-4 md:p-0 p-2 ">
                             <div>
                                 <button onClick={() => window.location.href = "https://apps.apple.com/gh/app/somtin-somtin/id1597263559"}
                                     target="_blank" className="flex justify-center no-underline p-3 bg-[#fca21a] 

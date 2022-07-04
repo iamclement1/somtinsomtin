@@ -11,13 +11,13 @@ export default function Everyone() {
     return (
         <main>
             <div className="relative">
-                <div className="md:flex md:p-32 pt-0 pb-5">
+                <div className="md:flex md:p-32 pt-0 pb-5 p-1">
                     <div>
                         <h4 className="text-red-700 text-sm">Somtin for your Staff</h4>
                         <h1 className="text-[#0E1133] font-bold ">
                             Somtin For Everyone
                         </h1>
-                        <p className="text-gray-600 md:w-4/6 pb-6">
+                        <p className="text-gray-600 md:w-4/6 pb-6 md:p-0 ">
                             Give your staff the power to choose how they send their Voucher. Simply allocate them an amount, and give them freedom to spend on any voucher.
                         </p>
                         <div className="md:flex justify-center m-auto">

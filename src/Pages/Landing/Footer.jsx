@@ -13,9 +13,9 @@ export default function Footer() {
                         <div>
                             <img src={Logo} alt="brand__logo"
                                 className="md:w-1/6 w-1/6 " />
-                            <span>
+                            {/* <span>
                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti a ipsam eius ut sapiente perspiciatis!
-                            </span>
+                            </span> */}
                         </div>
                     </div>
                     <div className="col-md-2">

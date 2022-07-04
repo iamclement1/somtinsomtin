@@ -58,7 +58,7 @@
   height: 4em;
   width: 4em
 }
-.dropdown-toggle::after {
+select::after {
   display: none !important; 
 }
 

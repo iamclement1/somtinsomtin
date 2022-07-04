@@ -45,7 +45,7 @@ export default function Navbar(fixed) {
                                     Contact
                                 </NavLink>
 
-                                
+
                                 <NavLink to="/login" className='py-3 px-3 text-[#222554] font-semibold
                                 no-underline uppercase text-sm'>
                                     <FontAwesomeIcon icon={faUser} className="ml-24" />
@@ -100,14 +100,20 @@ export default function Navbar(fixed) {
                                 <NavLink to='/' className='block py-3 px-8 text-[#222554]
                                 transition duration-300 no-underline font-semibold uppercase'>Home</NavLink>
 
-                                <NavLink to='/login' className='block py-3 px-8 text-[#222554] 
-                                transition duration-300 no-underline font-semibold uppercase'>Consumer</NavLink>
+                                <NavLink to='/about' className='block py-3 px-8 text-[#222554] 
+                                transition duration-300 no-underline font-semibold uppercase'>
+                                    About
+                                </NavLink>
 
                                 <NavLink to='' className='block py-3 px-8 text-[#222554]
-                                transition duration-300 no-underline font-semibold uppercase'>Vendor</NavLink>
+                                transition duration-300 no-underline font-semibold uppercase'>
+                                    Marketplace
+                                </NavLink>
 
-                                <NavLink to='' className='block py-3 px-8 text-[#222554]
-                                transition duration-300 no-underline font-semibold uppercase'>Support</NavLink>
+                                <NavLink to='/contact' className='block py-3 px-8 text-[#222554]
+                                transition duration-300 no-underline font-semibold uppercase'>
+                                    Contact
+                                </NavLink>
 
 
 
@@ -116,14 +122,14 @@ export default function Navbar(fixed) {
                                 no-underline uppercase text-sm'>
 
                                         <span className="ml-3">
-                                            Consumer Login
+                                            Login
                                         </span>
                                     </NavLink>
                                     <NavLink to="" className='block py-3 px-6 bg-[#E0013F] text-white 
                                 font-semibold rounded-md hover:bg-[#222554]
                                 no-underline uppercase text-sm'>
                                         <button className="font-bold">
-                                            Vendor Login
+                                            Merchant Login
                                         </button>
                                     </NavLink>
                                 </div>

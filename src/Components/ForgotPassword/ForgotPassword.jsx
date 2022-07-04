@@ -17,6 +17,7 @@ export default function ForgotPassword() {
     const [password, setPassword] = useState()
     const [confirmNewPassword, setConfirmNewPassword] = useState()
 
+    
 
     useEffect(() => {
         const number = localStorage.getItem('number', 'user')

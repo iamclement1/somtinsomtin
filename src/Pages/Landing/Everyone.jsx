@@ -11,7 +11,7 @@ export default function Everyone() {
     return (
         <main>
             <div className="relative">
-                <div className="md:flex md:p-32">
+                <div className="md:flex md:p-32 pt-0 pb-5">
                     <div>
                         <h4 className="text-red-700 text-sm">Somtin for your Staff</h4>
                         <h1 className="text-[#0E1133] font-bold ">

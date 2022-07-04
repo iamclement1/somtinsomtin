@@ -10,6 +10,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Logo from '../../Assets/brand-logo/sometinlogo250-150-red.png'
 import { Menus } from '../../Utils/MenuData'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -20,12 +21,13 @@ export default function Sidebar({ children }, props) {
     const [title, setTitle] = useState();
     const [ users, setUsers ] = useState();
     const auth_token = localStorage.getItem('token');
+    const navigate = useNavigate('')
 
 
     const Logout = () => {
         localStorage.removeItem('currentUser')
-        window.location.reload()
         toast('user logged out successfully')
+        navigate("/")
     }
 
 

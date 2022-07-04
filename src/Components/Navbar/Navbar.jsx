@@ -30,32 +30,34 @@ export default function Navbar(fixed) {
                                     Home
                                 </NavLink>
 
-                                <NavLink to='/login' className='py-3 px-3 text-[#222554] font-semibold
+                                <NavLink to='/' className='py-3 px-3 text-[#222554] font-semibold
                                 no-underline uppercase text-sm'>
-                                    Consumers
+                                    About
                                 </NavLink>
 
-                                <NavLink to='' className='py-3 px-3 text-[#222554] font-semibold
+                                <NavLink to='/' className='py-3 px-3 text-[#222554] font-semibold
                                 no-underline uppercase text-sm'>
-                                    Vendors
+                                    Marketplace
                                 </NavLink>
 
-                                <NavLink to='' className='py-3 px-3 text-[#222554] font-semibold
+                                <NavLink to='/contact' className='py-3 px-3 text-[#222554] font-semibold
                                 no-underline uppercase text-sm'>
-                                    Support
+                                    Contact
                                 </NavLink>
+
+                                
                                 <NavLink to="/login" className='py-3 px-3 text-[#222554] font-semibold
                                 no-underline uppercase text-sm'>
                                     <FontAwesomeIcon icon={faUser} className="ml-24" />
                                     <span className="ml-3">
-                                        Consumer Login
+                                        Login
                                     </span>
                                 </NavLink>
                                 <NavLink to="" className='py-3 px-3 bg-[#E0013F] text-white 
                                 font-semibold rounded-md hover:bg-[#222554]
                                 no-underline uppercase text-sm'>
                                     <button className="font-bold">
-                                        Vendor Login
+                                        Merchant Login
                                     </button>
                                 </NavLink>
                             </div>

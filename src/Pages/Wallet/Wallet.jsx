@@ -10,9 +10,9 @@ import axios from 'axios';
 export default function Wallet(props) {
 
     const [selected, setSelected] = useState("");
-    const [number, setNumber] = useState();
-    const [ alias, setAlias] = useState();
-    const [network, setNetwork] = useState();
+    const [number, setNumber] = useState("");
+    const [ alias, setAlias] = useState("");
+    const [network, setNetwork] = useState("");
     const auth_token = localStorage.getItem('token');
 
     const [show, setShow] = useState(false);
@@ -28,6 +28,7 @@ export default function Wallet(props) {
             "phone_number": number,
             "network_code" : network,
         }
+        console.log(data)
 
         axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/wallets/', data, {
             header: {
@@ -71,7 +72,7 @@ export default function Wallet(props) {
                                             Wallet Alias
                                         </label>
                                         <input type="text" name="wallet_alias"
-                                            placeholder="Enter Wallet Alias" value="alias"
+                                            placeholder="Enter Wallet Alias" value={alias}
                                             onChange={(event) => setAlias(event.target.value)}
                                             className="w-full p-2 text-gray-400 border rounded-md outline-none 
                                                         text-sm transition duration-150 ease-in-out mb-4 focus:outline-none" />

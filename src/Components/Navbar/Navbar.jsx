@@ -120,10 +120,10 @@ export default function Navbar(fixed) {
                                 <div className='text-white text-2xl cursor-pointer block'>
                                     <NavLink to="/login" className='block py-3 px-3 text-[#222554] font-semibold
                                 no-underline uppercase text-sm'>
-
-                                        <span className="ml-3">
-                                            Login
-                                        </span>
+                                    <FontAwesomeIcon icon={faUser} className="ml-4" />
+                                    <span className="ml-3">
+                                        Login
+                                    </span>
                                     </NavLink>
                                     <NavLink to="" className='block py-3 px-6 bg-[#E0013F] text-white 
                                 font-semibold rounded-md hover:bg-[#222554]

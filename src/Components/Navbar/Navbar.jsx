@@ -30,7 +30,7 @@ export default function Navbar(fixed) {
                                     Home
                                 </NavLink>
 
-                                <NavLink to='/' className='py-3 px-3 text-[#222554] font-semibold
+                                <NavLink to='/about' className='py-3 px-3 text-[#222554] font-semibold
                                 no-underline uppercase text-sm'>
                                     About
                                 </NavLink>

@@ -35,7 +35,7 @@ export default function Navbar(fixed) {
                                     About
                                 </NavLink>
 
-                                <NavLink to='/' className='py-3 px-3 text-[#222554] font-semibold
+                                <NavLink to='/product&services' className='py-3 px-3 text-[#222554] font-semibold
                                 no-underline uppercase text-sm'>
                                     Marketplace
                                 </NavLink>
@@ -105,7 +105,7 @@ export default function Navbar(fixed) {
                                     About
                                 </NavLink>
 
-                                <NavLink to='' className='block py-3 px-8 text-[#222554]
+                                <NavLink to='/product&services' className='block py-3 px-8 text-[#222554]
                                 transition duration-300 no-underline font-semibold uppercase'>
                                     Marketplace
                                 </NavLink>

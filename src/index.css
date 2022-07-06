@@ -52,6 +52,12 @@
   background-color: rgba(0,0,0,0.6) /* Black background with opacity */
 }
 
+.hero-bg{
+  background: url(/src/Assets/Hero-bg.jpg) linear-gradient(0, 0, 0, .6);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
 
 /* button spinner */
 .spinner-border {

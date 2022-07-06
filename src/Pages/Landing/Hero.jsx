@@ -4,7 +4,7 @@ export default function Hero() {
 
 
     return (
-        <main>
+        <main className="">
             <div className=" relative flex pt-11">
                 <div className="flex flex-col w-full justify-between items-center
                 md:flex-row-reverse pt-11 bg-hero">
@@ -28,8 +28,8 @@ export default function Hero() {
                         <div className="md:flex md:space-x-2 pt-4 md:p-0 p-2 ">
                             <div>
                                 <button onClick={() => window.location.href = "https://apps.apple.com/gh/app/somtin-somtin/id1597263559"}
-                                    target="_blank" className="flex justify-center no-underline p-3 bg-[#fca21a] 
-                                text-white rounded-sm items-center hover:bg-amber-400 w-full">
+                                    target="_blank" className="flex justify-center no-underline p-3 bg-[#0E1133] 
+                                text-white rounded-sm items-center hover:outline-[#0E1133] w-full">
                                     <FaApple />
                                     <button className="ml-2">
                                         Download for iOS

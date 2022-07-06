@@ -27,7 +27,7 @@ export default function Accordion() {
                                 <h2 className="accordion-header mb-0 " id="flush-headingTwo" >
                                     <button className="accordion-button relative flex items-center w-full
                                 py-4 px-5 text-base text-left transition focus:outline-none bg-white
-                                font-bold text-[#0E1133] "
+                                font-bold text-[#0E1133] focus:text-[#0E1133] focus:font-bold "
                                         type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
                                         aria-expanded="false" aria-controls="flush-collapseTwo" >
                                         How do I transfer value on a voucher?
@@ -47,9 +47,10 @@ export default function Accordion() {
                             <div className="accordion-item rounded-md bg-white mb-4">
                                 <h2 className="accordion-header mb-0" id="headingOne" >
                                     <button className="accordion-button relative flex items-center w-full
-                                py-4 px-5 text-base text-left transition focus:outline-none bg-white"
+                                py-4 px-5 text-base text-left transition focus:outline-none bg-white
+                                font-bold text-[#0E1133] "
                                         type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                        aria-expanded="false" aria-controls="collapseOne" >
+                                        aria-expanded="true" aria-controls="collapseOne" >
                                         What can I use my points for?
                                     </button>
                                 </h2>
@@ -63,9 +64,10 @@ export default function Accordion() {
                             <div className="accordion-item rounded-md bg-white">
                                 <h2 className="accordion-header mb-0" id="headingTwo">
                                     <button className="accordion-button relative flex items-center w-full
-                                    py-4 px-5 text-base text-left transition focus:outline-none bg-white"
+                                    py-4 px-5 text-base text-left transition focus:outline-none bg-white
+                                    font-bold text-[#0E1133]"
                                         type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                        aria-expanded="false" aria-controls="collapseTwo" >
+                                        aria-expanded="true" aria-controls="collapseTwo" >
                                         How do u send someone somtin
                                     </button>
                                 </h2>

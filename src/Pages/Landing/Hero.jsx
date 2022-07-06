@@ -13,15 +13,16 @@ export default function Hero() {
                             className="pt-36" />
                     </div>
                     <div className=" md:mx-20 md:w-4/6 w-full">
-                        <h3 className="md:block flex justify-center text-xl text-[#E0013F] ">
+                        <h3 className="md:block flex justify-center text-xl text-[#E0013F]
+                        p-3 pb-0">
                             SomtinSomtin
                         </h3>
                         <h2 className="md:block font-bold md:text-6xl 
-                        text-4xl text-[#0E1133]">
+                        text-4xl text-[#0E1133] md:p-0 p-3 pb-0">
                             A Gift Voucher That Rewards U
                         </h2>
                         <p className="md:block flex justify-center md:text-xl 
-                        items-center align-center md:text-start text-xl text-gray-600 pt-3">
+                        items-center align-center md:text-start text-xl text-gray-600 pt-3 md:p-0 p-3">
                             Buy, Share, Send & TopUp Your SomtinSomtin Gift Voucher; Earn Loyalty Points You Can Use Anywhere & Anytime!
                         </p>
                         <div className="md:flex md:space-x-2 pt-4 md:p-0 p-2 ">

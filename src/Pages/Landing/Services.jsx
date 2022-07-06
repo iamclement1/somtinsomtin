@@ -22,7 +22,7 @@ export default function Services() {
                         Its more than a gift voucher; its a way to say I Dey 4 U
                     </p>
                 </div>
-                <div className="md:flex md:p-24 md:space-x-8 md:space-y-0 space-y-4">
+                <div className="md:flex md:p-24 pt-0 md:space-x-8 md:space-y-0 space-y-4">
                     <div className="bg-white text-center rounded-md p-5 "
                         data-aos="fade-up"
                         data-aos-delay="50"

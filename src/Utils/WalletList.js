@@ -5,14 +5,14 @@ export const WalletList = [
     },
     {
         id: 2,
-        name: 'Mtn Mobile Money',
+        name: 'MTN',
     },
     {
         id: 3,
-        name: 'Vodafone Cash',
+        name: 'VOD',
     },
     {
         id: 4,
-        name: 'AirtelTigo Cash',
+        name: 'AIR',
     }
 ]

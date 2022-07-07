@@ -31,10 +31,11 @@ export default function Wallet(props) {
             "wallet_number": number,
             "network_code" : selected,
         }
-        console.log(data)
+        // console.log(data)
+        // console.log(auth_token)
 
         axios.post('https://somtinsomtin-api.herokuapp.com/api/v1.0/wallets/', data, {
-            header: {
+            headers: {
                 Authorization: `Bearer ${auth_token}`
             }
         })
@@ -46,6 +47,7 @@ export default function Wallet(props) {
             console.log(error)
         })
     }
+
     return (
         <Sidebar>
             <div className="container">

@@ -1,14 +1,31 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Aos from 'aos'
 import Image from '../../Assets/black-couple.jpg'
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "./Footer";
+import { BsFillArrowUpSquareFill } from 'react-icons/bs';
 
 export default function About() {
+
+    const [ showButton, setShowButton ] = useState(false);
     useEffect(() => {
         // gives global animation to all animation
         Aos.init({ duration: 2000 })
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 250) {
+                setShowButton(true);
+            } else {
+                setShowButton(false);
+            }
+        })
     }, [])
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }
     return (
         <>
             <Navbar />
@@ -44,7 +61,7 @@ export default function About() {
                             <p className="text-4xl mb-4">
                                 What we offer
                             </p>
-                            <p className="w-3/6 text-center items-center mx-auto mb-4">
+                            <p className="md:w-3/6 text-center items-center mx-auto mb-4">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus provident earum impedit, quam quisquam doloremque nam aperiam distinctio ad consequatur neque hic, illum fugiat quasi quis ipsam accusamus expedita recusandae minima deserunt commodi iure. Iste asperiores, facilis culpa impedit architecto dolorum voluptate quia, tempora nihil accusantium provident similique obcaecati laboriosam accusamus placeat adipisci fuga numquam tempore beatae eius dicta illum. Non alias mollitia inventore perferendis incidunt nostrum tempora voluptate. Odit illo blanditiis, dolorem temporibus fugit ipsa modi debitis magnam tempora ex nihil impedit sint excepturi officiis odio, sit, eligendi placeat! Voluptas explicabo ea magni voluptatibus necessitatibus tempore maxime inventore voluptate.
                             </p>
                         </div>
@@ -58,6 +75,11 @@ export default function About() {
                 </div>
             </div>
             <Footer />
+            {showButton && (
+                <button onClick={scrollToTop} className="back-to-top">
+                    <BsFillArrowUpSquareFill />
+                </button>
+            )}
         </>
     )
 }

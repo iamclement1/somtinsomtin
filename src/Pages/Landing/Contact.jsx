@@ -1,10 +1,34 @@
 import Footer from "../../Pages/Landing/Footer";
 import Navbar from "../../Components/Navbar/Navbar";
-import { BsHouseDoor } from "react-icons/bs";
+import { BsFillArrowUpSquareFill, BsHouseDoor } from "react-icons/bs";
 import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
+import { useEffect, useState } from "react";
+import Aos from "aos";
 
 
 export default function Contact() {
+    const [showButton, setShowButton] = useState(false);
+
+
+    useEffect(() => {
+        // gives global animation to all animation
+        Aos.init({ duration: 2000 })
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 250) {
+                setShowButton(true);
+            } else {
+                setShowButton(false);
+            }
+        })
+    }, [])
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }
+
     return (
         <>
             <Navbar />
@@ -55,7 +79,11 @@ export default function Contact() {
                             </div>
 
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6"
+                            data-aos="fade-right"
+                            data-aos-delay="50"
+                            data-aos-duration="1000"
+                            data-aos-easing="ease-in-out">
                             <div className="p-12 bg-[#0E1133] shadow-md">
                                 <h3 className="text-white font-bold ">
                                     Let's connect
@@ -104,6 +132,11 @@ export default function Contact() {
 
             </div>
             <Footer />
+            {showButton && (
+                <button onClick={scrollToTop} className="back-to-top">
+                    <BsFillArrowUpSquareFill />
+                </button>
+            )}
         </>
     )
 }

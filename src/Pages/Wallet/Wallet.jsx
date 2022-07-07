@@ -6,6 +6,7 @@ import { WalletList } from '../../Utils/WalletList'
 import Footer from '../../Components/Footer/Footer'
 import { Button, Modal } from 'react-bootstrap';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export default function Wallet(props) {
 
@@ -41,6 +42,11 @@ export default function Wallet(props) {
         })
         .then((response) => {
             console.log(response.data)
+            toast("Wallet Added Successfully")
+
+            if(response.data.response_code === "100") {
+                window.location.reload()
+            }
         })
 
         .catch((error) => {

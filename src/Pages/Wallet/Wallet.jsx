@@ -12,7 +12,6 @@ export default function Wallet(props) {
     const [selected, setSelected] = useState("");
     const [number, setNumber] = useState("");
     const [ alias, setAlias] = useState("");
-    const [network, setNetwork] = useState("");
     const auth_token = localStorage.getItem('token');
 
     const [show, setShow] = useState(false);
@@ -20,13 +19,17 @@ export default function Wallet(props) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const handleChange = (event) => {
+        setSelected(event.target.value);
+    }
+
 
     const handleAddWallet = (event) => {
         event.preventDefault()
         const data = {
             "alias" : alias,
-            "phone_number": number,
-            "network_code" : network,
+            "wallet_number": number,
+            "network_code" : selected,
         }
         console.log(data)
 
@@ -95,7 +98,7 @@ export default function Wallet(props) {
                                             Wallet Network
                                         </label>
                                         <select className="focus:outline-none p-2 select-toggle w-full"
-                                            value={selected} onChange={(e) => setSelected(e.target.value) }>
+                                            value={selected} onChange={handleChange}>
                                                 <>
                                                     {
                                                         WalletList.map((selected, index) => {
@@ -149,7 +152,7 @@ export default function Wallet(props) {
                         </div>
                         <div className=" md:w-1/5 ">
                             <select className="focus:outline-none p-2 select-toggle w-full"
-                                value={selected} onChange={(e) => setSelected(e.target.value)} >
+                                value={selected} onChange={handleChange} >
                                 <>
                                     {
                                         WalletTransactions.map((transaction, index) => {
@@ -161,7 +164,7 @@ export default function Wallet(props) {
                                                 </option>
                                             )
                                         })
-                                    }
+                                    }   
 
                                 </>
                             </select>

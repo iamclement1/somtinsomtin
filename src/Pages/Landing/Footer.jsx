@@ -90,7 +90,7 @@ export default function Footer() {
                                 </button>
                             </div>
                         </div>
-                        <div className="col-md-3 pt-2">
+                        <div className="col-md-3 pt-2 transition ease-in-out delay-200 duration-300">
                             <button onClick={() => window.location.href = "https://play.google.com/store/apps/details?id=com.somtinsomtin.app"}
                                 target="_blank" className="flex justify-center p-3 text-[#0E1133] rounded-sm no-underline items-center
                                 border-2 border-solid border-[#0E1133] hover:bg-[#0E1133] hover:text-white

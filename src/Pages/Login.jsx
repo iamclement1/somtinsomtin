@@ -80,7 +80,7 @@ function Login() {
                             defaultCountry='GH'
                             value={number}
                             onChange={setNumber}
-                            className={`w-full p-2 text-gray-400 border rounded-md outline-none 
+                            className={` w-full p-2 text-gray-400 border rounded-md outline-none
                     text-sm transition duration-150 ease-in-out mb-4 focus:outline-none`} />
                     </div>
 

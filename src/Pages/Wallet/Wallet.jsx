@@ -117,13 +117,9 @@ export default function Wallet(props) {
                                                                             hover:text-white">
                                                                     {selected.name}
                                                                 </option>
-
-
                                                             )
                                                         })
                                                     }
-
-
                                                 </>
                                         </select>
                                 </div>

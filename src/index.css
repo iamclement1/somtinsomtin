@@ -61,8 +61,8 @@
 
 /* button spinner */
 .spinner-border {
-  height: 4em;
-  width: 4em
+  height: 10em;
+  width: 10em;
 }
 select::after {
   display: none !important; 

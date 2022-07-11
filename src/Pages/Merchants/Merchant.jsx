@@ -61,7 +61,7 @@ export default function Merchant() {
               <h3 className="text-xl font-semibold text-[#E4043C] mb-0 pt-4"> Merchants </h3>
               <p className="text-gray-500 text-sm"> Approved Somtins Merchants </p>
             </div>
-            <div className="border" >
+            <div className="flex justify-around flex-wrap "  >
               <MerchantCard merchants={merchants}  />
             </div>
           </>

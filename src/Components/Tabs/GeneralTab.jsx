@@ -1,5 +1,6 @@
-import { faArrowAltCircleRight,  faClock, faMoneyCheckDollar, faQuestionCircle, faShieldVirus } from "@fortawesome/free-solid-svg-icons"
+import { faArrowAltCircleRight, faClock, faMoneyCheckDollar, faQuestionCircle, faShieldVirus } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Link } from "react-router-dom"
 
 
 
@@ -11,7 +12,7 @@ function GeneralTab() {
                     <div className="tab__content flex justify-between">
                         <div className="flex space-x-4">
                             <p className="text-[#3D4765] text-xl py-4 ">
-                                <FontAwesomeIcon icon={ faClock }/>
+                                <FontAwesomeIcon icon={faClock} />
                             </p>
                             <div className="py-3">
                                 <span className="text-[#3D4765] text-xm font-medium ">Redeem Voucher by Date</span>
@@ -28,7 +29,7 @@ function GeneralTab() {
                     <div className="tab__content flex justify-between">
                         <div className="flex space-x-4">
                             <p className=" text-[#3D4765] text-xl py-4">
-                                <FontAwesomeIcon icon={ faMoneyCheckDollar } />
+                                <FontAwesomeIcon icon={faMoneyCheckDollar} />
                             </p>
                             <div className="py-3">
                                 <span className="text-[#3D4765] text-xm font-medium">
@@ -49,7 +50,7 @@ function GeneralTab() {
                     <div className="tab__content flex justify-between">
                         <div className="flex space-x-4">
                             <p className=" text-[#3D4765] text-xl py-4">
-                                <FontAwesomeIcon icon={ faQuestionCircle } />
+                                <FontAwesomeIcon icon={faQuestionCircle} />
                             </p>
                             <div className="py-3">
                                 <span className="text-[#3D4765] text-xm font-medium">
@@ -61,7 +62,8 @@ function GeneralTab() {
                             </div>
                         </div>
                         <div className="pt-4 text-gray-500 hover:text-[#e00] text-xl cursor-pointer">
-                            <FontAwesomeIcon icon={ faArrowAltCircleRight } />
+
+                            <FontAwesomeIcon icon={faArrowAltCircleRight} />
                         </div>
                     </div>
                 </div>
@@ -70,7 +72,7 @@ function GeneralTab() {
                     <div className="tab__content flex justify-between">
                         <div className="flex space-x-4">
                             <p className=" text-[#3D4765] text-xl py-4">
-                                <FontAwesomeIcon icon={ faShieldVirus } />
+                                <FontAwesomeIcon icon={faShieldVirus} />
                             </p>
                             <div className="py-3">
                                 <span className="text-[#3D4765] text-xm font-medium">
@@ -82,7 +84,9 @@ function GeneralTab() {
                             </div>
                         </div>
                         <div className="pt-4 text-gray-500 hover:text-[#e00] text-xl cursor-pointer">
-                            <FontAwesomeIcon icon={ faArrowAltCircleRight } />
+                            <Link to="/privacy-terms" className="text-gray-500 hover:text-[#e00] text-xl cursor-pointer">
+                                <FontAwesomeIcon icon={faArrowAltCircleRight} />
+                            </Link>
                         </div>
                     </div>
                 </div>

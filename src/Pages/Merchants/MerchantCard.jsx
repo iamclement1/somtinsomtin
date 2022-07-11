@@ -10,7 +10,7 @@ function MerchantCard(props) {
                     // console.log(merchant);
                     return (
                         <>
-                            <div className="max-w-sm w-full lg:max-w-2/4 flex items-center bg-white shadow-md border mb-4" key={merchant.id}>
+                            <div className="max-w-sm w-full lg:max-w-2/4 flex items-center bg-white shadow-md mb-4" key={merchant.id}>
                                 <img src={merchant.logo} alt="merchant__logo" className="w-3/6"
                                     style={{
                                         width: '80px',

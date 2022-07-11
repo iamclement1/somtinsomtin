@@ -57,7 +57,7 @@ export default function Merchant() {
           </div>
         ) : (
           <>
-            <div className="">
+            <div className="pl-6">
               <h3 className="text-xl font-semibold text-[#E4043C] mb-0 pt-4"> Merchants </h3>
               <p className="text-gray-500 text-sm"> Approved Somtins Merchants </p>
             </div>

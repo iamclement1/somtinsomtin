@@ -17,7 +17,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Sidebar({ children }, props) {
 
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(true)
     const [title, setTitle] = useState();
     const [ users, setUsers ] = useState();
     const auth_token = localStorage.getItem('token');

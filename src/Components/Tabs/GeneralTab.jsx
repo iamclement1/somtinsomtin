@@ -15,8 +15,9 @@ function GeneralTab() {
                                 <FontAwesomeIcon icon={faClock} />
                             </p>
                             <div className="py-3">
-                                <span className="text-[#3D4765] text-xm font-medium ">Redeem Voucher by Date</span>
-                                <p className="text-gray-400">Deplet vouchers from oldest to latest</p>
+                                <span className="text-[#3D4765] md:text-xm 
+                                text-xm font-medium ">Redeem Voucher by Date</span>
+                                <p className="text-gray-400 md:text-xm text-xs">Deplet vouchers from oldest to latest</p>
                             </div>
                         </div>
                         {/* <div className="pt-4 text-[#e00] text-xl cursor-pointer">
@@ -35,7 +36,7 @@ function GeneralTab() {
                                 <span className="text-[#3D4765] text-xm font-medium">
                                     Redeem Voucher by Amount
                                 </span>
-                                <p className="text-gray-400">
+                                <p className="text-gray-400 md:text-xm text-xs">
                                     Deplet vouchers from smallest amount to largest
                                 </p>
                             </div>
@@ -56,7 +57,7 @@ function GeneralTab() {
                                 <span className="text-[#3D4765] text-xm font-medium">
                                     Help and Support
                                 </span>
-                                <p className="text-gray-400">
+                                <p className="text-gray-400 md:text-xm text-xs">
                                     Get Help for Somtin.
                                 </p>
                             </div>
@@ -78,7 +79,7 @@ function GeneralTab() {
                                 <span className="text-[#3D4765] text-xm font-medium">
                                     Privacy Policy
                                 </span>
-                                <p className="text-gray-400">
+                                <p className="text-gray-400 md:text-xm text-xs">
                                     Somtin Somtin Privacy
                                 </p>
                             </div>

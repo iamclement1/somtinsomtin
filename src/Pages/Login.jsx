@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import 'react-phone-number-input/style.css';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -54,7 +55,7 @@ function Login() {
             })
             .catch(error => {
                 console.log(error.response)
-                toast.error('Invalid number')
+                toast.error('Invalid number or pin')
                 setIsLoading(false);
             })
     }
@@ -75,10 +76,9 @@ function Login() {
                     <div>
                         <label htmlFor="Phone Number"></label>
                         <PhoneInput placeholder="Enter phone number"
-                            international
-                            defaultCountry='GH'
                             value={number}
                             onChange={setNumber}
+
                             className="w-full p-2 text-gray-400 border rounded-md outline-none
                     text-sm transition duration-150 ease-in-out mb-4 focus:outline-none" />
                     </div>

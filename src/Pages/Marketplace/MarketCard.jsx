@@ -1,144 +1,34 @@
-
-import { Button, Card, Col, Container, Row } from 'react-bootstrap'
-import Img2 from '../../Assets/marketplace2.jpg'
-import Img3 from '../../Assets/marketplace3.jpg';
-import Img4 from '../../Assets/img5.jpg'
-import '../../styles/marketplace.css'
-import { Link } from 'react-router-dom';
-
+import { Link } from 'react-router-dom'
+import { MarketList } from '../../Utils/Marketcontent'
 export default function MarketCard(props) {
-
     return (
-        <Container fluid>
-            <Row className="pl-0">
-                <Col xs={12} md={6} lg={4}>
-                    <Card className="shadow-md">
-                        <div className="overflow">
-                            <Card.Img variant='top' src={Img2} className="card-image" />
-                        </div>
-                        <Card.Body>
-                            <Card.Title className="text-gray-500">
-                                Simple
-                            </Card.Title>
-                            <Card.Text>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, consequuntur?
-                            </Card.Text>
-                            <Button variant="danger">
-                                <Link to="/checkout" className="text-white no-underline">
-                                    Get Voucher
-                                </Link>
-                            </Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
-
-                <Col xs={12} md={6} lg={4}>
-                    <Card className="shadow-md">
-                        <div className="overflow">
-                            <Card.Img variant='top' src={Img3} className="card-image" />
-                        </div>
-                        <Card.Body>
-                            <Card.Title className="text-gray-500">
-                                Simple
-                            </Card.Title>
-                            <Card.Text>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, consequuntur?
-                            </Card.Text>
-                            <Button variant="danger">
-                                <Link to="/checkout" className="text-white no-underline">
-                                    Get Voucher
-                                </Link>
-                            </Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
-
-                <Col xs={12} md={6} lg={4}>
-                    <Card className="shadow-md">
-                        <div className="overflow">
-                            <Card.Img variant='top' src={Img4} className="card-image" />
-                        </div>
-                        <Card.Body>
-                            <Card.Title className="text-gray-500">
-                                Simple
-                            </Card.Title>
-                            <Card.Text>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, consequuntur?
-                            </Card.Text>
-                            <Button variant="danger">
-                                <Link to="/checkout" className="text-white no-underline">
-                                    Get Voucher
-                                </Link>
-                            </Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
-
-            <Row className="pt-4">
-                <Col xs={12} md={6} lg={4}>
-                    <Card className="shadow-md">
-                        <div className="overflow">
-                            <Card.Img variant='top' src={Img2} className="card-image" />
-                        </div>
-                        <Card.Body>
-                            <Card.Title className="text-gray-500">
-                                Simple
-                            </Card.Title>
-                            <Card.Text>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, consequuntur?
-                            </Card.Text>
-                            <Button variant="danger">
-                                <Link to="/checkout" className="text-white no-underline">
-                                    Get Voucher
-                                </Link>
-                            </Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
-
-                <Col xs={12} md={6} lg={4}>
-                    <Card className="shadow-md">
-                        <div className="overflow">
-                            <Card.Img variant='top' src={Img3} className="card-image" />
-                        </div>
-                        <Card.Body>
-                            <Card.Title className="text-gray-500">
-                                Simple
-                            </Card.Title>
-                            <Card.Text>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, consequuntur?
-                            </Card.Text>
-                            <Button variant="danger">
-                                <Link to="/checkout" className="text-white no-underline">
-                                    Get Voucher
-                                </Link>
-                            </Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
-
-                <Col xs={12} md={6} lg={4}>
-                    <Card className="shadow-md">
-                        <div className="overflow">
-                            <Card.Img variant='top' src={Img4} className="card-image" />
-                        </div>
-                        <Card.Body>
-                            <Card.Title className="text-gray-500">
-                                Simple
-                            </Card.Title>
-                            <Card.Text>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, consequuntur?
-                            </Card.Text>
-                            <Button variant="danger">
-                                <Link to="/checkout" className="text-white no-underline">
-                                    Get Voucher
-                                </Link>
-                            </Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
-        </Container>
+        <>
+            <div className="container-fluid flex flex-wrap justify-around mb-3">
+                {
+                    MarketList.map((market, index) => {
+                        return (
+                            <>
+                                <div className="max-w-sm rounded overflow-hidden shadow-md bg-white mb-3">
+                                    <img src={market.img} alt="market__image" className="w-full" />
+                                    <div className="px-4 py-4">
+                                        <div className="text-xl mb-2 font-bold">
+                                            {market.title}
+                                        </div>
+                                        <p className="text-gray-700 text-base">
+                                            {market.description}
+                                        </p>
+                                    </div>
+                                    <div className="px-6 pb-4">
+                                        <Link to="/checkout">
+                                            {market.button}
+                                        </Link>
+                                    </div>
+                                </div>
+                            </>
+                        )
+                    })
+                }
+            </div>
+        </>
     )
 }

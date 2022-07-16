@@ -2,13 +2,11 @@ import Sidebar from "../../Components/Sidebar/Sidebar";
 import MarketCard from './MarketCard'
 import Footer from '../../Components/Footer/Footer'
 
-function Marketplace () {
+function Marketplace() {
     return (
         <Sidebar>
             <div className="container-fluid pt-10">
-                <div className="row">
-                    <MarketCard />
-                </div>
+                <MarketCard className="" />
                 <Footer />
             </div>
         </Sidebar>

@@ -1,12 +1,12 @@
 import Logo from '../Assets/brand-logo/sometinlogo250-150-red.png'
 import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+import PhoneInput,
+{ isValidPhoneNumber } from 'react-phone-number-input'
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import 'react-phone-number-input/style.css';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -59,6 +59,7 @@ function Login() {
                 setIsLoading(false);
             })
     }
+    
 
     return (
         <div className=" container-xxl position-relative login-background h-screen flex bg-gray-bg1
@@ -76,16 +77,18 @@ function Login() {
                     <div>
                         <label htmlFor="Phone Number"></label>
                         <PhoneInput placeholder="Enter phone number"
+                            international
+                            defaultCountry="GH"
                             value={number}
                             onChange={setNumber}
-
-                            className="w-full p-2 text-gray-400 border rounded-md outline-none
-                    text-sm transition duration-150 ease-in-out mb-4 focus:outline-none" />
+                            error={number ? (isValidPhoneNumber(number) ? undefined : 'Invalid phone number') : 'Phone number required'}
+                            className="phone w-full p-2 text-gray-400 border rounded-md outline-none focus:outline-none
+                    text-sm transition duration-150 ease-in-out mb-4" />
                     </div>
 
                     <div>
                         <label htmlFor="Pin"> </label>
-                        <input type="text" id="pin" name="pin" placeholder="Pin"
+                        <input type="password" id="pin" name="password" placeholder="Pin"
                             className={`w-full p-2 text-gray-600 border rounded-md outline-none
                         text-sm transition duration-150 ease-in-out mb-4`}
                             onChange={(event) => setPassword(event.target.value)} />
@@ -94,7 +97,7 @@ function Login() {
                         {!isLoading && (
                             <button className="bg-red-400
                     font-semibold text-white mr-2
-                    hover:bg-red-700 hover:text-white p-2 w-full mb-2 rounded-sm"
+                    hover:bg-[#E00] hover:text-white p-2 w-full mb-2 rounded-sm"
                                 onClick={handleSubmit}>
                                 Log in
                             </button>
@@ -110,22 +113,20 @@ function Login() {
                             </button>
                         )}
                     </div>
-                    <div className="flex text-center text-start text-xs
-                mt-2 text-gray-600 align-center space-x-3">
+                    <div className="flex  text-start text-xs mt-2 text-gray-600 align-center space-x-3">
                         <p>
                             Don't have an account yet?
                         </p>
                         <Link to='/register'
-                            className="text-xs text-indigo-600 no-underline hover:text-red-400
-                    ">
+                            className="text-xs text-[#0E1133] no-underline hover:text-[#E00]">
                             Click Here
                         </Link>
                     </div>
-                    <div className="flex text-center text-start text-xs align-center space-x-3">
+                    <div className="flex text-start text-xs align-center space-x-3">
                         <p className="text-gray-600">
                             Forgotten Password?
                         </p>
-                        <Link to="/phone-verify" className="text-xs text-indigo-600 hover:text-red-400 no-underline">
+                        <Link to="/phone-verify" className="text-xs text-[#0E1133] hover:text-[#E00] no-underline">
                             Click here
                         </Link>
                     </div>

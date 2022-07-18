@@ -315,7 +315,7 @@ export default function WalletCard(props) {
                                             Wallet Network
                                         </label>
                                         <select className="focus:outline-none p-2 select-toggle w-full"
-                                            value={selected} onChange={handleChange}>
+                                            value={wallet.network_code} onChange={handleChange}>
                                             <>
                                                 {
                                                     WalletList.map((selected, index) => {

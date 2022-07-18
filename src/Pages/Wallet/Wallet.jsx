@@ -8,19 +8,31 @@ import { Button, Modal } from 'react-bootstrap';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import DisplayWallet from './DisplayWallet';
+import { ImSpinner6 } from 'react-icons/im';
+import VerifyWallet from './VerifyWallet';
 
 export default function Wallet(props) {
 
+
+    // const navigate = useNavigate('')
     const [selected, setSelected] = useState("");
     const [number, setNumber] = useState("");
     const [alias, setAlias] = useState("");
+    const [isLoading, setIsLoading] = useState(false)
     const auth_token = localStorage.getItem('token');
-
-    const [show, setShow] = useState(false);
     
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+
+    const [showA, setShowA] = useState(false);
+    const [ showB, setShowB ] = useState(false);
+
+
+    const handleCloseA = () => setShowA(false);
+    const handleShowA = () => setShowA(true);
+
+    const handleShowB = ( { handleShow } ) => {
+        setShowB(handleShow)
+    }
 
     const handleChange = (event) => {
         setSelected(event.target.value);
@@ -28,7 +40,7 @@ export default function Wallet(props) {
 
 
     const handleAddWallet = (event) => {
-        event.preventDefault()
+        setIsLoading(true)
         const data = {
             "alias": alias,
             "wallet_number": number,
@@ -44,15 +56,16 @@ export default function Wallet(props) {
         })
             .then((response) => {
                 console.log(response.data)
-                toast("Wallet Added Successfully")
-
-                if (response.data.response_code === "100") {
-                    window.location.reload()
-                }
+                toast("OTP sent to number")
+                setIsLoading(false)
+                // if (response.data.response_code === "100") {
+                //     navigate('/verify-wallet')
+                // }
             })
 
             .catch((error) => {
                 console.log(error)
+                setIsLoading(false)
             })
     }
 
@@ -61,7 +74,7 @@ export default function Wallet(props) {
             <div className="container p-0">
                 <div className="row">
                     <div className="pt-3">
-                        <Button onClick={handleShow}
+                        <Button onClick={handleShowA}
                             style={{
                                 float: 'right',
                                 backgroundColor: '#e4043c',
@@ -73,7 +86,7 @@ export default function Wallet(props) {
 
                         <DisplayWallet />
 
-                        <Modal show={show} onHide={handleClose}
+                        <Modal show={showA} onHide={handleCloseA}
                             {...props}
                             aria-labelledby="contained-modal-title-vcenter"
                             centered>
@@ -131,22 +144,47 @@ export default function Wallet(props) {
                                 </form>
                             </Modal.Body>
                             <Modal.Footer>
-                                <Button style={{
-                                    backgroundColor: "#e4043c",
-                                    border: 'none'
-                                }} onClick={handleClose}>
-                                    Close
-                                </Button>
-                                <Button variant="primary"
-                                    style={{
-                                        backgroundColor: "#88C057",
-                                        border: "none"
-                                    }} onClick={handleAddWallet}>
-                                    Save Changes
-                                </Button>
+                                {!isLoading && (
+                                    <>
+                                        <Button style={{
+                                            backgroundColor: "#e4043c",
+                                            border: 'none'
+                                        }} onClick={handleCloseA}>
+                                            Close
+                                        </Button>
+                                        <Button variant="primary"
+                                            style={{
+                                                backgroundColor: "#88C057",
+                                                border: "none"
+                                            }} onClick={handleAddWallet}>
+                                            Save Changes
+                                        </Button>
+                                    </>
+                                )}
+                                {
+                                    isLoading && (
+                                        <>
+                                            <Button style={{
+                                                backgroundColor: "#e4043c",
+                                                border: 'none'
+                                            }} onClick={handleCloseA}>
+                                                Close
+                                            </Button>
+                                            <Button variant="primary"
+                                                style={{
+                                                    backgroundColor: "#88C057",
+                                                    border: "none"
+                                                }} onClick={handleAddWallet} disabled>
+                                                <ImSpinner6 className="spinner space-x-4 mx-auto mr-0 text-3xl" />
+                                            </Button>
+                                        </>
+                                    )
+                                }
                             </Modal.Footer>
                         </Modal>
 
+                        <VerifyWallet isModalVisible={showB}
+                        handleShowB={() => setShowB(false)}></VerifyWallet>
                     </div>
                     <div className="col-md-12 pt-6">
                         <div className="md:flex justify-between bg-white p-3 shadow-md rounded-md">

@@ -22,6 +22,7 @@ import Privacy from "../../Pages/Landing/Privacy";
 import Contact from "../../Pages/Landing/Contact";
 import About from "../../Pages/Landing/About";
 import Product from "../../Pages/Landing/Product";
+import VerifyWallet from "../../Pages/Wallet/VerifyWallet";
 
 export default function Routing() {
     return (
@@ -44,6 +45,7 @@ export default function Routing() {
                 <Route path='signup' element={ <SignUpForm /> } />
                 <Route path="merchants" element={ <Merchants /> } />
                 <Route path="my-wallet" element={ <Wallet /> } />
+                    <Route path="verify-wallet" element={ <VerifyWallet /> } />
                 <Route path="my-voucher" element={ <Voucher /> } />
                 <Route path="depleted-voucher" element={ <DepVoucher /> } />
                 <Route path="settings/*" element={ <Settings /> } />

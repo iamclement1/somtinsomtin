@@ -19,7 +19,7 @@ export default function Sidebar({ children }, props) {
 
     const [isOpen, setIsOpen] = useState(true)
     const [title, setTitle] = useState();
-    const [ users, setUsers ] = useState();
+    const [users, setUsers] = useState();
     const auth_token = localStorage.getItem('token');
     const navigate = useNavigate('')
 
@@ -36,14 +36,14 @@ export default function Sidebar({ children }, props) {
             headers: {
                 Authorization: `Bearer ${auth_token}`
             }
-        } )
-        .then((response) => {
-            setUsers(response.data.results)
-            // console.log(response.data.results)
         })
-        .catch((error) => {
-            console.log(error)
-        })
+            .then((response) => {
+                setUsers(response.data.results)
+                // console.log(response.data.results)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }, [auth_token])
 
 
@@ -63,6 +63,8 @@ export default function Sidebar({ children }, props) {
             case "/depleted-voucher": setTitle("Depleted Voucher");
                 break;
             case "/settings": setTitle("Settings");
+                break;
+            case "/verify-wallet": setTitle("Verify Wallet");
                 break;
             default: setTitle("Marketplace");
                 break;
@@ -190,12 +192,12 @@ export default function Sidebar({ children }, props) {
                                         {/* <FontAwesomeIcon icon={faBell} className="text-[#e4043c]
                                                         md:text-2xl p-2 rounded-full" /> */}
                                         <div>
-                                            { users && (
-                                            <Link to="/profile" className="no-underline text-black text-xl">
-                                                {/* { users.map((user, index) => (
+                                            {users && (
+                                                <Link to="/profile" className="no-underline text-black text-xl">
+                                                    {/* { users.map((user, index) => (
                                                     <li key={user.id}> {user.first_name} </li>
                                                 ))} */}
-                                            </Link>
+                                                </Link>
                                             )}
                                         </div>
                                         <div>

@@ -10,44 +10,44 @@ export default function WalletCard(props) {
 
     const [show, setShow] = useState(false);
     const [code, setCode] = useState("");
-    const [number, setNumber] = useState("")
+    // const [number, setNumber] = useState("")
     const [isLoading, setIsLoading] = useState(false);
     const auth_token = localStorage.getItem('token');
 
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
-    useEffect(() => {
-        const number = localStorage.getItem('number')
-        setNumber(number);
-    }, [])
+    // useEffect(() => {
+    //     const number = localStorage.getItem('number')
+    //     setNumber(number);
+    // }, [])
 
     // const wallet_url = `https://somtinsomtin-api.herokuapp.com/api/v1.0/wallets/${wallet.id}/resend_wallet_otp/`
 
     // resend otp
-    const handleResend = (event) => {
-        setIsLoading(true);
-        const data = {
-            "phone_number": number,
-        }
-        console.log(data);
+    // const handleResend = (event) => {
+    //     setIsLoading(true);
+    //     const data = {
+    //         "phone_number": number,
+    //     }
+    //     console.log(data);
         
-        axios.post(`https://somtinsomtin-api.herokuapp.com/api/v1.0/wallets/${wallet.id}/resend_wallet_otp/` , {
-            headers: {
-                Authorization: `Bearer ${auth_token}`
-            }
-        })
-            .then((response) => {
-                console.log(data)
-                console.log(response.data);
-                toast('OTP resent to the registered number')
-                setIsLoading(false)
-            })
-            .catch((error) => {
-                console.log(error);
-                setIsLoading(false)
-            })
-    }
+    //     axios.post(`https://somtinsomtin-api.herokuapp.com/api/v1.0/wallets/${wallet.id}/resend_wallet_otp/` , {
+    //         headers: {
+    //             Authorization: `Bearer ${auth_token}`
+    //         }
+    //     })
+    //         .then((response) => {
+    //             console.log(data)
+    //             console.log(response.data);
+    //             toast('OTP resent to the registered number')
+    //             setIsLoading(false)
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //             setIsLoading(false)
+    //         })
+    // }
 
     // verify wallet
     const handleVerify = (event) => {
@@ -134,7 +134,7 @@ export default function WalletCard(props) {
                                     <form action="">
                                         <p>We sent a code to {wallet.wallet_number}. Not received yet?
                                             <span className="text-[#E00] ml-2" role="button"
-                                                onClick={handleResend}>Resend</span> </p>
+                                                >Resend</span> </p>
 
                                         <div>
                                             <input type="number" placeholder="Enter Security Code"

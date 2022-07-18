@@ -8,8 +8,8 @@ export default function MarketCard(props) {
                     MarketList.map((market, index) => {
                         return (
                             <>
-                                <div className="max-w-sm rounded overflow-hidden shadow-md bg-white mb-3">
-                                    <img src={market.img} alt="market__image" className="w-full" />
+                                <div className="md:max-w-sm rounded overflow-hidden shadow-md bg-white mb-3">
+                                    <img src={market.img} alt="market__image" className="w-full"/>
                                     <div className="px-4 py-4">
                                         <div className="text-xl mb-2 font-bold">
                                             {market.title}

@@ -1,7 +1,6 @@
 import Logo from '../Assets/brand-logo/sometinlogo250-150-red.png'
 import 'react-phone-number-input/style.css'
-import PhoneInput,
-{ isValidPhoneNumber } from 'react-phone-number-input'
+import PhoneInput from 'react-phone-number-input'
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -59,7 +58,7 @@ function Login() {
                 setIsLoading(false);
             })
     }
-    
+
 
     return (
         <div className=" container-xxl position-relative login-background h-screen flex bg-gray-bg1
@@ -78,12 +77,11 @@ function Login() {
                         <label htmlFor="Phone Number"></label>
                         <PhoneInput placeholder="Enter phone number"
                             international
-                            defaultCountry="GH"
+                            defaultCountry='GH'
                             value={number}
                             onChange={setNumber}
-                            error={number ? (isValidPhoneNumber(number) ? undefined : 'Invalid phone number') : 'Phone number required'}
-                            className="phone w-full p-2 text-gray-400 border rounded-md outline-none focus:outline-none
-                    text-sm transition duration-150 ease-in-out mb-4" />
+                            className={`w-full p-2 text-gray-400 border rounded-md outline-none 
+                                                        text-sm transition duration-150 ease-in-out mb-4 focus:outline-none`} />
                     </div>
 
                     <div>

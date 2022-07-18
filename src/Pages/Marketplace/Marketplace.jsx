@@ -5,10 +5,12 @@ import Footer from '../../Components/Footer/Footer'
 function Marketplace() {
     return (
         <Sidebar>
-            <div className="container-fluid pt-10">
-                <MarketCard className="" />
-                <Footer />
-            </div>
+            <main className="pt-10 w-full">
+                <div className="container-fluid md:pt-10 p-0">
+                    <MarketCard />
+                    <Footer />
+                </div>
+            </main>
         </Sidebar>
     )
 }

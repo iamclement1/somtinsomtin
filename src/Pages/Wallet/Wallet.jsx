@@ -7,6 +7,7 @@ import Footer from '../../Components/Footer/Footer'
 import { Button, Modal } from 'react-bootstrap';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import DisplayWallet from './DisplayWallet';
 
 export default function Wallet(props) {
 
@@ -175,6 +176,7 @@ export default function Wallet(props) {
                         </div>
                     </div>
                 </div>
+                <DisplayWallet />
             </div>
             {/* Footer */}
             <Footer />

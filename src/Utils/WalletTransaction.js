@@ -14,5 +14,9 @@ export const WalletTransactions = [
     {
         id: 4,
         name: 'Gift',
+    },
+    {
+        id: 5,
+        name: 'View Wallet'
     }
 ]

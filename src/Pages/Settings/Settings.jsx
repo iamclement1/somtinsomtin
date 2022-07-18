@@ -13,6 +13,7 @@ function Settings() {
                     <p className="text-xm pt-0 text-gray-500">
                         Make your Somtin App look like you
                     </p>
+                    
                 </div>
                 
             </main>

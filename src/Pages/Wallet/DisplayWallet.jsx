@@ -19,7 +19,7 @@ export default function DisplayWallet() {
                 const allWalllets = response.data.results;
                 setWallet(allWalllets);
                 setLoading(false);
-                console.log(wallet)
+                // console.log(setWallet);
             })
             .catch((error) => {
                 console.log(error)

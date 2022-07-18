@@ -13,10 +13,11 @@ export default function Wallet(props) {
 
     const [selected, setSelected] = useState("");
     const [number, setNumber] = useState("");
-    const [ alias, setAlias] = useState("");
+    const [alias, setAlias] = useState("");
     const auth_token = localStorage.getItem('token');
 
     const [show, setShow] = useState(false);
+    
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -29,9 +30,9 @@ export default function Wallet(props) {
     const handleAddWallet = (event) => {
         event.preventDefault()
         const data = {
-            "alias" : alias,
+            "alias": alias,
             "wallet_number": number,
-            "network_code" : selected,
+            "network_code": selected,
         }
         // console.log(data)
         // console.log(auth_token)
@@ -41,23 +42,23 @@ export default function Wallet(props) {
                 Authorization: `Bearer ${auth_token}`
             }
         })
-        .then((response) => {
-            console.log(response.data)
-            toast("Wallet Added Successfully")
+            .then((response) => {
+                console.log(response.data)
+                toast("Wallet Added Successfully")
 
-            if(response.data.response_code === "100") {
-                window.location.reload()
-            }
-        })
+                if (response.data.response_code === "100") {
+                    window.location.reload()
+                }
+            })
 
-        .catch((error) => {
-            console.log(error)
-        })
+            .catch((error) => {
+                console.log(error)
+            })
     }
 
     return (
         <Sidebar>
-            <div className="container">
+            <div className="container p-0">
                 <div className="row">
                     <div className="pt-3">
                         <Button onClick={handleShow}
@@ -69,6 +70,8 @@ export default function Wallet(props) {
                             }}>
                             + Add Wallet
                         </Button>
+
+                        <DisplayWallet />
 
                         <Modal show={show} onHide={handleClose}
                             {...props}
@@ -108,79 +111,78 @@ export default function Wallet(props) {
                                         </label>
                                         <select className="focus:outline-none p-2 select-toggle w-full"
                                             value={selected} onChange={handleChange}>
-                                                <>
-                                                    {
-                                                        WalletList.map((selected, index) => {
-                                                            return (
-                                                                <option
-                                                                    key={selected.id} role="button"
-                                                                    className="pl-3 mb-1 hover:bg-red-600 p-2
+                                            <>
+                                                {
+                                                    WalletList.map((selected, index) => {
+                                                        return (
+                                                            <option
+                                                                key={selected.id} role="button"
+                                                                className="pl-3 mb-1 hover:bg-red-600 p-2
                                                                             hover:text-white">
-                                                                    {selected.name}
-                                                                </option>
-                                                            )
-                                                        })
-                                                    }
-                                                </>
+                                                                {selected.name}
+                                                            </option>
+                                                        )
+                                                    })
+                                                }
+                                            </>
                                         </select>
-                                </div>
+                                    </div>
 
-                            </form>
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button style={{
-                                backgroundColor: "#e4043c",
-                                border: 'none'
-                            }} onClick={handleClose}>
-                                Close
-                            </Button>
-                            <Button variant="primary"
-                                style={{
-                                    backgroundColor: "#88C057",
-                                    border: "none"
-                                }} onClick={handleAddWallet}>
-                                Save Changes
-                            </Button>
-                        </Modal.Footer>
-                    </Modal>
+                                </form>
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button style={{
+                                    backgroundColor: "#e4043c",
+                                    border: 'none'
+                                }} onClick={handleClose}>
+                                    Close
+                                </Button>
+                                <Button variant="primary"
+                                    style={{
+                                        backgroundColor: "#88C057",
+                                        border: "none"
+                                    }} onClick={handleAddWallet}>
+                                    Save Changes
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
 
-                </div>
-                <div className="col-md-12 pt-3">
-                    <div className="md:flex justify-between bg-white p-3 shadow-md rounded-md">
-                        <div className="px-3 py-3">
-                            <h2 className="text-2xl font-semibold mb-0">
-                                Transaction history
-                            </h2>
-                            <p className="text-sm text-gray-500 mb-0">
-                                All transactions on your wallets.
-                            </p>
-                        </div>
-                        <div className=" md:w-1/5 ">
-                            <select className="focus:outline-none p-2 select-toggle w-full"
-                                value={selected} onChange={handleChange} >
-                                <>
-                                    {
-                                        WalletTransactions.map((transaction, index) => {
-                                            return (
-                                                <option
-                                                    key={transaction.name} role="button"
-                                                    className=" hover:bg-[#E4043C] hover:text-white rounded-sm p-1">
-                                                    {transaction.name}
-                                                </option>
-                                            )
-                                        })
-                                    }   
+                    </div>
+                    <div className="col-md-12 pt-6">
+                        <div className="md:flex justify-between bg-white p-3 shadow-md rounded-md">
+                            <div className="px-3 py-3">
+                                <h2 className="md:text-2xl text-xl font-semibold mb-0">
+                                    Transaction history
+                                </h2>
+                                <p className="text-sm text-gray-500 mb-0">
+                                    All transactions on your wallets.
+                                </p>
+                            </div>
+                            <div className=" md:w-1/5 ">
+                                <select className="focus:outline-none p-2 select-toggle w-full"
+                                    value={selected} onChange={handleChange} >
+                                    <>
+                                        {
+                                            WalletTransactions.map((transaction, index) => {
+                                                return (
+                                                    <option
+                                                        key={transaction.name} role="button"
+                                                        className=" hover:bg-[#E4043C] hover:text-white rounded-sm p-1">
+                                                        {transaction.name}
+                                                    </option>
+                                                )
+                                            })
+                                        }
 
-                                </>
-                            </select>
+                                    </>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <DisplayWallet />
+                {/* Footer */}
+                <Footer />
             </div>
-            {/* Footer */}
-            <Footer />
-        </div>
         </Sidebar >
     )
 }

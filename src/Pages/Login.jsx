@@ -5,8 +5,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { ImSpinner6 } from 'react-icons/im';
 
 
 
@@ -105,9 +104,7 @@ function Login() {
                             <button className="bg-red-400 text-sm text-white space-x-5
                         hover:bg-gradient hover:text-white p-2 w-full mb-2 rounded-sm"
                                 disabled>
-                                <FontAwesomeIcon icon={faSpinner}
-                                    className='space-x-4 spinner mr-3' />
-                                loading...
+                                <ImSpinner6 className="spinner space-x-4 mx-auto mr-0 text-3xl" />
                             </button>
                         )}
                     </div>

@@ -86,6 +86,7 @@ export default function WalletCard(props) {
             })
             .catch((error) => {
                 console.log(error);
+                setIsLoading(false);
             })
     }
 
@@ -109,6 +110,7 @@ export default function WalletCard(props) {
 
     const handleEdit = (event) => {
         event.preventDefault();
+        setIsLoading(true);
         const data = {
             "alias": alias,
             "wallet_number" : number,
@@ -121,7 +123,7 @@ export default function WalletCard(props) {
             }
         })
         .then((response) => {
-            setIsLoading(true);
+            setIsLoading(false);
             console.log(response.data);
             toast("Wallet Updated")
         })
@@ -383,7 +385,7 @@ export default function WalletCard(props) {
         else {
             return (
                 <h3>
-                    No Wallet Found
+                    {/* No Wallet Found */}
                 </h3>
             )
         }

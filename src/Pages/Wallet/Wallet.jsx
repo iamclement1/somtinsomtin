@@ -30,9 +30,9 @@ export default function Wallet(props) {
     const handleCloseA = () => setShowA(false);
     const handleShowA = () => setShowA(true);
 
-    const handleShowB = ( { handleShow } ) => {
-        setShowB(handleShow)
-    }
+    // const handleShowB = ( { handleShow } ) => {
+    //     setShowB(handleShow)
+    // }
 
     const handleChange = (event) => {
         setSelected(event.target.value);

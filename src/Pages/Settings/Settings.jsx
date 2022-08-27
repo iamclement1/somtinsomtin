@@ -1,5 +1,4 @@
 import Sidebar from '../../Components/Sidebar/Sidebar'
-import SettingsContent from './SettingsContent'
 
 function Settings() {
 
